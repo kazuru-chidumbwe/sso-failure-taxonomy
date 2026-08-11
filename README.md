@@ -1,4 +1,4 @@
-# sso-failure-taxonomy
+# SSO Failure Taxonomy
 
 This archive contains the codebook and a nonce-consume demonstration for the manuscript *Production Failure Modes in Federated SSO: Lessons from Operating OSS IAM in a Low-Bandwidth, Multi-Site Environment* (Kazuru).
 
@@ -7,7 +7,7 @@ It is **not** a production identity provider.
 Author: Seke Kazuru (https://orcid.org/0009-0002-4099-1059) · kazuruuni@gmail.com  
 License: MIT · [`LICENSE`](LICENSE) · [`CITATION.cff`](CITATION.cff)
 
-https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite a release tag, not floating `main`.
+https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite tag `v0.1.0`, not floating `main`.
 
 ## What is in the archive
 
