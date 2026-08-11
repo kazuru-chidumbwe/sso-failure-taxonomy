@@ -1,0 +1,61 @@
+{
+  "paper": "Production Failure Modes in Federated SSO",
+  "venue": "IEEE Access",
+  "derivation": "a_priori_architectural_surfaces",
+  "n_categories": 10,
+  "annotator": "sole_author_architect",
+  "tie_breaker": "identifier instability wins over authorize/release manifestation",
+  "categories": [
+    {
+      "id": "edge_side_effect",
+      "includes": "IdP/session success but edge authorize/release fails; non-transactional boundary",
+      "excludes_to": ["edge_identifier", "edge_nonce"]
+    },
+    {
+      "id": "edge_identifier",
+      "includes": "Cap/quota/policy keyed on unstable device identifiers (e.g. MAC randomization)",
+      "excludes_to": ["edge_side_effect"]
+    },
+    {
+      "id": "edge_nonce",
+      "includes": "OIDC state/nonce single-use lifecycle broken (concurrency, TTL, missing atomic consume); mechanism-defined",
+      "excludes_to": ["session_plane"],
+      "severity_mix": "may span Sev-2 false rejects and Sev-3 replay"
+    },
+    {
+      "id": "session_plane",
+      "includes": "Confusion or unsafe shortcut between identity session and network/edge session",
+      "excludes_to": ["cluster_state"]
+    },
+    {
+      "id": "directory_federation",
+      "includes": "LDAP/AD federation path latency/availability over WAN breaks bind/search/timeouts",
+      "excludes_to": ["protocol_gateway"]
+    },
+    {
+      "id": "multi_site_affinity",
+      "includes": "Cross-site / LB stickiness or session visibility causes re-auth or stale UX",
+      "excludes_to": ["cluster_state"]
+    },
+    {
+      "id": "cluster_state",
+      "includes": "IdP cluster membership / distributed-cache divergence",
+      "excludes_to": ["multi_site_affinity"]
+    },
+    {
+      "id": "protocol_gateway",
+      "includes": "Middlebox buffer/timeout damages SAML/OIDC payloads before IdP logic",
+      "excludes_to": ["directory_federation"]
+    },
+    {
+      "id": "mfa_delivery",
+      "includes": "MFA fails because delivery channel (e.g. SMS) is unreliable; password/IdP otherwise OK",
+      "excludes_to": ["cluster_state", "multi_site_affinity", "session_plane"]
+    },
+    {
+      "id": "dual_idp_boundary",
+      "includes": "Shared directory but token/claim/lifetime semantics differ across co-deployed IdPs",
+      "excludes_to": ["out_of_corpus_synthetic_lab"]
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "citation_removal_test": "If the incident citation is removed, the item must not remain a generic injunction true of any IAM estate.",
+  "items": [
+    {"n": 1, "incidents": ["F1"], "item": "Treat IdP success and edge release as separate commits; require acknowledgment-before-commit or compensating rollback."},
+    {"n": 2, "incidents": ["F2"], "item": "Do not key device caps on randomized MACs; use stable bindings and remediation UX."},
+    {"n": 3, "incidents": ["F3", "F5"], "item": "Require atomic single-use consume for OIDC state or nonce; set TTL at least RTT; do not rely on JWT expiry alone."},
+    {"n": 4, "incidents": ["F4"], "item": "Document two session planes; never skip edge re-authorization because SSO is warm."},
+    {"n": 5, "incidents": ["I1"], "item": "Size federation timeouts for worst-site WAN, not LAN HA assumptions; plan degrade messaging."},
+    {"n": 6, "incidents": ["I2"], "item": "Validate sticky routing and shared session stores across sites; expect re-authentication windows on failover."},
+    {"n": 7, "incidents": ["I3"], "item": "Treat IdP cluster coherence as an authentication SLO; quorum runbooks; no dual-writer under partition."},
+    {"n": 8, "incidents": ["I4"], "item": "Set gateway buffers at least 2x maximum assertion size; alert on truncation and idle kills."},
+    {"n": 9, "incidents": ["I5"], "item": "Prefer authenticator-first MFA; treat SMS/PSTN as fallback only; non-stranding paths."},
+    {"n": 10, "incidents": ["I6"], "item": "Run a dual-IdP equivalence checklist before cutover: token shape, claims, lifetimes."}
+  ]
+}

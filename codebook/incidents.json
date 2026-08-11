@@ -1,0 +1,19 @@
+{
+  "n": 11,
+  "severity": {"1": 1, "2": 9, "3": 1},
+  "forms": {"DESIGN": 5, "RETRO": 6},
+  "note": "Publishable summaries only. No geography, hostnames, ticket IDs, or non-IAM product names.",
+  "incidents": [
+    {"id": "F1", "category": "edge_side_effect", "sev": 2, "form": "DESIGN", "summary": "Identity success is not network release — non-transactional IdP/edge boundary."},
+    {"id": "F2", "category": "edge_identifier", "sev": 2, "form": "DESIGN", "summary": "Ephemeral MACs exhausted device quotas for real users."},
+    {"id": "F3", "category": "edge_nonce", "sev": 2, "form": "DESIGN", "summary": "Replay protections fired on legitimate traffic — nonce lifecycle, not attackers."},
+    {"id": "F4", "category": "session_plane", "sev": 1, "form": "DESIGN", "summary": "Dual session machines produced already-logged-in friction and unsafe shortcuts."},
+    {"id": "F5", "category": "edge_nonce", "sev": 3, "form": "DESIGN", "summary": "Without atomic nonce consume, captured state could re-enter callback."},
+    {"id": "I1", "category": "directory_federation", "sev": 2, "form": "RETRO", "summary": "Federation assumed stable links; WAN latency broke auth while IdP processes were up."},
+    {"id": "I2", "category": "multi_site_affinity", "sev": 2, "form": "RETRO", "summary": "HA diagrams understated sticky/cross-site session failure under real WAN."},
+    {"id": "I3", "category": "cluster_state", "sev": 2, "form": "RETRO", "summary": "HA cluster still admitted a visible stale-session window."},
+    {"id": "I4", "category": "protocol_gateway", "sev": 2, "form": "RETRO", "summary": "Undersized middlebox defaults broke federation before IdP logic ran."},
+    {"id": "I5", "category": "mfa_delivery", "sev": 2, "form": "RETRO", "summary": "MFA assumed reliable SMS; channel failure stranded users with correct passwords."},
+    {"id": "I6", "category": "dual_idp_boundary", "sev": 2, "form": "RETRO", "summary": "Same protocol plus shared directory does not imply interchangeable IdP semantics."}
+  ]
+}
