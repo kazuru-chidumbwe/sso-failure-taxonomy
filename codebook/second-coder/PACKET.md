@@ -3,8 +3,10 @@
 **Task:** Assign one Table I category and one Table II severity to each case.  
 **This is not taxonomy discovery.** Table I is normative. You apply the inclusion/exclusion rules and tie-breakers.  
 **Time:** about one hour.  
-**Blind:** cases are in randomized order. Category names and publishable summaries are stripped.  
+**Order:** cases are in randomized order.  
 **No estate access.** No NDA. Do not search for the paper.
+
+**Isolation (mandatory):** Treat this file as self-contained. Do not clone, browse, or search the public repository until you have submitted this sheet. The published codebook in that repository includes per-incident category, severity, and form. Reading it would make this task a transcription exercise.
 
 Return the filled response sheet. Do not discuss cases with the author until you submit.
 
@@ -18,17 +20,23 @@ Return the filled response sheet. Do not discuss cases with the author until you
 4. Tie-breakers (below).  
 5. Response sheet.
 
-## What you do not receive
+## What you do not receive in this packet
 
-Incident IDs (F1… / I1…), category labels, publishable one-liners, documentation pointers. Gold labels are not in this repository.
+Incident IDs (F1… / I1…), gold category labels, and the manuscript’s one-line summaries. Those labels exist in the public codebook (`codebook/incidents.json`) for the published catalog. They are not hidden. Isolation is procedural: code from this file only, then submit.
+
+Case texts are paraphrased. They are not the Table I inclusion sentences. Apply the rules; do not keyword-match the table.
+
+---
 
 ## How to code
 
-For each case, read **symptom**, **mechanism**, and **resolution**.
+For each case, read **symptom**, **mechanism**, **resolution**, and **additional observations**.
+
+The additional-observations field is evidence for Table I **excludes**. Use it. A match on the inclusion phrase alone is not enough.
 
 1. Walk the tie-breaker order in Table I: first matching **Yes** wins.  
 2. Assign **exactly one** category from Table I.  
-3. Assign **exactly one** severity from Table II. Severity is a second axis. It is not a substitute for mechanism. The same mechanism may appear at two severities.  
+3. Assign **exactly one** severity from Table II, written as `Sev-1`, `Sev-2`, or `Sev-3`. Severity is a second axis. It is not a substitute for mechanism. The same mechanism may appear at two severities.  
 4. If no Table I cell fits, write `NEW_LABEL` and one sentence why.  
 5. Do not invent incidents. Do not recode another coder’s sheet.
 
@@ -70,84 +78,97 @@ For each case, read **symptom**, **mechanism**, and **resolution**.
 | Sev-2 | Authentication or service failure for a user cohort or site; operations intervention required |
 | Sev-3 | Security-boundary risk (bypass, wrong trust) or widespread multi-site authentication outage |
 
+Write the code `Sev-1`, `Sev-2`, or `Sev-3` on the response sheet (not bare `1` / `2` / `3`).
+
 ---
 
 ## Cases (randomized order)
 
 ### Case 01
 
-**Symptom:** Re-prompt for directory credentials despite recent SSO.  
-**Mechanism:** Identity session is not the network session; operators expected SSO to skip edge re-authorization.  
-**Resolution:** Document two planes; never skip edge re-authorize.
+**Symptom:** Users who had just completed login at the identity product were asked again for directory credentials before they could use the network.  
+**Mechanism:** Operators treated “already logged in at the identity product” as “already on the network.” Completing the identity product’s login did not, by itself, open the network path. The two clocks were independent; staff expected the first to skip the second.  
+**Resolution:** Write the two clocks down as separate. Never treat identity-product login as permission to skip the network check.  
+**Additional observations:** Replica nodes of the identity product agreed on the user’s login. Returning the user to a previous site did not change the prompt. Device addresses used for policy were stable and within quota. The network check itself succeeded when it ran. No second identity product was in the path. Login eventually completed after the extra prompt; the load was helpdesk tickets, not an outage.
 
 ### Case 02
 
-**Symptom:** Capability bypass via replayed `state`.  
-**Mechanism:** JWT expiry was accepted; the nonce was not atomically consumed.  
-**Resolution:** Mandatory nonce store + atomic consume; security telemetry.
+**Symptom:** A copied callback value let a client obtain a network capability it should not have kept.  
+**Mechanism:** A callback token meant to be used once was looked up and then removed in two separate steps. A second presentation of the same value in the gap still succeeded. Treating a signed token as finished because it had not yet expired was accepted as sufficient.  
+**Resolution:** Read and remove the one-time value in a single store operation. Alarm if a copy is presented after that.  
+**Additional observations:** On first use, the user’s identity was correct and the device address used for policy was stable and within quota. The network-opening step was not the failing step. Login messages reached the identity product intact. Directory lookups were timely. This was not helpdesk friction: a captured callback could re-enter after the first client had already succeeded.
 
 ### Case 03
 
-**Symptom:** MFA never completes for a subset of users.  
-**Mechanism:** SMS delivery unreliable; policy assumed prompt delivery.  
-**Resolution:** Authenticator-first; SMS as fallback; path that does not strand the user.
+**Symptom:** A subset of users never finished the second factor. Password check had already succeeded.  
+**Mechanism:** Policy required a one-time code that arrived over the telephone text channel. Those messages did not arrive in time, or at all. Users with the right password were left with no other way through.  
+**Resolution:** Prefer an authenticator app as the primary second factor. Keep the telephone channel as fallback. Provide a path that does not strand the user when the message never comes.  
+**Additional observations:** Replica nodes of the identity product agreed. Returning the user to a previous site did not change the outcome. The stall was before any network-opening step; this was not a second clock after identity login. Device addresses were stable. Login messages reached the identity product intact. Directory lookups were timely. Operations had to change the second-factor path for the affected cohort.
 
 ### Case 04
 
-**Symptom:** Application works on IdP A and breaks on IdP B or at cutover.  
-**Mechanism:** Token shape, lifetimes, or claims were not equated across co-deployed IdPs that share a directory.  
-**Resolution:** Equivalence checklist before cutover.
+**Symptom:** An application worked against identity product A and broke against identity product B, including at cutover.  
+**Mechanism:** Both products looked up the same people. Token fields, lifetimes, or claim names still differed, and the application depended on the first product’s meaning.  
+**Resolution:** Before cutover, check that tokens, claims, and lifetimes are equivalent for each application — not only that both products can find the user.  
+**Additional observations:** User lookup in the shared people store succeeded on both products. Replica nodes within each product agreed. Login messages arrived intact. This was a live cutover with a broken application, not a laboratory matrix. Device addresses and the telephone second-factor channel were not in the failing path.
 
 ### Case 05
 
-**Symptom:** Re-authentication or a stale session after site hop or failover.  
-**Mechanism:** Imperfect multi-site affinity / session visibility.  
-**Resolution:** Sticky where required; validate shared store; expect re-auth windows.
+**Symptom:** After a user moved between sites, or after failover, they were asked to log in again or saw a session that looked out of date.  
+**Mechanism:** Request routing did not consistently return a user to the node holding their session, and session state was not uniformly visible across the routing tier.  
+**Resolution:** Pin a user to the node that holds their session where that is required. Confirm that the store those nodes share actually answers. Expect a re-login window on failover rather than claiming it cannot happen.  
+**Additional observations:** Within one site, replica nodes did not disagree on who was a member of the set. Directory lookups were timely. Login messages reached the identity product intact. Device addresses were stable. The telephone second-factor channel was not involved. Operators had to intervene at the affected site.
 
 ### Case 06
 
-**Symptom:** Conflicting authentication state across secondary IdP nodes.  
-**Mechanism:** Cluster membership or cache divergence under partition.  
-**Resolution:** Quorum runbook; no dual-writer; treat cluster coherence as an authentication health check.
+**Symptom:** Two replica nodes of the same identity product gave the same user different “already logged in” answers.  
+**Mechanism:** After a brief split, both nodes accepted writes. One node still served an older login record while the other had moved on.  
+**Resolution:** Run a quorum. Do not allow two writers. Treat disagreement among replica nodes as an authentication health failure, not only as a cluster health failure.  
+**Additional observations:** The user was not being sent to a different site; the disagreement was among replicas of one product. Directory lookups were timely. Login messages arrived intact. Device addresses were stable. The telephone second-factor channel was not involved. Operators had to repair the replica set before login was trustworthy again.
 
 ### Case 07
 
-**Symptom:** Truncated or invalid assertion at the gateway.  
-**Mechanism:** Load-balancer buffer or idle timeout undersized for large assertions.  
-**Resolution:** Buffer at least twice maximum assertion size; raise idle timeouts; alert.
+**Symptom:** The identity product logged no complete login request; the reverse proxy reported a truncated or invalid body.  
+**Mechanism:** The message that should have reached the identity product’s application code was cut off or closed on the path in front of it. The same class of message succeeded on a path that would accept a larger body and a longer idle wait.  
+**Resolution:** Raise body and idle limits to at least twice the largest login message in use. Alert when the proxy rejects a login body.  
+**Additional observations:** User lookup in the directory was not the failing step; the identity product never saw the request. Replica nodes were not split. Device addresses were stable. The telephone second-factor channel was not involved. A user cohort behind that reverse proxy could not authenticate until operators changed the proxy limits.
 
 ### Case 08
 
-**Symptom:** Replay or nonce reject spike after a deploy.  
-**Mechanism:** Non-atomic nonce consume and TTL skew under concurrency.  
-**Resolution:** Atomic consume (e.g. GETDEL); TTL at least round-trip; sticky-independence test.
+**Symptom:** After a release, legitimate callbacks were rejected as already used or unknown. A spike of failed logins followed.  
+**Mechanism:** A callback token meant to be used once was looked up and then removed in two separate steps. Under concurrent retries, both requests could pass the existence check; the loser was then told the value was gone. Under load, the stored value also disappeared before the browser returned.  
+**Resolution:** Read and remove the one-time value in a single store operation. Keep it long enough for the round trip. Confirm the path still works when the user is not pinned to one node.  
+**Additional observations:** No evidence that a third party presented a captured token. On first use, identity and device handling were correct. Login messages reached the identity product intact. Directory lookups were timely. Users were locked out until operations rolled or patched the consume path; this was not a bypass and not helpdesk-only friction.
 
 ### Case 09
 
-**Symptom:** Intermittent login and slow binds at a remote site.  
-**Mechanism:** LDAP/AD federation over intermittent WAN exceeded timeouts.  
-**Resolution:** Tune timeouts; cache or replica; degrade messaging.
+**Symptom:** At a distant office, login failed or hung, while the identity product process at the hub was healthy.  
+**Mechanism:** Looking up the user in the central people store took longer than the login path would wait. The link to that store was lossy. Hub processes were up; the lookup step was not.  
+**Resolution:** Lengthen the wait to match the link. Keep a nearer copy of the people store, or say clearly that login will degrade when the link is bad.  
+**Additional observations:** Login messages reached the identity product intact; the stall was the user-lookup step, not a truncated body at a proxy. Replica nodes at the hub agreed. Device addresses were stable. The telephone second-factor channel was not the failing step. Operators had to change timeouts or placement before that office could log in reliably.
 
 ### Case 10
 
-**Symptom:** Legitimate user hits a device cap.  
-**Mechanism:** MAC randomization inflated the active-device count.  
-**Resolution:** Stable identifiers; design for randomization; remediation user experience.
+**Symptom:** A user who had already completed identity login was blocked for exceeding a device allowance.  
+**Mechanism:** Policy counted “devices” by the hardware address the client presented. Phones that change that address on their own were counted as many devices, and a real person exhausted the allowance.  
+**Resolution:** Do not key the allowance on an address the client can change without the user noticing. Design the path for that change. Give a remediation experience that is not “buy another licence.”  
+**Additional observations:** Identity login had succeeded. The network-opening step ran; the block was the count keyed on the address, not a grant that failed to complete after a correct identity. Replica nodes agreed. Login messages arrived intact. Directory lookups were timely. The address was not stable across reconnects. Operations had to clear or redesign the allowance for the affected users.
 
 ### Case 11
 
-**Symptom:** Federated login succeeded; the client remained walled from the network.  
-**Mechanism:** Edge authorize failed after the session or capability commit; no rollback.  
-**Resolution:** Acknowledgment-before-commit; rollback; reconcile.
+**Symptom:** Federated login at the identity product succeeded; the client remained walled off from the network.  
+**Mechanism:** The identity product recorded a successful login. The later step that was supposed to open the network never completed, and that recorded success was not undone. The user held a valid login and still could not pass the wall.  
+**Resolution:** Do not record success until the network-opening step acknowledges. If that step fails, undo the recorded login. Reconcile leftovers.  
+**Additional observations:** The hardware address used for policy was stable and within quota. The one-time callback value was used once and was not replayed. Replica nodes agreed. Login messages reached the identity product intact. Directory lookups were timely. Identity handling was correct; the gap was the later network-opening step with no undo. Operators had to reconcile the two sides before the user could pass.
 
 ---
 
 ## Response sheet
 
-Copy this table. One category and one severity per row.
+Copy this table. One category and one severity per row. Severity must be `Sev-1`, `Sev-2`, or `Sev-3`.
 
-| Case | Category (Table I or NEW_LABEL) | Severity (1 / 2 / 3) | One-line note (optional) |
-| ---: | --- | ---: | --- |
+| Case | Category (Table I or NEW_LABEL) | Severity (Sev-1 / Sev-2 / Sev-3) | One-line note (optional) |
+| ---: | --- | --- | --- |
 | 01 |  |  |  |
 | 02 |  |  |  |
 | 03 |  |  |  |

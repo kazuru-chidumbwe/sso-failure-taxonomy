@@ -7,16 +7,17 @@ It is **not** a production identity provider.
 Author: Seke Kazuru (https://orcid.org/0009-0002-4099-1059) · kazuruuni@gmail.com  
 License: MIT · [`LICENSE`](LICENSE) · [`CITATION.cff`](CITATION.cff)
 
-https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite a release tag when one exists, not floating `main`.
+https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite a release tag, not floating `main`.
 
 ## What is in the archive
 
 | Path | Role |
 | --- | --- |
 | [`codebook/`](codebook/) | Ten-category taxonomy, N=11 publishable summaries, checklist |
-| [`codebook/second-coder/`](codebook/second-coder/) | Blind coding packet (no gold labels) |
+| [`codebook/second-coder/`](codebook/second-coder/) | Independent-coding packet (send standalone; do not browse the repo first) |
 | [`harness/`](harness/) | Stdlib demo of Fig. 3: naive check-then-delete vs atomic consume |
-| [`figures/`](figures/) | Fig. 1–3 (captions in the manuscript) |
+| [`figures/`](figures/) | Fig. 1–3 (captions in the manuscript). Fig. 2 is the tie-breaker walk, not a count chart |
+| [`docs/`](docs/) | Scope, tag policy |
 
 No hostnames, secrets, ticket IDs, or geography.
 

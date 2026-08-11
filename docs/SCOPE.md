@@ -3,8 +3,8 @@
 ## This artefact is
 
 - A frozen codebook for a ten-category federated SSO failure taxonomy (inclusion, exclusion, tie-breakers, severity).
-- Eleven fingerprint-safe incident summaries used as a demonstration of that scheme.
-- A blind second-coder packet (symptom / mechanism / resolution only).
+- Eleven fingerprint-safe incident summaries used as a demonstration of that scheme (`codebook/incidents.json` is the published catalog, including category, severity, and form).
+- An independent-coding packet (`codebook/second-coder/PACKET.md`) with paraphrased cases and negative-evidence fields. Isolation is procedural: send the packet standalone; the coder must not browse this repository until they submit.
 - A standard-library nonce-consume demonstration of the manuscript Fig. 3 claim.
 
 ## This artefact is not
@@ -12,11 +12,12 @@
 - A production IdP, portal, or estate config.
 - A rate, a laboratory experiment on live IdPs, or statistical transfer across organisations.
 - Independent taxonomy discovery. Second-coder agreement is label assignment given Table I.
+- A hidden gold file. There is no separate public answer key that maps Case 01–11 to F/I ids. The catalog labels themselves are public because they are Table III.
 
 ## Fingerprint test
 
 Procurement notices plus about ten minutes of search must not narrow the text to one organisation. No geography, live hostnames, ticket IDs, or mail/collaboration product names.
 
-## What stays out of the public tree
+## What stays out of a public tag
 
-Programme notes (`upstream/`) and any gold second-coder key are not part of a public tag.
+Programme notes (`upstream/`, gitignored). The Case→incident shuffle answer key lives only with the author, not in this tree.
