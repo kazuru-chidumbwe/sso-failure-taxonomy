@@ -1,9 +1,12 @@
 cff-version: 1.2.0
 message: "If you use this artefact, please cite it as below."
 title: "sso-failure-taxonomy"
-version: 0.1.0
+version: 0.1.1
 date-released: "2026-08-12"
 url: "https://github.com/kazuru-chidumbwe/sso-failure-taxonomy"
+# identifiers:
+#   - type: doi
+#     value: "10.5281/zenodo.XXXXXXXX"   # Temsen: paste after Zenodo mint from tag v0.1.1
 license: MIT
 authors:
   - family-names: Kazuru

@@ -10,13 +10,13 @@
 ## This artefact is not
 
 - A production IdP, portal, or estate config.
-- A rate, a laboratory experiment on live IdPs, or statistical transfer across organisations.
+- A rate, a laboratory experiment on live IdPs, or statistical transfer across organizations.
 - Independent taxonomy discovery. Second-coder agreement is label assignment given Table I.
 - A hidden gold file. There is no separate public answer key that maps Case 01–11 to F/I ids. The catalog labels themselves are public because they are Table III.
 
 ## Fingerprint test
 
-Procurement notices plus about ten minutes of search must not narrow the text to one organisation. No geography, live hostnames, ticket IDs, or mail/collaboration product names.
+Procurement notices plus about ten minutes of search must not narrow the text to one organization. No geography, live hostnames, ticket IDs, or mail/collaboration product names.
 
 ## What stays out of a public tag
 
