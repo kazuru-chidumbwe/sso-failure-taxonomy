@@ -4,7 +4,7 @@
 
 - A frozen codebook for a ten-category federated SSO failure taxonomy (inclusion, exclusion, tie-breakers, severity).
 - Eleven fingerprint-safe incident summaries used as a demonstration of that scheme (`codebook/incidents.json` is the published catalog, including category, severity, and form).
-- An independent-coding packet (`codebook/second-coder/PACKET.md`) with paraphrased cases and negative-evidence fields. Isolation is procedural: send the packet standalone; the coder must not browse this repository until they submit.
+- An **unblinded** independent-coding packet (`codebook/second-coder/PACKET.md`) with paraphrased cases and negative-evidence fields. Gold labels for the published catalog are in `incidents.json` (Table III). Send the packet standalone so coding is rule application, not transcription; do not claim blinding.
 - A standard-library nonce-consume demonstration of the manuscript Fig. 3 claim.
 
 ## This artefact is not

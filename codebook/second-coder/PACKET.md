@@ -6,7 +6,7 @@
 **Order:** cases are in randomized order.  
 **No estate access.** No NDA. Do not search for the paper.
 
-**Isolation (mandatory):** Treat this file as self-contained. Do not clone, browse, or search the public repository until you have submitted this sheet. The published codebook in that repository includes per-incident category, severity, and form. Reading it would make this task a transcription exercise.
+**Working protocol (not blinding):** This round is **unblinded** relative to the published catalog. The public repository’s `codebook/incidents.json` already carries category, severity, and form for all eleven rows (Table III). Those labels are not hidden. Treat this file as self-contained anyway: do not clone, browse, or search that repository until you have submitted this sheet. Reading the catalog would turn the task into transcription. We measure agreement on applying Table I to paraphrased cases, not double-blind discovery.
 
 Return the filled response sheet. Do not discuss cases with the author until you submit.
 
@@ -22,7 +22,7 @@ Return the filled response sheet. Do not discuss cases with the author until you
 
 ## What you do not receive in this packet
 
-Incident IDs (F1… / I1…), gold category labels, and the manuscript’s one-line summaries. Those labels exist in the public codebook (`codebook/incidents.json`) for the published catalog. They are not hidden. Isolation is procedural: code from this file only, then submit.
+Incident IDs (F1… / I1…), gold category labels, and the manuscript’s one-line summaries. Those labels exist in the public codebook (`codebook/incidents.json`) for the published catalog. They are not hidden; the exercise is therefore unblinded against that catalog. Code from this file only, then submit.
 
 Case texts are paraphrased. They are not the Table I inclusion sentences. Apply the rules; do not keyword-match the table.
 
@@ -40,7 +40,7 @@ The additional-observations field is evidence for Table I **excludes**. Use it. 
 4. If no Table I cell fits, write `NEW_LABEL` and one sentence why.  
 5. Do not invent incidents. Do not recode another coder’s sheet.
 
-**Frame (honest):** agreement on label assignment given a normative decision table.
+**Frame (honest):** unblinded agreement on label assignment given a normative decision table (not blinding; not taxonomy discovery).
 
 ---
 
