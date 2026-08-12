@@ -14,7 +14,7 @@ https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite tag `v0.1.3` (
 | --- | --- |
 | [`codebook/`](codebook/) | Ten-category taxonomy, N=11 publishable summaries, checklist |
 | [`codebook/second-coder/`](codebook/second-coder/) | Unblinded independent-coding packet (send standalone; public catalog is not hidden) |
-| [`codebook/reliability.json`](codebook/reliability.json) | Second-coder agreement (raw + Cohen’s κ + bootstrap CI) |
+| [`codebook/reliability.json`](codebook/reliability.json) | Second-coder agreement (AC1 primary + κ + bootstrap CI) |
 | [`harness/`](harness/) | Stdlib demo of Fig. 3: naive check-then-delete vs atomic consume |
 | [`figures/`](figures/) | Fig. 1–3 (captions in the manuscript). Fig. 2 is the tie-breaker walk, not a count chart |
 | [`docs/`](docs/) | Scope, tag policy |
