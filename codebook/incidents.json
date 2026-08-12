@@ -12,8 +12,8 @@
     {"id": "I1", "category": "directory_federation", "sev": 2, "form": "RETRO", "summary": "Federation assumed stable links; WAN latency broke auth while IdP processes were up."},
     {"id": "I2", "category": "multi_site_affinity", "sev": 2, "form": "RETRO", "summary": "HA diagrams understated sticky/cross-site session failure under real WAN."},
     {"id": "I3", "category": "cluster_state", "sev": 2, "form": "RETRO", "summary": "HA cluster still admitted a visible stale-session window."},
-    {"id": "I4", "category": "protocol_gateway", "sev": 2, "form": "RETRO", "summary": "Undersized middlebox defaults broke federation before IdP logic ran."},
-    {"id": "I5", "category": "mfa_delivery", "sev": 2, "form": "RETRO", "summary": "MFA assumed reliable SMS; channel failure stranded users with correct passwords."},
+    {"id": "I4", "category": "protocol_gateway", "sev": 2, "form": "RETRO", "summary": "SAML POST rejected on gateway path after successful IdP auth; request-size limit raised restored SSO."},
+    {"id": "I5", "category": "mfa_delivery", "sev": 2, "form": "RETRO", "summary": "Password OK; SMS MFA failed at OTP verification completion; MFA transaction config restored password-plus-OTP."},
     {"id": "I6", "category": "dual_idp_boundary", "sev": 2, "form": "RETRO", "summary": "Same protocol plus shared directory does not imply interchangeable IdP semantics."}
   ]
 }

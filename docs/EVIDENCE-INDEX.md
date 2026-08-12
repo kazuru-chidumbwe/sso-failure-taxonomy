@@ -9,12 +9,11 @@ Honest map for the manuscript Table III. **No estate tickets, live logs, hostnam
 | F3 | edge_callback_consume | DESIGN | Architect note + [`harness/`](../harness/) callback-consume demo | Harness models the race class; not original estate logs |
 | F4 | session_plane | DESIGN | Architect note / Table III summary only | |
 | F5 | edge_callback_consume | DESIGN | Architect note + [`harness/`](../harness/) callback-consume demo | Same harness as F3 |
-| I1 | directory_federation | RETRO | Architect note / Table III summary only | |
+| I1 | directory_federation | RETRO | Architect note / Table III summary only | Non-corpus mechanism corroboration (manuscript §VI-E): VIP EG WAN/user-store timeout; RODC/hub WAN auth failure; Nagios LDAP socket-timeout thread rejected (no WAN proven) |
 | I2 | multi_site_affinity | RETRO | Architect note / Table III summary only | |
 | I3 | cluster_state | RETRO | Architect note / Table III summary only | |
-| I4 | protocol_gateway | RETRO | Architect note + [`harness/fixtures/i4/`](../harness/fixtures/i4/) synthetic size-class fixtures | Fixtures are **not** estate SAML captures; size-class helper only |
-
-| I5 | mfa_delivery | RETRO | Architect note / Table III summary only | |
+| I4 | protocol_gateway | RETRO | Publishable summary + [`harness/fixtures/i4/`](../harness/fixtures/i4/) synthetic size-class fixtures | **Ticket-reviewed privately** (not released); fixtures are **not** estate SAML captures |
+| I5 | mfa_delivery | RETRO | Publishable summary only | **Ticket-reviewed privately** (not released); SMS-path OTP verification completion, not pure non-delivery |
 | I6 | dual_idp_boundary | RETRO | Architect note / Table III summary only | No claim matrix released |
 
 ## How to run the only executable evidence object
