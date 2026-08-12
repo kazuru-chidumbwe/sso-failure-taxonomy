@@ -4,7 +4,7 @@ This archive contains the codebook and a nonce-consume demonstration for the man
 
 It is **not** a production identity provider.
 
-Author: Seke Kazuru (https://orcid.org/0009-0002-4099-1059) · kazuruuni@gmail.com  
+
 License: MIT · [`LICENSE`](LICENSE) · [`CITATION.cff`](CITATION.cff)
 
 https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite tag `v0.1.1` (or its Zenodo DOI), not floating `main`.
@@ -37,6 +37,3 @@ make smoke
 python3 harness/nonce_consume.py both --mode both --workers 8
 ```
 
-## Contact
-
-Seke Kazuru, kazuruuni@gmail.com.
