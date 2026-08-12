@@ -1,12 +1,13 @@
 cff-version: 1.2.0
 message: "If you use this artefact, please cite it as below."
 title: "sso-failure-taxonomy"
-version: 0.1.1
+version: 0.1.2
 date-released: "2026-08-12"
 url: "https://github.com/kazuru-chidumbwe/sso-failure-taxonomy"
+# After Zenodo mint from tag v0.1.2, uncomment and set:
 # identifiers:
 #   - type: doi
-#     value: "10.5281/zenodo.XXXXXXXX"   # Temsen: paste after Zenodo mint from tag v0.1.1
+#     value: "10.5281/zenodo.XXXXXXXX"
 license: MIT
 authors:
   - family-names: Kazuru
@@ -14,5 +15,6 @@ authors:
     email: kazuruuni@gmail.com
     orcid: "https://orcid.org/0009-0002-4099-1059"
 abstract: >-
-  Codebook and nonce-consume demonstration for a ten-category federated SSO
-  failure taxonomy. Not a production identity provider.
+  Codebook, unblinded second-coder reliability summary, and nonce-consume
+  demonstration for a ten-category federated SSO failure taxonomy. Not a
+  production identity provider.

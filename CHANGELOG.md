@@ -1,8 +1,12 @@
 # Changelog
 
+## 0.1.2 — 2026-08-12
+
+Data release for Access Availability: `codebook/reliability.json` (+ `reliability.md`) with second-coder raw agreement, Cohen’s κ, and bootstrap CIs. Scrub programme placeholder from `CITATION.cff` DOI comment. README authorship left to `CITATION.cff` only (plain harness style). **Cite / Zenodo-mint this tag**, not `v0.1.1` or `v0.1.0`.
+
 ## 0.1.1 — 2026-08-12
 
-Packet and docs state the second-coder round as **unblinded** relative to the published catalog (`incidents.json` / Table III). “Packet only until submit” remains the working protocol (not a blinding claim). Cite this tag (or its Zenodo DOI) for Access Availability — not `v0.1.0` alone, and not floating `main`.
+Packet and docs state the second-coder round as **unblinded** relative to the published catalog (`incidents.json` / Table III). “Packet only until submit” remains the working protocol (not a blinding claim).
 
 ## 0.1.0 — 2026-08-12
 
