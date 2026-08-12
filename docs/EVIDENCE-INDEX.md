@@ -6,9 +6,9 @@ Honest map for the manuscript Table III. **No estate tickets, live logs, hostnam
 | --- | --- | --- | --- | --- |
 | F1 | edge_side_effect | DESIGN | Architect note / Table III summary only | No state-machine fixture released |
 | F2 | edge_identifier | DESIGN | Architect note / Table III summary only | Mechanism literature is cited in the paper, not as proof of the local event |
-| F3 | edge_nonce | DESIGN | Architect note + [`harness/`](../harness/) nonce-consume demo | Harness models the race class; not original estate logs |
+| F3 | edge_callback_consume | DESIGN | Architect note + [`harness/`](../harness/) callback-consume demo | Harness models the race class; not original estate logs |
 | F4 | session_plane | DESIGN | Architect note / Table III summary only | |
-| F5 | edge_nonce | DESIGN | Architect note + [`harness/`](../harness/) nonce-consume demo | Same harness as F3 |
+| F5 | edge_callback_consume | DESIGN | Architect note + [`harness/`](../harness/) callback-consume demo | Same harness as F3 |
 | I1 | directory_federation | RETRO | Architect note / Table III summary only | |
 | I2 | multi_site_affinity | RETRO | Architect note / Table III summary only | |
 | I3 | cluster_state | RETRO | Architect note / Table III summary only | |

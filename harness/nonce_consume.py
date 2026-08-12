@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Illustrate F3/F5 nonce lifecycle: naive check-then-delete vs atomic consume.
+"""Illustrate F3/F5 edge callback-consume race: naive check-then-delete vs atomic consume.
 
 Stdlib only. Not a production IdP. Synthetic tokens; no estate data.
-Maps to manuscript edge_nonce incidents F3 (Sev-2 false reject) and F5 (Sev-3 replay).
+Maps to manuscript edge_callback_consume incidents F3 (Sev-2 false reject) and F5 (Sev-3 replay).
 """
 from __future__ import annotations
 

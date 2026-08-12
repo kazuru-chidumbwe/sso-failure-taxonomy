@@ -49,7 +49,7 @@ The additional-observations field is evidence for Table I **excludes**. Use it. 
 1. If the root cause is **identifier instability**, classify as `edge_identifier` even when the failure looks like authorize or release.  
 2. Use `edge_side_effect` only when identity and identifier handling are correct and the failure is a non-transactional edge commit or release.  
 3. `mfa_delivery` excludes to `cluster_state`, `multi_site_affinity`, or `session_plane` — not to an unnamed HA bucket.  
-4. `edge_nonce` is mechanism-defined (broken one-use `state`/nonce consume, including missing atomic consume). It may be Severity-2 or Severity-3.
+4. `edge_callback_consume` is mechanism-defined (single-use edge callback-correlation / capability consume, including missing atomic consume). It may be Severity-2 or Severity-3. It does not treat OAuth `state`, OIDC ID-Token `nonce`, authorization codes, and access tokens as interchangeable.
 
 ---
 
@@ -57,9 +57,9 @@ The additional-observations field is evidence for Table I **excludes**. Use it. 
 
 | Category | Includes | Excludes (goes to…) |
 | --- | --- | --- |
-| edge_side_effect | IdP/session success but edge enforcement side-effect fails (authorize/release); non-transactional boundary | Identifier policy false blocks → edge_identifier; nonce/replay → edge_nonce |
+| edge_side_effect | IdP/session success but edge enforcement side-effect fails (authorize/release); non-transactional boundary | Identifier policy false blocks → edge_identifier; callback-consume defects → edge_callback_consume |
 | edge_identifier | Cap/quota/policy keyed on unstable device identifiers (e.g., MAC randomization) | Side-effect after correct identity → edge_side_effect |
-| edge_nonce | OIDC/`state` single-use/replay lifecycle broken (concurrency, TTL, missing atomic consume); mechanism-defined | Session-plane confusion without replay → session_plane |
+| edge_callback_consume | Failure in the single-use lifecycle of an RP callback-correlation value or edge callback capability, including non-atomic validation/consumption, TTL mismatch, or concurrent callback handling | OIDC ID-Token nonce validation without a callback-consumption defect; authorization-code or access-token replay handled by the authorization server/resource server; session-plane confusion without callback replay → session_plane |
 | session_plane | Confusion or unsafe shortcut between identity session and network/edge session (independent TTLs) | Cluster cache divergence inside IdP → cluster_state |
 | directory_federation | Auth fails because LDAP/AD federation path latency/availability over WAN breaks bind/search/timeouts | Gateway truncates assertion before IdP logic → protocol_gateway |
 | multi_site_affinity | Cross-site / load-balancer stickiness or session visibility causes re-auth or stale UX after hop/failover | In-cluster membership/cache split → cluster_state |
@@ -74,7 +74,7 @@ The additional-observations field is evidence for Table I **excludes**. Use it. 
 
 | Code | Meaning |
 | --- | --- |
-| Sev-1 | Friction / helpdesk noise; authentication eventually succeeds or workaround is trivial |
+| Sev-1 | User friction / low-impact support demand; authentication eventually succeeds or workaround is trivial |
 | Sev-2 | Authentication or service failure for a user cohort or site; operations intervention required |
 | Sev-3 | Security-boundary risk (bypass, wrong trust) or widespread multi-site authentication outage |
 

@@ -37,7 +37,7 @@ body:
       options:
         - edge_side_effect
         - edge_identifier
-        - edge_nonce
+        - edge_callback_consume
         - session_plane
         - directory_federation
         - multi_site_affinity

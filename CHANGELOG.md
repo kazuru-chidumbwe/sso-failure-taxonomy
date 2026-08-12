@@ -1,8 +1,12 @@
 # Changelog
 
+## 0.1.5 — 2026-08-12
+
+Rename category `edge_nonce` → `edge_callback_consume` for protocol precision (callback-correlation consume ≠ OIDC ID-Token nonce / AS–RS token replay). Sync Table I, incidents, checklist, packet, evidence index, and harness docs. Second-coder agreement remains on the same mechanism cell; earlier tags used the prior label name.
+
 ## 0.1.4 — 2026-08-12
 
-Add `docs/EVIDENCE-INDEX.md` and `docs/EXTERNAL-INCIDENTS.md` (plus GitHub issue template) so manuscript Availability references resolve. Align README / `taxonomy.json` title with the current manuscript. Retire checklist “citation-removal” label in favor of bidirectional case traceability; sync Table IV item wording (incl. item 8 buffer/fixture language). **Cite / Zenodo-mint this tag.**
+Add `docs/EVIDENCE-INDEX.md` and `docs/EXTERNAL-INCIDENTS.md` (plus GitHub issue template) so manuscript Availability references resolve. Align README / `taxonomy.json` title with the current manuscript. Retire checklist “citation-removal” label in favor of bidirectional case traceability; sync Table IV item wording (incl. item 8 buffer/fixture language).
 
 ## 0.1.3 — 2026-08-12
 

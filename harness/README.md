@@ -1,7 +1,7 @@
-# Nonce consume harness (F3 / F5)
+# Callback-consume harness (F3 / F5)
 
-Manuscript `edge_nonce`: F3 (Severity-2 false reject) and F5 (Severity-3 replay).  
-Not a Keycloak or WSO2 deployment. Not a production config. Synthetic nonces only.
+Manuscript `edge_callback_consume`: F3 (Severity-2 false reject) and F5 (Severity-3 replay).  
+Not a Keycloak or WSO2 deployment. Not a production config. Synthetic callback values only.
 
 ```text
 python3 nonce_consume.py both --mode both --workers 8
