@@ -1,8 +1,12 @@
 # Changelog
 
+## 0.1.4 — 2026-08-12
+
+Add `docs/EVIDENCE-INDEX.md` and `docs/EXTERNAL-INCIDENTS.md` (plus GitHub issue template) so manuscript Availability references resolve. Align README / `taxonomy.json` title with the current manuscript. Retire checklist “citation-removal” label in favor of bidirectional case traceability; sync Table IV item wording (incl. item 8 buffer/fixture language). **Cite / Zenodo-mint this tag.**
+
 ## 0.1.3 — 2026-08-12
 
-Reliability computation: add Gwet’s AC1 (primary under severity skew) alongside Cohen’s κ, same bootstrap treatment. Document the `cluster_state` Sev-2/Sev-3 split as severity-boundary judgment. **Cite / Zenodo-mint this tag.**
+Reliability computation: add Gwet’s AC1 (primary under severity skew) alongside Cohen’s κ, same bootstrap treatment. Document the `cluster_state` Sev-2/Sev-3 split as severity-boundary judgment.
 
 ## 0.1.2 — 2026-08-12
 

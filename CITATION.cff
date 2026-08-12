@@ -1,10 +1,10 @@
 cff-version: 1.2.0
 message: "If you use this artefact, please cite it as below."
 title: "sso-failure-taxonomy"
-version: 0.1.3
+version: 0.1.4
 date-released: "2026-08-12"
 url: "https://github.com/kazuru-chidumbwe/sso-failure-taxonomy"
-# After Zenodo mint from tag v0.1.3, uncomment and set:
+# After Zenodo mint from tag v0.1.4, uncomment and set:
 # identifiers:
 #   - type: doi
 #     value: "10.5281/zenodo.XXXXXXXX"

@@ -1,0 +1,68 @@
+name: External incident (Table I)
+description: Submit a fingerprint-safe SSO/IAM incident for fit against the published ten-category taxonomy
+title: "[external-incident] "
+labels: ["external-incident"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Read [`docs/EXTERNAL-INCIDENTS.md`](../docs/EXTERNAL-INCIDENTS.md) first.
+        No hostnames, ticket IDs, geography, or org-identifying product names.
+        This is a falsifiability check, not an addition to the manuscript N=11 catalog.
+  - type: textarea
+    id: symptom
+    attributes:
+      label: Symptom
+      description: What users or operators saw
+    validations:
+      required: true
+  - type: textarea
+    id: mechanism
+    attributes:
+      label: Mechanism
+      description: What failed on the authentication path
+    validations:
+      required: true
+  - type: textarea
+    id: resolution
+    attributes:
+      label: Resolution
+      description: What closed or mitigated it (or unknown)
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Proposed Table I category
+      options:
+        - edge_side_effect
+        - edge_identifier
+        - edge_nonce
+        - session_plane
+        - directory_federation
+        - multi_site_affinity
+        - cluster_state
+        - protocol_gateway
+        - mfa_delivery
+        - dual_idp_boundary
+        - none
+    validations:
+      required: true
+  - type: textarea
+    id: negative_evidence
+    attributes:
+      label: Negative evidence
+      description: Why neighboring labels do not apply
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity (optional)
+      options:
+        - Sev-1
+        - Sev-2
+        - Sev-3
+        - not sure
+    validations:
+      required: false
