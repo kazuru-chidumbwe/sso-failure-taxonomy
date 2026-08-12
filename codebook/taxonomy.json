@@ -18,7 +18,7 @@
     },
     {
       "id": "edge_callback_consume",
-      "includes": "Failure in single-use lifecycle of RP callback-correlation value or edge callback capability (non-atomic consume, TTL mismatch, concurrent callback handling); not interchangeable with ID-Token nonce or AS/RS token replay",
+      "includes": "Failure in single-use lifecycle of RP callback-correlation value or edge callback capability (non-atomic consume; TTL expiry or TTL mismatch relative to modeled callback RTT; concurrent callback handling); not interchangeable with ID-Token nonce or AS/RS token replay",
       "excludes_to": ["session_plane"],
       "severity_mix": "may span Sev-2 false rejects and Sev-3 replay"
     },

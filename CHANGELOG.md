@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.6 — 2026-08-12
+
+Document explicit F3/F5 harness schedules (`harness/SCHEDULES.md`): Schedule A `jwt_only` (second acceptance), Schedule B `naive` (false reject), Schedule C `atomic`. Narrow threat model and atomic single-winner wording for manuscript IV lock.
+
 ## 0.1.5 — 2026-08-12
 
 Rename category `edge_nonce` → `edge_callback_consume` for protocol precision (callback-correlation consume ≠ OIDC ID-Token nonce / AS–RS token replay). Sync Table I, incidents, checklist, packet, evidence index, and harness docs. Second-coder agreement remains on the same mechanism cell; earlier tags used the prior label name.

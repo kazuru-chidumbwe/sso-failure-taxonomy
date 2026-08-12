@@ -3,6 +3,11 @@
 
 Stdlib only. Not a production IdP. Synthetic tokens; no estate data.
 Maps to manuscript edge_callback_consume incidents F3 (Sev-2 false reject) and F5 (Sev-3 replay).
+
+Exact modeled schedules: harness/SCHEDULES.md
+  Schedule A (jwt_only): presence without consume → second path accepts.
+  Schedule B (naive): check, release, delay, pop → loser false-rejects after seeing present.
+  Schedule C (atomic): single-winner pop under one lock.
 """
 from __future__ import annotations
 
@@ -19,7 +24,7 @@ Mode = Literal["naive", "jwt_only", "atomic"]
 
 
 class NaiveNonceStore:
-    """Check-then-delete. Concurrent callbacks race (F3)."""
+    """Schedule B: check-then-delete with gap. Concurrent losers false-reject (F3)."""
 
     def __init__(self) -> None:
         self._data: dict[str, str] = {}
@@ -43,7 +48,7 @@ class NaiveNonceStore:
 
 
 class JwtOnlyStore:
-    """Treats JWT-style presence/expiry as enough. Never consumes. F5 replay."""
+    """Schedule A: presence/expiry treated as enough; never consumes. Second path accepts (F5)."""
 
     def __init__(self) -> None:
         self._data: dict[str, str] = {}
@@ -59,7 +64,7 @@ class JwtOnlyStore:
 
 
 class AtomicNonceStore:
-    """Single-lock pop. One winner; replay misses."""
+    """Schedule C: single-lock pop. One winner; replay misses."""
 
     def __init__(self) -> None:
         self._data: dict[str, str] = {}
