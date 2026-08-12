@@ -1,7 +1,8 @@
 {
   "schema": "sso-failure-taxonomy/reliability/v1",
   "n": 11,
-  "n_categories": 10,
+  "n_categories_table_I": 10,
+  "n_severity_levels_table_II": 3,
   "protocol": "unblinded_independent_coding",
   "protocol_notes": [
     "Gold category/severity/form for the published catalog are in codebook/incidents.json (Table III).",
@@ -12,8 +13,14 @@
   "coder_descriptor": "independent_coder_iam_sso_operations",
   "date": "2026-08-12",
   "minutes": 47,
+  "primary_metric": "gwet_ac1",
+  "primary_metric_rationale": "Severity is skewed (Table III 1/9/1). Cohen's kappa understates agreement under that prevalence (kappa paradox). Gwet AC1 is the intended primary chance-corrected metric; kappa is reported alongside.",
   "computation": {
-    "cohen_kappa": "standard",
+    "cohen_kappa": "standard (Po-Pe)/(1-Pe) with Pe from rater marginal products",
+    "gwet_ac1": "Gwet AC1: (Po-Pe)/(1-Pe) with Pe=(1/(q-1))*sum_k pi_k*(1-pi_k); pi_k=mean of two raters' category proportions; q=scheme size (10 categories / 3 severities)",
+    "references": [
+      "Gwet, K. L. (2008). Computing inter-rater reliability and its variance in the presence of high agreement. British Journal of Mathematical and Statistical Psychology, 61(1), 29-48."
+    ],
     "bootstrap": {
       "method": "percentile",
       "B": 10000,
@@ -24,16 +31,20 @@
   "category": {
     "n_agree": 11,
     "raw_agreement": 1.0,
-    "kappa": 1.0,
-    "bootstrap_ci95": [1.0, 1.0],
+    "gwet_ac1": 1.0,
+    "gwet_ac1_bootstrap_ci95": [1.0, 1.0],
+    "cohen_kappa": 1.0,
+    "cohen_kappa_bootstrap_ci95": [1.0, 1.0],
     "ci_note": "degenerate under perfect agreement"
   },
   "severity": {
     "n_agree": 10,
     "raw_agreement": 0.9090909090909091,
-    "kappa": 0.7608695652173912,
-    "bootstrap_ci95": [0.0, 1.0],
-    "ci_note": "wide; n=11 with severity class imbalance"
+    "gwet_ac1": 0.8880407124681934,
+    "gwet_ac1_bootstrap_ci95": [0.6363636363636364, 1.0],
+    "cohen_kappa": 0.7608695652173912,
+    "cohen_kappa_bootstrap_ci95": [0.0, 1.0],
+    "ci_note": "kappa CI spans [0,1] under Sev-2 dominance; AC1 remains the primary chance-corrected read"
   },
   "disagreements": [
     {
@@ -42,7 +53,8 @@
       "author_severity": 2,
       "coder_severity": 3,
       "category_agreed": true,
-      "note": "Coder read conflicting replica state as trustworthiness/security-boundary risk (Sev-3); author catalog is Sev-2 (cohort/site ops intervention)."
+      "note": "Coder read conflicting replica state as trustworthiness/security-boundary risk (Sev-3); author catalog is Sev-2 (cohort/site ops intervention).",
+      "rubric_boundary": "Informative Sev-2/Sev-3 judgment at the seam where stale or conflicting auth state shades into wrong-trust risk. Evidence the severity rubric has real content there, not that category coding failed."
     }
   ],
   "not_included": [
