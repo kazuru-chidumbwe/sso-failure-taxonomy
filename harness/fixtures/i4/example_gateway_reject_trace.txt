@@ -1,0 +1,5 @@
+# Synthetic gateway reject trace (NOT a production log)
+# Illustrates a size-class reject line operators might see when a request buffer/limit is exceeded.
+2026-01-01T00:00:00Z proxy gateway_id=synth-1 client=203.0.113.10 method=POST path=/saml/acs
+  decision=reject reason=request_buffer_or_body_limit_exceeded bytes=32768 limit=16384
+  note=synthetic; no hostname or estate identifiers

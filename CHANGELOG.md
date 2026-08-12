@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Add `codebook/stress-cases.json` (five outside-taxonomy / multi-causal instrument stress vignettes; not N=11).
+- Add synthetic I4 request-size fixtures and checker under `harness/fixtures/i4/`; extend `make smoke`.
+
 ## 0.1.6 — 2026-08-12
 
 Document explicit F3/F5 harness schedules (`harness/SCHEDULES.md`): Schedule A `jwt_only` (second acceptance), Schedule B `naive` (false reject), Schedule C `atomic`. Narrow threat model and atomic single-winner wording for manuscript IV lock.

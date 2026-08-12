@@ -1,0 +1,41 @@
+{
+  "purpose": "Instrument stress set for Table I outside-taxonomy / multi-causal exercise. Not part of N=11. Not ticket extracts.",
+  "not_in_table_iii": true,
+  "vignettes": [
+    {
+      "id": "S1",
+      "narrative": "Login fails after IdP success when the RP clock is skewed past assertion NotOnOrAfter / token exp during a JWKS rollover window.",
+      "coding": "outside_taxonomy",
+      "rationale": "Clock/JWKS adjacent surfaces; no Table I inclusion rule is primary."
+    },
+    {
+      "id": "S2",
+      "narrative": "Same cohort sees both WAN LDAP bind timeouts and gateway rejection of large SAML POSTs in one outage window.",
+      "coding": "outside_taxonomy",
+      "rationale": "Multi-causal: directory_federation and protocol_gateway remain equally plausible after tie-breakers."
+    },
+    {
+      "id": "S3",
+      "narrative": "Browser Intelligent Tracking Prevention drops the edge callback cookie mid-flow; IdP logs show success.",
+      "coding": "outside_taxonomy",
+      "rationale": "ITP/captive-portal-class client isolation is adjacent, not an inclusion cell."
+    },
+    {
+      "id": "S4",
+      "narrative": "Authorization server rejects the token request for PKCE code_verifier mismatch; edge never receives a callback capability.",
+      "coding": "outside_taxonomy",
+      "rationale": "AS-side PKCE failure is not edge_callback_consume and has no other Table I home."
+    },
+    {
+      "id": "S5",
+      "narrative": "Warm SSO is treated as sufficient to skip edge re-authorization after network ACL revoke (no callback race).",
+      "coding": "session_plane",
+      "rationale": "Tie-breaker favors nested session planes over edge_side_effect when release was never attempted."
+    }
+  ],
+  "summary": {
+    "outside_taxonomy": 4,
+    "in_taxonomy": 1,
+    "added_to_n11": false
+  }
+}
