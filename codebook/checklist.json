@@ -9,7 +9,7 @@
     {"n": 6, "incidents": ["I2"], "item": "Validate sticky routing and shared session stores across sites; expect re-authentication windows on failover."},
     {"n": 7, "incidents": ["I3"], "item": "Treat IdP cluster coherence as an authentication health check; quorum runbooks; no dual-writer under partition."},
     {"n": 8, "incidents": ["I4"], "item": "Size gateway request-body buffers with headroom above the measured maximum encoded assertion payload; validate with representative SAML/OIDC fixtures; alert on truncation and idle kills."},
-    {"n": 9, "incidents": ["I5"], "item": "Prefer authenticator-first MFA; treat SMS/PSTN as fallback only; non-stranding paths."},
+    {"n": 9, "incidents": ["I5"], "item": "Provide at least one alternative authenticator that does not depend on SMS/PSTN delivery; do not make SMS the sole MFA completion path for affected users."},
     {"n": 10, "incidents": ["I6"], "item": "Run a dual-IdP equivalence checklist before cutover (token shape, claims, lifetimes)."}
   ]
 }

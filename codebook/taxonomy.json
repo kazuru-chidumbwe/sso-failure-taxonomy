@@ -49,7 +49,7 @@
     },
     {
       "id": "mfa_delivery",
-      "includes": "MFA fails because delivery channel (e.g. SMS) is unreliable; password/IdP otherwise OK",
+      "includes": "MFA completion fails on an out-of-band path (e.g., SMS channel unreliability or OTP verification/lifecycle failure) while password/IdP primary authentication is otherwise OK",
       "excludes_to": ["cluster_state", "multi_site_affinity", "session_plane"]
     },
     {

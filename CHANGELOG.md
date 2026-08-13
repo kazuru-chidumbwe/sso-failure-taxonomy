@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.0 — 2026-08-13
+
+- Manuscript-aligned freeze for IEEE Access companion artifact.
+- Broaden `mfa_delivery` inclusion to MFA completion on an out-of-band path (SMS unreliability or OTP verification/lifecycle), keeping the ten-category id set.
+- Clarify `codebook/stress-cases.json` as illustrative decision-test vignettes only (not empirical validation).
+- Sync checklist item 9, packet Table I row, I5 publishable summary, and `docs/EVIDENCE-INDEX.md`.
+
 ## 0.1.7 — 2026-08-13
 
 - Add `codebook/stress-cases.json` (five outside-taxonomy / multi-causal instrument stress vignettes; not N=11).

@@ -13,7 +13,7 @@
     {"id": "I2", "category": "multi_site_affinity", "sev": 2, "form": "RETRO", "summary": "HA diagrams understated sticky/cross-site session failure under real WAN."},
     {"id": "I3", "category": "cluster_state", "sev": 2, "form": "RETRO", "summary": "HA cluster still admitted a visible stale-session window."},
     {"id": "I4", "category": "protocol_gateway", "sev": 2, "form": "RETRO", "summary": "SAML POST rejected on gateway path after successful IdP auth; request-size limit raised restored SSO."},
-    {"id": "I5", "category": "mfa_delivery", "sev": 2, "form": "RETRO", "summary": "Password OK; SMS MFA failed at OTP verification completion; MFA transaction config restored password-plus-OTP."},
+    {"id": "I5", "category": "mfa_delivery", "sev": 2, "form": "RETRO", "summary": "Password OK; SMS MFA completion failed at OTP verification (state expiry/invalid); MFA transaction configuration restored password-plus-OTP."},
     {"id": "I6", "category": "dual_idp_boundary", "sev": 2, "form": "RETRO", "summary": "Same protocol plus shared directory does not imply interchangeable IdP semantics."}
   ]
 }

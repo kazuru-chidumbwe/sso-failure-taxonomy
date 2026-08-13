@@ -65,7 +65,7 @@ The additional-observations field is evidence for Table I **excludes**. Use it. 
 | multi_site_affinity | Cross-site / load-balancer stickiness or session visibility causes re-auth or stale UX after hop/failover | In-cluster membership/cache split → cluster_state |
 | cluster_state | IdP cluster membership / distributed-cache divergence (stale or conflicting auth state across nodes) | Load-balancer affinity only → multi_site_affinity |
 | protocol_gateway | Middlebox buffer/timeout damages SAML/OIDC payloads before IdP application logic | Directory bind timeout → directory_federation |
-| mfa_delivery | MFA fails because delivery channel (e.g., SMS) is unreliable; password/IdP otherwise OK | IdP HA/session bugs → cluster_state, multi_site_affinity, or session_plane |
+| mfa_delivery | MFA completion fails on an out-of-band path (e.g., SMS channel unreliability or OTP verification/lifecycle failure) while password/IdP primary authentication is otherwise OK | IdP HA/session bugs → cluster_state, multi_site_affinity, or session_plane |
 | dual_idp_boundary | Shared directory / same profile but token/claim/lifetime semantics differ across co-deployed IdPs → application break | Synthetic lab matrix without ops incident → out of corpus |
 
 ---
