@@ -1,9 +1,10 @@
 # Changelog
 
-## Unreleased
+## 0.1.7 — 2026-08-13
 
 - Add `codebook/stress-cases.json` (five outside-taxonomy / multi-causal instrument stress vignettes; not N=11).
 - Add synthetic I4 request-size fixtures and checker under `harness/fixtures/i4/`; extend `make smoke`.
+- Update I4/I5 publishable summaries and `docs/EVIDENCE-INDEX.md` provenance (ticket-reviewed privately; artifacts not released).
 
 ## 0.1.6 — 2026-08-12
 
