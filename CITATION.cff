@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this artefact, please cite it using these metadata.
 title: "sso-failure-taxonomy"
-version: 1.0.3
+version: 1.0.5
 date-released: "2026-08-15"
 type: software
 authors:
@@ -12,7 +12,6 @@ authors:
     affiliation: "Independent Researcher, Malawi"
 license: MIT
 repository-code: "https://github.com/kazuru-chidumbwe/sso-failure-taxonomy"
-url: "https://github.com/kazuru-chidumbwe/sso-failure-taxonomy"
 abstract: >-
   Codebook, unblinded second-coder reliability summary, and callback-consume
   demonstration for a ten-category federated SSO failure taxonomy. Not a
