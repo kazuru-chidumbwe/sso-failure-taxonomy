@@ -4,7 +4,8 @@ Cite a tag, never floating `main`.
 
 | Tag | Role |
 | --- | --- |
-| `v1.0.9` | **IEEE Access / Zenodo cite pin.** Manuscript title in `taxonomy.json` + README; SCOPE "classification instrument"; release DOI procedure |
+| `v1.0.9.1` | **IEEE Access / Zenodo cite pin.** `CITATION.cff` version DOI wired (`10.5281/zenodo.22214839`) |
+| `v1.0.9` | Manuscript title + SCOPE wording; DOI procedure in TAGS.md |
 | `v1.0.8` | Superseded — Fig. 3 `fig3-callback-consume.png`; version DOI on tag lagged until post-release commit |
 | `v1.0.7` | Superseded — manuscript-aligned Table III / checklist / anonymization pass; `nonce_*` → `callback_*` in harness |
 | `v1.0.0` – `v1.0.5` | Superseded — packaging and metadata iterations |

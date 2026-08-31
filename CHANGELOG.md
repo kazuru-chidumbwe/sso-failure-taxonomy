@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.9.1 — 2026-08-31
+
+Wire Zenodo v1.0.9 version DOI into `CITATION.cff` (`10.5281/zenodo.22214839`). No code or case-data changes.
+
 ## 1.0.9 — 2026-08-31
 
 Manuscript title alignment and release-metadata hygiene. No taxonomy, category, severity, reliability, or case-catalog changes.
