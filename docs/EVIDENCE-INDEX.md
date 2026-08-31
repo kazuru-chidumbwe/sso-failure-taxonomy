@@ -1,6 +1,6 @@
 # Evidence index (case → released material)
 
-Honest map for the manuscript Table III. **No estate tickets, live logs, hostnames, product names, topology descriptors, or configuration fragments are released.**
+Honest map for the manuscript Table IV. **No estate tickets, live logs, hostnames, product names, topology descriptors, or configuration fragments are released.**
 
 ## Evidence classes
 
@@ -19,17 +19,17 @@ additional, finer-grained label; it does not renumber or recode any row.
 
 | Case | Category | Form | Class | Released technical material | Notes |
 | --- | --- | --- | --- | --- | --- |
-| F1 | edge_side_effect | DESIGN | E0 | Architect note / Table III summary only | No state-machine fixture released |
-| F2 | edge_identifier | DESIGN | E0 | Architect note / Table III summary only | Mechanism literature is cited in the paper, not as proof of a local event |
+| F1 | edge_side_effect | DESIGN | E0 | Architect note / Table IV summary only | No state-machine fixture released |
+| F2 | edge_identifier | DESIGN | E0 | Architect note / Table IV summary only | Mechanism literature is cited in the paper, not as proof of a local event |
 | F3 | edge_callback_consume | DESIGN | E0 + E3 | Architect note + [`harness/`](../harness/) callback-consume demo | Harness models the race class under single-store assumptions; not estate logs |
-| F4 | session_plane | DESIGN | E0 | Architect note / Table III summary only | |
+| F4 | session_plane | DESIGN | E0 | Architect note / Table IV summary only | |
 | F5 | edge_callback_consume | DESIGN | E0 + E3 | Architect note + [`harness/`](../harness/) callback-consume demo | Same harness as F3; see [`harness/SCHEDULES.md`](../harness/SCHEDULES.md) for the threat model |
-| I1 | directory_federation | RETRO | E1 | Architect note / Table III summary only | No corroborating ticket, log, or configuration retained; the manuscript attributes the failure to WAN federation latency and does not claim measurement |
-| I2 | multi_site_affinity | RETRO | E1 | Architect note / Table III summary only | |
-| I3 | cluster_state | RETRO | E1 | Architect note / Table III summary only | |
+| I1 | directory_federation | RETRO | E1 | Architect note / Table IV summary only | No corroborating ticket, log, or configuration retained; the manuscript attributes the failure to WAN federation latency and does not claim measurement |
+| I2 | multi_site_affinity | RETRO | E1 | Architect note / Table IV summary only | |
+| I3 | cluster_state | RETRO | E1 | Architect note / Table IV summary only | |
 | I4 | protocol_gateway | RETRO | E2 | Publishable summary + [`harness/fixtures/i4/`](../harness/fixtures/i4/) synthetic size-class fixtures | **Ticket-reviewed privately** (not released). Fixtures are **not** estate SAML captures and do not upgrade this row above E2 |
 | I5 | mfa_delivery | RETRO | E2 | Publishable summary only | **Ticket-reviewed privately** (not released); MFA completion failure at OTP verification/lifecycle on the SMS path (category inclusion covers channel unreliability or OTP state); not claimed as PSTN blackout alone |
-| I6 | dual_idp_boundary | RETRO | E1 | Architect note / Table III summary only | No claim matrix released |
+| I6 | dual_idp_boundary | RETRO | E1 | Architect note / Table IV summary only | No claim matrix released |
 
 ## How to run the executable evidence objects
 

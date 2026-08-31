@@ -1,12 +1,12 @@
 # Independent coding packet — label assignment
 
-**Task:** Assign one Table I category and one Table II severity to each case.  
-**This is not taxonomy discovery.** Table I is normative. You apply the inclusion/exclusion rules and tie-breakers.  
+**Task:** Assign one Table II category and one Table III severity to each case.  
+**This is not taxonomy discovery.** Table II is normative. You apply the inclusion/exclusion rules and tie-breakers.  
 **Time:** about one hour.  
 **Order:** cases are in randomized order.  
 **No estate access.** No NDA. Do not search for the paper.
 
-**Working protocol (not blinding):** This round is **unblinded** relative to the published catalog. The public repository’s `codebook/incidents.json` already carries category, severity, and form for all eleven rows (Table III). Those labels are not hidden. Treat this file as self-contained anyway: do not clone, browse, or search that repository until you have submitted this sheet. Reading the catalog would turn the task into transcription. We measure agreement on applying Table I to paraphrased cases, not double-blind discovery.
+**Working protocol (not blinding):** This round is **unblinded** relative to the published catalog. The public repository’s `codebook/incidents.json` already carries category, severity, and form for all eleven rows (Table IV). Those labels are not hidden. Treat this file as self-contained anyway: do not clone, browse, or search that repository until you have submitted this sheet. Reading the catalog would turn the task into transcription. We measure agreement on applying Table II to paraphrased cases, not double-blind discovery.
 
 Return the filled response sheet. Do not discuss cases with the author until you submit.
 
@@ -15,8 +15,8 @@ Return the filled response sheet. Do not discuss cases with the author until you
 ## What you receive
 
 1. This packet (instructions + cases).  
-2. Table I (inclusion / exclusion).  
-3. Table II (severity).  
+2. Table II (inclusion / exclusion).  
+3. Table III (severity).  
 4. Tie-breakers (below).  
 5. Response sheet.
 
@@ -24,7 +24,7 @@ Return the filled response sheet. Do not discuss cases with the author until you
 
 Incident IDs (F1… / I1…), gold category labels, and the manuscript’s one-line summaries. Those labels exist in the public codebook (`codebook/incidents.json`) for the published catalog. They are not hidden; the exercise is therefore unblinded against that catalog. Code from this file only, then submit.
 
-Case texts are paraphrased. They are not the Table I inclusion sentences. Apply the rules; do not keyword-match the table.
+Case texts are paraphrased. They are not the Table II inclusion sentences. Apply the rules; do not keyword-match the table.
 
 ---
 
@@ -32,12 +32,12 @@ Case texts are paraphrased. They are not the Table I inclusion sentences. Apply 
 
 For each case, read **symptom**, **mechanism**, **resolution**, and **additional observations**.
 
-The additional-observations field is evidence for Table I **excludes**. Use it. A match on the inclusion phrase alone is not enough.
+The additional-observations field is evidence for Table II **excludes**. Use it. A match on the inclusion phrase alone is not enough.
 
-1. Walk the tie-breaker order in Table I: first matching **Yes** wins.  
-2. Assign **exactly one** category from Table I.  
-3. Assign **exactly one** severity from Table II, written as `Sev-1`, `Sev-2`, or `Sev-3`. Severity is a second axis. It is not a substitute for mechanism. The same mechanism may appear at two severities.  
-4. If no Table I cell fits, write `NEW_LABEL` and one sentence why.  
+1. Walk the tie-breaker order in Table II: first matching **Yes** wins.  
+2. Assign **exactly one** category from Table II.  
+3. Assign **exactly one** severity from Table III, written as `Sev-1`, `Sev-2`, or `Sev-3`. Severity is a second axis. It is not a substitute for mechanism. The same mechanism may appear at two severities.  
+4. If no Table II cell fits, write `NEW_LABEL` and one sentence why.  
 5. Do not invent incidents. Do not recode another coder’s sheet.
 
 **Frame (honest):** unblinded agreement on label assignment given a normative decision table (not blinding; not taxonomy discovery).
@@ -53,7 +53,7 @@ The additional-observations field is evidence for Table I **excludes**. Use it. 
 
 ---
 
-## Table I — Closed category inclusion and exclusion
+## Table II — Closed category inclusion and exclusion
 
 | Category | Includes | Excludes (goes to…) |
 | --- | --- | --- |
@@ -70,7 +70,7 @@ The additional-observations field is evidence for Table I **excludes**. Use it. 
 
 ---
 
-## Table II — Severity axis
+## Table III — Severity axis
 
 | Code | Meaning |
 | --- | --- |
@@ -167,7 +167,7 @@ Write the code `Sev-1`, `Sev-2`, or `Sev-3` on the response sheet (not bare `1` 
 
 Copy this table. One category and one severity per row. Severity must be `Sev-1`, `Sev-2`, or `Sev-3`.
 
-| Case | Category (Table I or NEW_LABEL) | Severity (Sev-1 / Sev-2 / Sev-3) | One-line note (optional) |
+| Case | Category (Table II or NEW_LABEL) | Severity (Sev-1 / Sev-2 / Sev-3) | One-line note (optional) |
 | ---: | --- | --- | --- |
 | 01 |  |  |  |
 | 02 |  |  |  |

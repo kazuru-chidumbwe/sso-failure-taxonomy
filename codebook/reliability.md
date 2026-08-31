@@ -13,4 +13,4 @@ Protocol: **unblinded** independent coding (packet-only; public gold in `inciden
 
 **Sole disagreement (severity only):** `cluster_state` — author Sev-2 (cohort/site ops intervention), coder Sev-3 (conflicting replica state as trust/security-boundary risk). Category agreed. That split is where the Sev-2/Sev-3 boundary does real judgment work (stale state → wrong trust), not noise in the mechanism label.
 
-Frame: agreement given Table I; n=11 → wide CIs; not multi-estate reliability. The Case→incident shuffle map stays out of this tree (author-only).
+Frame: agreement given Table II; n=11 → wide CIs; not multi-estate reliability. The Case→incident shuffle map stays out of this tree (author-only).

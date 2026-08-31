@@ -6,6 +6,28 @@
     "2": 9,
     "3": 1
   },
+  "operational_priority_class": {
+    "field_name_legacy": "severity",
+    "field_name_artifact": "sev",
+    "field_name_manuscript": "operational_priority_class",
+    "value_prefix_legacy": "Sev-",
+    "value_prefix_manuscript": "Pri-",
+    "mapping": {
+      "Sev-1": "Pri-1",
+      "Sev-2": "Pri-2",
+      "Sev-3": "Pri-3"
+    },
+    "note": "The legacy field name was retained for compatibility with the original response sheet. In the manuscript, this construct is termed operational priority class because it is a triage label rather than a unidimensional severity measure."
+  },
+  "manuscript_tables": {
+    "evidence_classes": "I",
+    "taxonomy": "II",
+    "operational_priority_class": "III",
+    "case_catalog": "IV",
+    "practitioner_checklist": "V",
+    "prior_work_comparison": "VI",
+    "f5_threat_model": "VII"
+  },
   "forms": {
     "DESIGN": 5,
     "RETRO": 6
@@ -16,7 +38,7 @@
     "E2": "Privately ticket-reviewed reconstruction: internal reconstruction reviewed by the author; public release limited to an anonymized paraphrase.",
     "E3": "Artifact-reproduced mechanism: a synthetic runnable artifact reproduces the stated mechanism under explicitly bounded assumptions. E3 attaches to the mechanism, never to the original operational event."
   },
-  "note": "Publishable summaries only. These strings are byte-identical to the manuscript Table III 'Publishable summary' column. No geography, hostnames, ticket IDs, or non-IAM product names. DESIGN rows are stated in modeling voice because they are author-constructed scenarios, not observed events.",
+  "note": "Publishable summaries only. These strings are byte-identical to the manuscript Table IV 'Publishable summary' column. No geography, hostnames, ticket IDs, or non-IAM product names. DESIGN rows are stated in modeling voice because they are author-constructed scenarios, not observed events.",
   "incidents": [
     {
       "id": "F1",

@@ -23,7 +23,7 @@ No hostnames, secrets, ticket IDs, or geography.
 
 ## External incidents (falsifiability)
 
-Operators of similar constrained multi-site open-source IAM deployments may submit fingerprint-safe incident summaries against the published Table I. Use the **External incident (Table I)** GitHub issue template or follow [`docs/EXTERNAL-INCIDENTS.md`](docs/EXTERNAL-INCIDENTS.md). Submissions are scored `fits` / `fits_with_clarification` / `forces_new_label`. They are **not** part of the manuscript’s N=11 catalog.
+Operators of similar constrained multi-site open-source IAM deployments may submit fingerprint-safe incident summaries against the published Table II. Use the **External incident (Table II)** GitHub issue template or follow [`docs/EXTERNAL-INCIDENTS.md`](docs/EXTERNAL-INCIDENTS.md). Submissions are scored `fits` / `fits_with_clarification` / `forces_new_label`. They are **not** part of the manuscript’s N=11 catalog.
 
 ## Evidence index
 

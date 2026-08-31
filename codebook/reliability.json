@@ -1,20 +1,20 @@
 {
   "schema": "sso-failure-taxonomy/reliability/v1",
   "n": 11,
-  "n_categories_table_I": 10,
-  "n_severity_levels_table_II": 3,
+  "n_categories_table_II": 10,
+  "n_severity_levels_table_III": 3,
   "protocol": "unblinded_independent_coding",
   "protocol_notes": [
-    "Gold category/severity/form for the published catalog are in codebook/incidents.json (Table III).",
+    "Gold category/severity/form for the published catalog are in codebook/incidents.json (Table IV).",
     "The round is not blinded against that catalog.",
     "The coder worked from codebook/second-coder/PACKET.md only and did not browse the repository before submit.",
-    "Agreement is label assignment given Table I, not taxonomy discovery and not a multi-estate reliability claim."
+    "Agreement is label assignment given Table II, not taxonomy discovery and not a multi-estate reliability claim."
   ],
   "coder_descriptor": "independent_coder_iam_sso_operations",
   "date": "2026-08-12",
   "minutes": 47,
   "primary_metric": "gwet_ac1",
-  "primary_metric_rationale": "Severity is skewed (Table III 1/9/1). Cohen's kappa understates agreement under that prevalence (kappa paradox). Gwet AC1 is the intended primary chance-corrected metric; kappa is reported alongside.",
+  "primary_metric_rationale": "Severity is skewed (Table IV 1/9/1). Cohen's kappa understates agreement under that prevalence (kappa paradox). Gwet AC1 is the intended primary chance-corrected metric; kappa is reported alongside.",
   "computation": {
     "cohen_kappa": "standard (Po-Pe)/(1-Pe) with Pe from rater marginal products",
     "gwet_ac1": "Gwet AC1: (Po-Pe)/(1-Pe) with Pe=(1/(q-1))*sum_k pi_k*(1-pi_k); pi_k=mean of two raters' category proportions; q=scheme size (10 categories / 3 severities)",
@@ -23,9 +23,11 @@
     ],
     "bootstrap": {
       "method": "percentile",
+      "unit": "case-level paired assignments",
       "B": 10000,
       "seed": 20260812,
-      "ci": 0.95
+      "ci": 0.95,
+      "reference": "Efron and Tibshirani (1994); manuscript [29]"
     }
   },
   "category": {
@@ -36,6 +38,16 @@
     "cohen_kappa": 1.0,
     "cohen_kappa_bootstrap_ci95": [1.0, 1.0],
     "ci_note": "degenerate under perfect agreement"
+  },
+  "operational_priority_class": {
+    "field_name_legacy": "severity",
+    "field_name_manuscript": "operational_priority_class",
+    "mapping": {
+      "Sev-1": "Pri-1",
+      "Sev-2": "Pri-2",
+      "Sev-3": "Pri-3"
+    },
+    "note": "Legacy JSON field retained for the independent-coder response sheet; manuscript Table III defines Pri-1/2/3."
   },
   "severity": {
     "n_agree": 10,

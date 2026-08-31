@@ -1,6 +1,6 @@
 {
-  "case_traceability": "Each checklist item must remain traceable to one or more Table III cases (bidirectional checklist-case link). If the case citation is removed, the item must not remain a generic injunction true of any IAM estate.",
-  "sync_note": "Item text here must remain byte-identical in meaning to manuscript Table IV. Items 3 and 8 were corrected in v1.0.7: item 3 no longer implies that a single-node primitive is the production control, and item 8 no longer prescribes a buffer default, matching the manuscript Section VII statement that the checklist states the operational validation action without prescribing a single buffer default.",
+  "case_traceability": "Each checklist item must remain traceable to one or more Table IV cases (bidirectional checklist-case link). If the case citation is removed, the item must not remain a generic injunction true of any IAM estate.",
+  "sync_note": "Item text here must remain byte-identical in meaning to manuscript Table V. Items 3 and 8 were corrected in v1.0.7: item 3 no longer implies that a single-node primitive is the production control, and item 8 no longer prescribes a buffer default, matching the manuscript Section VII statement that the checklist states the operational validation action without prescribing a single buffer default.",
   "items": [
     {
       "n": 1,
@@ -15,7 +15,7 @@
     {
       "n": 3,
       "incidents": ["F3", "F5"],
-      "item": "Implement a linearizable, single-winner consume operation for the edge callback-correlation value or callback capability at the callback-consistency scope; document the state store's replication, failover, and partition behaviour; fail closed (reject the callback) when the consume outcome is uncertain; and configure the value's TTL for the maximum expected authorization round trip plus operational margin.",
+      "item": "Implement a linearizable, single-winner consume operation for the edge callback-correlation value or callback capability at the callback-consistency scope; document the state store's replication, failover, and partition behavior; fail closed (reject the callback) when the consume outcome is uncertain; and set the callback-value TTL to the smallest value that covers the measured high-percentile authorization round trip and a bounded operational margin.",
       "note": "Redis GETDEL is one single-node example of such a primitive and is used illustratively in Fig. 3. It is not the required control. Single-node atomicity does not establish cluster-wide safety under replication or failover."
     },
     {
@@ -26,7 +26,7 @@
     {
       "n": 5,
       "incidents": ["I1"],
-      "item": "Size federation timeouts for worst-site WAN, not LAN HA assumptions; plan degrade messaging."
+      "item": "Derive directory-federation timeouts from measured worst-site WAN behavior and configured LDAP/AD retry behavior; do not reuse latency assumptions from unrelated HA or database-replication paths; plan degrade messaging."
     },
     {
       "n": 6,
