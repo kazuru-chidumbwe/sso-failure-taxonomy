@@ -4,7 +4,7 @@ Cite a tag, never floating `main`.
 
 | Tag | Role |
 | --- | --- |
-| `v1.0.11` | **Manuscript cite pin** for IEEE Access submission (Gates pass). Sequential table numbering I–VII; `operational_priority_class` mapping in `incidents.json`; figure ideal pass; refs [29]–[34] in manuscript only. Wire version DOI into manuscript ref [28] after Zenodo mints for this release. |
+| `v1.0.11` | **Manuscript cite pin** for IEEE Access submission (Gates pass). Sequential table numbering I–VII; `operational_priority_class` mapping in `incidents.json`; figure ideal pass. Version DOI `10.5281/zenodo.22215468`. |
 | `v1.0.10` | **CITATION.cff policy fix.** `url:` and `identifiers` use concept DOI only (`10.5281/zenodo.21950901`). Version DOI belongs in the manuscript, not in the artifact metadata. |
 | `v1.0.9` | **IEEE Access / Zenodo cite pin** for manuscript Availability and ref [28]. Version DOI `10.5281/zenodo.22214839`. Tag snapshot's `CITATION.cff` still carried v1.0.8 DOI — superseded by v1.0.10 policy. |
 | `v1.0.9.1` | Superseded post-tag DOI wire attempt; do not cite this tag in the paper. |
