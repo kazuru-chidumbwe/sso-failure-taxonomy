@@ -4,8 +4,8 @@ Cite a tag, never floating `main`.
 
 | Tag | Role |
 | --- | --- |
-| `v1.0.7` | **IEEE Access / Zenodo cite pin.** Manuscript-aligned: Table III summaries byte-matched, evidence classes E0–E3, checklist items 3 and 8 corrected, anonymization pass on `docs/EVIDENCE-INDEX.md`, `nonce_*` → `callback_*` rename |
-| `v1.0.6` | Superseded — manuscript-alignment freeze with known Table III / checklist divergences |
+| `v1.0.8` | **IEEE Access / Zenodo cite pin.** Fig. 3 filename `fig3-callback-consume.png` (completes `callback_*` rename); no taxonomy or case-data changes |
+| `v1.0.7` | Superseded — manuscript-aligned Table III / checklist / anonymization pass; `nonce_*` → `callback_*` in harness |
 | `v1.0.0` – `v1.0.5` | Superseded — packaging and metadata iterations |
 | `v0.1.6` | Superseded — explicit F3/F5 harness schedules + threat model |
 | `v0.1.5` | Superseded — `edge_nonce` → `edge_callback_consume` rename (data layer only) |

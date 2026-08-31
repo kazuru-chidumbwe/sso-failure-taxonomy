@@ -1,6 +1,13 @@
 # Changelog
 
-## 1.0.7 — 2026-08-31 (pre-release; tag pending Phase 2)
+## 1.0.8 — 2026-08-31
+
+Fig. 3 filename alignment only. No taxonomy, category, severity, reliability, or case-catalog changes.
+
+- **Naming.** `figures/fig3-nonce-consume.png` → `figures/fig3-callback-consume.png` (companion copy; captions remain in manuscript).
+- **Metadata.** `CITATION.cff`, `docs/TAGS.md`, and README cite pin updated to v1.0.8.
+
+## 1.0.7 — 2026-08-31
 
 Pre-submission consistency and anonymization pass. No taxonomy, category, severity, or reliability values changed; the N=11 catalog and all coding are unchanged.
 
