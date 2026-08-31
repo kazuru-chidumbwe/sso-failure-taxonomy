@@ -4,10 +4,11 @@ Cite a tag, never floating `main`.
 
 | Tag | Role |
 | --- | --- |
-| `v1.0.9.1` | **IEEE Access / Zenodo cite pin.** `CITATION.cff` version DOI wired (`10.5281/zenodo.22214839`) |
-| `v1.0.9` | Manuscript title + SCOPE wording; DOI procedure in TAGS.md |
-| `v1.0.8` | Superseded — Fig. 3 `fig3-callback-consume.png`; version DOI on tag lagged until post-release commit |
-| `v1.0.7` | Superseded — manuscript-aligned Table III / checklist / anonymization pass; `nonce_*` → `callback_*` in harness |
+| `v1.0.10` | **CITATION.cff policy fix.** `url:` and `identifiers` use concept DOI only (`10.5281/zenodo.21950901`). Version DOI belongs in the manuscript, not in the artifact metadata. |
+| `v1.0.9` | **IEEE Access / Zenodo cite pin** for manuscript Availability and ref [28]. Version DOI `10.5281/zenodo.22214839`. Tag snapshot's `CITATION.cff` still carried v1.0.8 DOI — superseded by v1.0.10 policy. |
+| `v1.0.9.1` | Superseded post-tag DOI wire attempt; do not cite this tag in the paper. |
+| `v1.0.8` | Superseded — Fig. 3 `fig3-callback-consume.png` |
+| `v1.0.7` | Superseded — manuscript-aligned Table III / checklist / anonymization pass |
 | `v1.0.0` – `v1.0.5` | Superseded — packaging and metadata iterations |
 | `v0.1.6` | Superseded — explicit F3/F5 harness schedules + threat model |
 | `v0.1.5` | Superseded — `edge_nonce` → `edge_callback_consume` rename (data layer only) |
@@ -17,8 +18,7 @@ Cite a tag, never floating `main`.
 
 1. Cut tag `vX.Y.Z` and publish a **GitHub Release** (Zenodo archives on releases, not on tags).
 2. Wait for Zenodo to mint the **version DOI** for that release.
-3. Commit the version DOI into `CITATION.cff` (`url:` and `identifiers` "This version") on `main`.
-4. Copy the same version DOI into the manuscript Data and Code Availability statement and ref [28].
-5. Confirm the Zenodo record's version label matches the tag before citing it.
-6. If the DOI commit must ship after the tag, cut a **patch tag** (e.g. `v1.0.9.1`) so the archived release ZIP includes the wired DOI.
-7. Never edit a tagged release in place. Cut a new patch tag instead.
+3. **Manuscript only:** wire the version DOI and tag into Data and Code Availability and ref [28]. Confirm in a browser that the Zenodo record's version label matches the tag before submitting.
+4. **`CITATION.cff`:** keep `url:` and `identifiers` on the **concept DOI** (`10.5281/zenodo.21950901`) only. Do **not** put the version DOI in the artifact — it cannot be correct inside the first tagged snapshot.
+5. Bump `version:` and `date-released:` in `CITATION.cff` when cutting a new tag; no post-tag DOI commit is required.
+6. Never edit a tagged release in place. Cut a new patch tag instead.

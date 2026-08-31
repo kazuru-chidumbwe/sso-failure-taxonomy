@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.10 — 2026-08-31
+
+Stop version-DOI lag in `CITATION.cff`. No code or case-data changes.
+
+- **CITATION.cff.** `url:` and `identifiers` now use concept DOI only (`10.5281/zenodo.21950901`). Version DOI for a release belongs in the manuscript Availability / ref [28], not inside the archived artifact metadata.
+- **Release procedure.** `docs/TAGS.md` rewritten to match (no post-tag DOI commit into `CITATION.cff`).
+
 ## 1.0.9.1 — 2026-08-31
 
 Wire Zenodo v1.0.9 version DOI into `CITATION.cff` (`10.5281/zenodo.22214839`). No code or case-data changes.

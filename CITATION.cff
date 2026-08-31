@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: If you use this artefact, please cite it using these metadata.
 title: "sso-failure-taxonomy"
-version: 1.0.9
+version: 1.0.10
 date-released: "2026-08-31"
 type: software
 authors:
@@ -12,11 +12,8 @@ authors:
     affiliation: "Independent Researcher, Malawi"
 license: MIT
 repository-code: "https://github.com/kazuru-chidumbwe/sso-failure-taxonomy"
-url: "https://doi.org/10.5281/zenodo.22214839"
+url: "https://doi.org/10.5281/zenodo.21950901"
 identifiers:
-  - type: doi
-    value: 10.5281/zenodo.22214839
-    description: "This version"
   - type: doi
     value: 10.5281/zenodo.21950901
     description: "All versions (concept DOI)"
