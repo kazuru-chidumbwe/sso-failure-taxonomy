@@ -2,7 +2,7 @@
 
 ## This artefact is
 
-- A frozen codebook for a ten-category federated SSO failure taxonomy (inclusion, exclusion, tie-breakers, severity).
+- A frozen codebook for a ten-category federated SSO classification instrument (inclusion, exclusion, tie-breakers, severity).
 - Eleven fingerprint-safe incident summaries used as a demonstration of that scheme (`codebook/incidents.json` is the published catalog, including category, severity, and form).
 - An **unblinded** independent-coding packet (`codebook/second-coder/PACKET.md`) with paraphrased cases and negative-evidence fields. Gold labels for the published catalog are in `incidents.json` (Table III). Send the packet standalone so coding is rule application, not transcription; do not claim blinding.
 - A reliability summary (`codebook/reliability.json`) with raw agreement, Gwet’s AC1 (primary under severity skew), Cohen’s κ, and bootstrap CIs for that round.

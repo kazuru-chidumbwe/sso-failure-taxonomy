@@ -1,5 +1,5 @@
 {
-  "paper": "Federated SSO Failure Modes: A Rule-Bounded Classification Instrument for Constrained Multi-Site Open-Source IAM",
+  "paper": "A Rule-Bounded Instrument for Classifying Federated SSO Failures in a Constrained Multi-Site Open-Source IAM Deployment",
   "venue": "IEEE Access",
   "derivation": "a_priori_architectural_surfaces",
   "n_categories": 10,

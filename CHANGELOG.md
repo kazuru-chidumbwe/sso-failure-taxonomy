@@ -1,11 +1,19 @@
 # Changelog
 
+## 1.0.9 — 2026-08-31
+
+Manuscript title alignment and release-metadata hygiene. No taxonomy, category, severity, reliability, or case-catalog changes.
+
+- **Title.** `codebook/taxonomy.json` and README aligned to current IEEE Access manuscript title.
+- **Scope.** `docs/SCOPE.md`: "classification instrument" wording (not "failure taxonomy").
+- **Release procedure.** `docs/TAGS.md`: DOI wiring checklist after Zenodo mint.
+
 ## 1.0.8 — 2026-08-31
 
 Fig. 3 filename alignment only. No taxonomy, category, severity, reliability, or case-catalog changes.
 
 - **Naming.** `figures/fig3-nonce-consume.png` → `figures/fig3-callback-consume.png` (companion copy; captions remain in manuscript).
-- **Metadata.** `CITATION.cff`, `docs/TAGS.md`, and README cite pin updated to v1.0.8.
+- **Metadata.** README cite pin updated to v1.0.8. Version DOI wired on `main` after tag (see v1.0.9 release procedure).
 
 ## 1.0.7 — 2026-08-31
 
