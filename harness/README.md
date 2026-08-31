@@ -6,8 +6,8 @@ Not a Keycloak or WSO2 deployment. Not a production config. Synthetic callback v
 **Modeled schedules (required reading):** [`SCHEDULES.md`](SCHEDULES.md) — Schedule A (`jwt_only` / F5), Schedule B (`naive` / F3), Schedule C (`atomic`).
 
 ```text
-python3 nonce_consume.py both --mode both --workers 8
-python3 nonce_consume.py both --json
+python3 callback_consume.py both --mode both --workers 8
+python3 callback_consume.py both --json
 python3 -m unittest discover -s . -v
 ```
 

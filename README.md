@@ -1,12 +1,12 @@
 # SSO Failure Taxonomy
 
-Codebook and nonce-consume demonstration for the manuscript *Federated SSO Failure Modes: A Rule-Bounded Classification Instrument for Constrained Multi-Site Open-Source IAM*.
+Companion codebook and callback-consume harness for the manuscript *Federated SSO Failure Modes: A Rule-Bounded Classification Instrument for Constrained Multi-Site Open-Source IAM*.
 
 It is **not** a production identity provider.
 
 License: MIT · [`LICENSE`](LICENSE) · [`CITATION.cff`](CITATION.cff)
 
-https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite tag `v0.1.6` (or its Zenodo DOI), not floating `main`.
+https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite tag `v1.0.7` (or its Zenodo version DOI), not floating `main`.
 
 ## What is in the archive
 
@@ -39,8 +39,8 @@ cd sso-failure-taxonomy
 make smoke
 ```
 
-`make smoke` runs six unittests. Atomic consume: one concurrent winner, replay rejected. Naive check-then-delete: false-reject window. JWT-expiry-only: replay accepted.
+`make smoke` runs eight unittests plus the I4 fixture size check. Atomic consume: one concurrent winner, replay rejected. Naive check-then-delete: false-reject window. Presence-only (`jwt_only`): second presentation accepted.
 
 ```bash
-python3 harness/nonce_consume.py both --mode both --workers 8
+python3 harness/callback_consume.py both --mode both --workers 8
 ```

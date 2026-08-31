@@ -1,19 +1,122 @@
 {
+  "schema": "sso-failure-taxonomy/incidents/v2",
   "n": 11,
-  "severity": {"1": 1, "2": 9, "3": 1},
-  "forms": {"DESIGN": 5, "RETRO": 6},
-  "note": "Publishable summaries only. No geography, hostnames, ticket IDs, or non-IAM product names.",
+  "severity": {
+    "1": 1,
+    "2": 9,
+    "3": 1
+  },
+  "forms": {
+    "DESIGN": 5,
+    "RETRO": 6
+  },
+  "evidence_classes": {
+    "E0": "Design-derived scenario: author-constructed from estate architecture; no retained production record.",
+    "E1": "Retrospective architect note: post hoc operational recollection; no ticket, log, or configuration retained for review.",
+    "E2": "Privately ticket-reviewed reconstruction: internal reconstruction reviewed by the author; public release limited to an anonymized paraphrase.",
+    "E3": "Artifact-reproduced mechanism: a synthetic runnable artifact reproduces the stated mechanism under explicitly bounded assumptions. E3 attaches to the mechanism, never to the original operational event."
+  },
+  "note": "Publishable summaries only. These strings are byte-identical to the manuscript Table III 'Publishable summary' column. No geography, hostnames, ticket IDs, or non-IAM product names. DESIGN rows are stated in modeling voice because they are author-constructed scenarios, not observed events.",
   "incidents": [
-    {"id": "F1", "category": "edge_side_effect", "sev": 2, "form": "DESIGN", "summary": "Identity success is not network release — non-transactional IdP/edge boundary."},
-    {"id": "F2", "category": "edge_identifier", "sev": 2, "form": "DESIGN", "summary": "Ephemeral MACs exhausted device quotas for real users."},
-    {"id": "F3", "category": "edge_callback_consume", "sev": 2, "form": "DESIGN", "summary": "False rejects of legitimate concurrent callbacks under non-atomic callback consume."},
-    {"id": "F4", "category": "session_plane", "sev": 1, "form": "DESIGN", "summary": "Dual session machines produced already-logged-in friction and unsafe shortcuts."},
-    {"id": "F5", "category": "edge_callback_consume", "sev": 3, "form": "DESIGN", "summary": "Callback re-entry of a captured callback capability without atomic consume."},
-    {"id": "I1", "category": "directory_federation", "sev": 2, "form": "RETRO", "summary": "Federation assumed stable links; WAN latency broke auth while IdP processes were up."},
-    {"id": "I2", "category": "multi_site_affinity", "sev": 2, "form": "RETRO", "summary": "HA diagrams understated sticky/cross-site session failure under real WAN."},
-    {"id": "I3", "category": "cluster_state", "sev": 2, "form": "RETRO", "summary": "HA cluster still admitted a visible stale-session window."},
-    {"id": "I4", "category": "protocol_gateway", "sev": 2, "form": "RETRO", "summary": "SAML POST rejected on gateway path after successful IdP auth; request-size limit raised restored SSO."},
-    {"id": "I5", "category": "mfa_delivery", "sev": 2, "form": "RETRO", "summary": "Password OK; SMS MFA completion failed at OTP verification (state expiry/invalid); MFA transaction configuration restored password-plus-OTP."},
-    {"id": "I6", "category": "dual_idp_boundary", "sev": 2, "form": "RETRO", "summary": "Same protocol plus shared directory does not imply interchangeable IdP semantics."}
+    {
+      "id": "F1",
+      "category": "edge_side_effect",
+      "sev": 2,
+      "form": "DESIGN",
+      "evidence_class": ["E0"],
+      "provenance": "Design scenario; ops-assessed; architect note only",
+      "summary": "Models identity success without network release on a non-transactional IdP/edge boundary."
+    },
+    {
+      "id": "F2",
+      "category": "edge_identifier",
+      "sev": 2,
+      "form": "DESIGN",
+      "evidence_class": ["E0"],
+      "provenance": "Design scenario; ops-assessed; architect note only",
+      "summary": "Models device-quota exhaustion under ephemeral MACs for legitimate users."
+    },
+    {
+      "id": "F3",
+      "category": "edge_callback_consume",
+      "sev": 2,
+      "form": "DESIGN",
+      "evidence_class": ["E0", "E3"],
+      "provenance": "Design scenario; ops-assessed; architect note + harness",
+      "summary": "Models false rejection of a legitimate concurrent callback under non-atomic callback consumption."
+    },
+    {
+      "id": "F4",
+      "category": "session_plane",
+      "sev": 1,
+      "form": "DESIGN",
+      "evidence_class": ["E0"],
+      "provenance": "Design scenario; ops-assessed; architect note only",
+      "summary": "Models dual session-plane friction and unsafe shortcuts when SSO is warm."
+    },
+    {
+      "id": "F5",
+      "category": "edge_callback_consume",
+      "sev": 3,
+      "form": "DESIGN",
+      "evidence_class": ["E0", "E3"],
+      "provenance": "Design scenario; ops-assessed; architect note + harness",
+      "summary": "Models second presentation of an edge callback capability without atomic single-use consumption."
+    },
+    {
+      "id": "I1",
+      "category": "directory_federation",
+      "sev": 2,
+      "form": "RETRO",
+      "evidence_class": ["E1"],
+      "provenance": "Retrospective ops memory; architect note only",
+      "summary": "Architect note: auth failure attributed to WAN federation latency while IdP processes remained up."
+    },
+    {
+      "id": "I2",
+      "category": "multi_site_affinity",
+      "sev": 2,
+      "form": "RETRO",
+      "evidence_class": ["E1"],
+      "provenance": "Retrospective ops memory; architect note only",
+      "summary": "Architect note: sticky/cross-site session failure under real WAN attributed to affinity/visibility."
+    },
+    {
+      "id": "I3",
+      "category": "cluster_state",
+      "sev": 2,
+      "form": "RETRO",
+      "evidence_class": ["E1"],
+      "provenance": "Retrospective ops memory; architect note only",
+      "summary": "Architect note: conflicting authentication state across secondary nodes attributed to membership/cache divergence under partition."
+    },
+    {
+      "id": "I4",
+      "category": "protocol_gateway",
+      "sev": 2,
+      "form": "RETRO",
+      "evidence_class": ["E2"],
+      "provenance": "Ticket-reviewed privately; publishable summary only + synthetic size-class fixtures (harness/fixtures/i4/)",
+      "summary": "SAML POST rejected on the gateway path after successful IdP authentication because the auth POST exceeded the request-size limit; raising the limit restored SSO; fixtures are synthetic, not estate captures.",
+      "support_material": "harness/fixtures/i4/ contains synthetic size-class fixtures. These are E3-style demonstration objects for gateway request-limit behaviour in general; they are not evidence of the original operational event and do not upgrade this row above E2."
+    },
+    {
+      "id": "I5",
+      "category": "mfa_delivery",
+      "sev": 2,
+      "form": "RETRO",
+      "evidence_class": ["E2"],
+      "provenance": "Ticket-reviewed privately; publishable summary only",
+      "summary": "Password OK; SMS MFA completion failed at OTP verification (state expiry/invalid); MFA transaction configuration restored password-plus-OTP."
+    },
+    {
+      "id": "I6",
+      "category": "dual_idp_boundary",
+      "sev": 2,
+      "form": "RETRO",
+      "evidence_class": ["E1"],
+      "provenance": "Retrospective ops memory; architect note only",
+      "summary": "Architect note: shared directory + same protocol family did not yield interchangeable IdP semantics."
+    }
   ]
 }

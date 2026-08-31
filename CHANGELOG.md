@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.0.7 — 2026-08-31 (pre-release; tag pending Phase 2)
+
+Pre-submission consistency and anonymization pass. No taxonomy, category, severity, or reliability values changed; the N=11 catalog and all coding are unchanged.
+
+- **Anonymization.** Removed product, directory-topology, and monitoring-tool names from `docs/EVIDENCE-INDEX.md` I1; no bogus §VI-E cross-reference.
+- **Table III parity.** `codebook/incidents.json` summaries byte-identical to manuscript Table III publishable-summary column; I3 mechanism corrected.
+- **Evidence classes.** Added E0–E3 alongside DESIGN/RETRO `form` key (primary key unchanged for reliability packet).
+- **Checklist parity.** Items 3 and 8 aligned with manuscript Table IV (no buffer default; linearizable single-winner consume wording).
+- **Naming.** `harness/nonce_consume.py` → `callback_consume.py`; `test_nonce_consume.py` → `test_callback_consume.py`.
+- **Metadata.** `CITATION.cff` and `docs/TAGS.md` prepared for v1.0.7; README cite pin updated.
+
+## 1.0.1 – 1.0.6 — 2026-08-13 to 2026-08-15
+
+Packaging and manuscript-alignment iterations between the first Access freeze (`v1.0.0`) and the `v1.0.6` Zenodo pin (`10.5281/zenodo.21950902`). No taxonomy relabels after `v1.0.0`.
+
 ## 1.0.0 — 2026-08-13
 
 - Manuscript-aligned freeze for IEEE Access companion artifact.

@@ -6,7 +6,7 @@
 - Eleven fingerprint-safe incident summaries used as a demonstration of that scheme (`codebook/incidents.json` is the published catalog, including category, severity, and form).
 - An **unblinded** independent-coding packet (`codebook/second-coder/PACKET.md`) with paraphrased cases and negative-evidence fields. Gold labels for the published catalog are in `incidents.json` (Table III). Send the packet standalone so coding is rule application, not transcription; do not claim blinding.
 - A reliability summary (`codebook/reliability.json`) with raw agreement, Gwet’s AC1 (primary under severity skew), Cohen’s κ, and bootstrap CIs for that round.
-- A standard-library nonce-consume demonstration of the manuscript Fig. 3 claim.
+- A standard-library callback-consume demonstration of the manuscript Fig. 3 claim (`harness/callback_consume.py`).
 - An **evidence index** (`docs/EVIDENCE-INDEX.md`) mapping each Table III case to released material (honest when the entry is architect note only).
 - An **open falsifiability path**: external fingerprint-safe incidents against Table I (`docs/EXTERNAL-INCIDENTS.md` + GitHub issue template). Outcomes are not claimed as manuscript evidence.
 

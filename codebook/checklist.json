@@ -1,15 +1,58 @@
 {
-  "case_traceability": "Each checklist item must remain traceable to one or more Table III cases (bidirectional checklist–case link). If the case citation is removed, the item must not remain a generic injunction true of any IAM estate.",
+  "case_traceability": "Each checklist item must remain traceable to one or more Table III cases (bidirectional checklist-case link). If the case citation is removed, the item must not remain a generic injunction true of any IAM estate.",
+  "sync_note": "Item text here must remain byte-identical in meaning to manuscript Table IV. Items 3 and 8 were corrected in v1.0.7: item 3 no longer implies that a single-node primitive is the production control, and item 8 no longer prescribes a buffer default, matching the manuscript Section VII statement that the checklist states the operational validation action without prescribing a single buffer default.",
   "items": [
-    {"n": 1, "incidents": ["F1"], "item": "Treat IdP success and edge release as separate steps; require acknowledgment before commit, or compensating rollback."},
-    {"n": 2, "incidents": ["F2"], "item": "Do not key device caps on randomized MACs; use stable bindings and remediation user experience."},
-    {"n": 3, "incidents": ["F3", "F5"], "item": "Require atomic single-use consume for the edge callback-correlation value or callback capability (e.g. GETDEL or equivalent); document store topology; fail closed on partition/failover; set TTL at least RTT; do not rely on JWT expiry alone."},
-    {"n": 4, "incidents": ["F4"], "item": "Document two session planes; never skip edge re-authorization because SSO is warm."},
-    {"n": 5, "incidents": ["I1"], "item": "Size federation timeouts for worst-site WAN, not LAN HA assumptions; plan degrade messaging."},
-    {"n": 6, "incidents": ["I2"], "item": "Validate sticky routing and shared session stores across sites; expect re-authentication windows on failover."},
-    {"n": 7, "incidents": ["I3"], "item": "Treat IdP cluster coherence as an authentication health check; quorum runbooks; no dual-writer under partition."},
-    {"n": 8, "incidents": ["I4"], "item": "Size gateway request-body buffers with headroom above the measured maximum encoded assertion payload; validate with representative SAML/OIDC fixtures; alert on truncation and idle kills."},
-    {"n": 9, "incidents": ["I5"], "item": "Provide at least one alternative authenticator that does not depend on SMS/PSTN delivery; do not make SMS the sole MFA completion path for affected users."},
-    {"n": 10, "incidents": ["I6"], "item": "Run a dual-IdP equivalence checklist before cutover (token shape, claims, lifetimes)."}
+    {
+      "n": 1,
+      "incidents": ["F1"],
+      "item": "Treat IdP success and edge release as separate steps; require acknowledgment before commit, or compensating rollback."
+    },
+    {
+      "n": 2,
+      "incidents": ["F2"],
+      "item": "Do not key device caps on randomized MACs; use stable bindings and remediation user experience."
+    },
+    {
+      "n": 3,
+      "incidents": ["F3", "F5"],
+      "item": "Implement a linearizable, single-winner consume operation for the edge callback-correlation value or callback capability at the callback-consistency scope; document the state store's replication, failover, and partition behaviour; fail closed (reject the callback) when the consume outcome is uncertain; and configure the value's TTL for the maximum expected authorization round trip plus operational margin.",
+      "note": "Redis GETDEL is one single-node example of such a primitive and is used illustratively in Fig. 3. It is not the required control. Single-node atomicity does not establish cluster-wide safety under replication or failover."
+    },
+    {
+      "n": 4,
+      "incidents": ["F4"],
+      "item": "Document two session planes; never skip edge re-authorization because SSO is warm."
+    },
+    {
+      "n": 5,
+      "incidents": ["I1"],
+      "item": "Size federation timeouts for worst-site WAN, not LAN HA assumptions; plan degrade messaging."
+    },
+    {
+      "n": 6,
+      "incidents": ["I2"],
+      "item": "Validate sticky routing and shared session stores across sites; expect re-authentication windows on failover."
+    },
+    {
+      "n": 7,
+      "incidents": ["I3"],
+      "item": "Treat IdP cluster coherence as an authentication health check; quorum runbooks; no dual-writer under partition."
+    },
+    {
+      "n": 8,
+      "incidents": ["I4"],
+      "item": "Validate representative end-to-end SAML and OIDC request sizes against the deployed gateway version and configuration, including request limits, buffering behaviour, and timeouts; alert on gateway rejection, malformed federation payloads, and timeout termination.",
+      "note": "No buffer default is prescribed. harness/fixtures/i4/ provides synthetic size-class fixtures for local validation only."
+    },
+    {
+      "n": 9,
+      "incidents": ["I5"],
+      "item": "Provide at least one alternative authenticator that does not depend on SMS/PSTN delivery; do not make SMS the sole MFA completion path for affected users."
+    },
+    {
+      "n": 10,
+      "incidents": ["I6"],
+      "item": "Run a dual-IdP equivalence checklist before cutover (token shape, claims, lifetimes)."
+    }
   ]
 }

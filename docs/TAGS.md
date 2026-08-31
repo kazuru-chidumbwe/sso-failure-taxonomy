@@ -1,19 +1,20 @@
-# Release tags
+# Tag policy
 
-Annotated tags mark reproducible anchors. **`main` may advance** after a tag — always `git checkout <tag>` when reproducing a cited result.
+Cite a tag, never floating `main`.
 
-| Tag | Purpose |
+| Tag | Role |
 | --- | --- |
-| `v0.1.6` | **Access / Zenodo cite pin** — explicit F3/F5 harness schedules + threat model |
-| `v0.1.5` | `edge_callback_consume` rename — superseded for schedule docs |
-| `v0.1.4` | Evidence index + external-incident path — superseded |
-| `v0.1.3` | AC1 + κ in reliability.json — superseded |
-| `v0.1.2` | Reliability file (κ only) — superseded |
-| `v0.1.1` | Unblinded packet wording — superseded |
-| `v0.1.0` | First public pin — superseded |
+| `v1.0.7` | **IEEE Access / Zenodo cite pin.** Manuscript-aligned: Table III summaries byte-matched, evidence classes E0–E3, checklist items 3 and 8 corrected, anonymization pass on `docs/EVIDENCE-INDEX.md`, `nonce_*` → `callback_*` rename |
+| `v1.0.6` | Superseded — manuscript-alignment freeze with known Table III / checklist divergences |
+| `v1.0.0` – `v1.0.5` | Superseded — packaging and metadata iterations |
+| `v0.1.6` | Superseded — explicit F3/F5 harness schedules + threat model |
+| `v0.1.5` | Superseded — `edge_nonce` → `edge_callback_consume` rename (data layer only) |
+| `v0.1.0` – `v0.1.4` | Superseded — first public pins |
 
-## Tag policy
+## Release procedure
 
-- **SemVer** → `v0.1.6` (see [`CHANGELOG.md`](../CHANGELOG.md)).
-- Never cite floating `main` for published results.
-- Mint Zenodo from the **GitHub release for `v0.1.6`**. Paste the DOI into `CITATION.cff` `identifiers` and into the manuscript Availability line.
+1. Cut tag `vX.Y.Z` and publish a **GitHub Release** (Zenodo archives on releases, not on tags).
+2. Copy the minted **version DOI** into `CITATION.cff` `identifiers` and into the manuscript
+   Data and Code Availability statement.
+3. Confirm the Zenodo record's version label matches the tag before citing it.
+4. Never edit a tagged release in place. Cut a new patch tag instead.

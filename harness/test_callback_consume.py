@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
-"""Unit tests for the F3/F5 nonce demo (unittest, stdlib)."""
+"""Unit tests for the F3/F5 callback-consume demo (unittest, stdlib)."""
 from __future__ import annotations
 
 import unittest
 
-from nonce_consume import AtomicNonceStore, NaiveNonceStore, concurrent_consume, replay_after_one
+from callback_consume import (
+    AtomicCallbackStore,
+    NaiveCallbackStore,
+    concurrent_consume,
+    replay_after_one,
+)
 
 
 class AtomicTests(unittest.TestCase):
@@ -29,8 +34,7 @@ class AtomicTests(unittest.TestCase):
 
 class NaiveTests(unittest.TestCase):
     def test_replay_after_clean_consume_usually_safe(self) -> None:
-        # Sequential naive consume still deletes; F5 needs leftover or skipped delete.
-        store = NaiveNonceStore()
+        store = NaiveCallbackStore()
         store.put("n", "p")
         self.assertEqual(store.consume("n"), "p")
         self.assertIsNone(store.consume("n"))
@@ -40,7 +44,7 @@ class NaiveTests(unittest.TestCase):
         self.assertTrue(r.replay_accepted)
 
     def test_atomic_pop_is_getdel(self) -> None:
-        store = AtomicNonceStore()
+        store = AtomicCallbackStore()
         store.put("n", "p")
         self.assertEqual(store.consume("n"), "p")
         self.assertIsNone(store.consume("n"))

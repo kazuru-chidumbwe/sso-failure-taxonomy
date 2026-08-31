@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Illustrate F3/F5 edge callback-consume race: naive check-then-delete vs atomic consume.
 
-Stdlib only. Not a production IdP. Synthetic tokens; no estate data.
+Stdlib only. Not a production IdP. Synthetic callback capabilities; no estate data.
 Maps to manuscript edge_callback_consume incidents F3 (Sev-2 false reject) and F5 (Sev-3 replay).
 
 Exact modeled schedules: harness/SCHEDULES.md
@@ -23,7 +23,7 @@ from typing import Literal
 Mode = Literal["naive", "jwt_only", "atomic"]
 
 
-class NaiveNonceStore:
+class NaiveCallbackStore:
     """Schedule B: check-then-delete with gap. Concurrent losers false-reject (F3)."""
 
     def __init__(self) -> None:
@@ -31,52 +31,52 @@ class NaiveNonceStore:
         self._lock = threading.Lock()
         self.observed_present = 0
 
-    def put(self, nonce: str, payload: str) -> None:
+    def put(self, capability: str, payload: str) -> None:
         with self._lock:
-            self._data[nonce] = payload
+            self._data[capability] = payload
 
-    def consume(self, nonce: str) -> str | None:
+    def consume(self, capability: str) -> str | None:
         with self._lock:
-            present = nonce in self._data
+            present = capability in self._data
             if present:
                 self.observed_present += 1
         time.sleep(0.004)
         if not present:
             return None
         with self._lock:
-            return self._data.pop(nonce, None)
+            return self._data.pop(capability, None)
 
 
-class JwtOnlyStore:
+class JwtOnlyCallbackStore:
     """Schedule A: presence/expiry treated as enough; never consumes. Second path accepts (F5)."""
 
     def __init__(self) -> None:
         self._data: dict[str, str] = {}
         self._lock = threading.Lock()
 
-    def put(self, nonce: str, payload: str) -> None:
+    def put(self, capability: str, payload: str) -> None:
         with self._lock:
-            self._data[nonce] = payload
+            self._data[capability] = payload
 
-    def consume(self, nonce: str) -> str | None:
+    def consume(self, capability: str) -> str | None:
         with self._lock:
-            return self._data.get(nonce)
+            return self._data.get(capability)
 
 
-class AtomicNonceStore:
+class AtomicCallbackStore:
     """Schedule C: single-lock pop. One winner; replay misses."""
 
     def __init__(self) -> None:
         self._data: dict[str, str] = {}
         self._lock = threading.Lock()
 
-    def put(self, nonce: str, payload: str) -> None:
+    def put(self, capability: str, payload: str) -> None:
         with self._lock:
-            self._data[nonce] = payload
+            self._data[capability] = payload
 
-    def consume(self, nonce: str) -> str | None:
+    def consume(self, capability: str) -> str | None:
         with self._lock:
-            return self._data.pop(nonce, None)
+            return self._data.pop(capability, None)
 
 
 @dataclass
@@ -104,25 +104,25 @@ class RunResult:
         }
 
 
-def _store(mode: Mode) -> NaiveNonceStore | JwtOnlyStore | AtomicNonceStore:
+def _store(mode: Mode) -> NaiveCallbackStore | JwtOnlyCallbackStore | AtomicCallbackStore:
     if mode == "naive":
-        return NaiveNonceStore()
+        return NaiveCallbackStore()
     if mode == "jwt_only":
-        return JwtOnlyStore()
-    return AtomicNonceStore()
+        return JwtOnlyCallbackStore()
+    return AtomicCallbackStore()
 
 
 def concurrent_consume(mode: Mode, workers: int = 8) -> RunResult:
     store = _store(mode)
-    nonce = hashlib.sha256(secrets.token_bytes(16)).hexdigest()
-    store.put(nonce, "auth-code-placeholder")
+    capability = hashlib.sha256(secrets.token_bytes(16)).hexdigest()
+    store.put(capability, "auth-code-placeholder")
     barrier = threading.Barrier(workers)
     got: list[str | None] = []
     lock = threading.Lock()
 
     def worker(name: str) -> None:
         barrier.wait()
-        val = store.consume(nonce)
+        val = store.consume(capability)
         with lock:
             got.append(val)
 
@@ -133,9 +133,9 @@ def concurrent_consume(mode: Mode, workers: int = 8) -> RunResult:
         t.join()
 
     successes = [v for v in got if v is not None]
-    leftover = nonce in store._data  # noqa: SLF001 — demo introspection
+    leftover = capability in store._data  # noqa: SLF001 — demo introspection
     observed = getattr(store, "observed_present", len(successes))
-    replay = store.consume(nonce) is not None
+    replay = store.consume(capability) is not None
     return RunResult(
         mode=mode,
         successes=len(successes),
@@ -150,10 +150,10 @@ def concurrent_consume(mode: Mode, workers: int = 8) -> RunResult:
 def replay_after_one(mode: Mode) -> RunResult:
     """One legitimate consume, then attacker replays the same state."""
     store = _store(mode)
-    nonce = "state-" + secrets.token_hex(8)
-    store.put(nonce, "legit")
-    first = store.consume(nonce)
-    second = store.consume(nonce)
+    capability = "state-" + secrets.token_hex(8)
+    store.put(capability, "legit")
+    first = store.consume(capability)
+    second = store.consume(capability)
     return RunResult(
         mode=mode,
         successes=1 if first else 0,
@@ -166,7 +166,7 @@ def replay_after_one(mode: Mode) -> RunResult:
 
 
 def main() -> int:
-    p = argparse.ArgumentParser(description="F3/F5 nonce consume demo (stdlib)")
+    p = argparse.ArgumentParser(description="F3/F5 callback-consume demo (stdlib)")
     p.add_argument("scenario", choices=["concurrent", "replay", "both"])
     p.add_argument("--mode", choices=["naive", "jwt_only", "atomic", "both"], default="both")
     p.add_argument("--workers", type=int, default=8)
