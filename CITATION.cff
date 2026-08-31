@@ -12,10 +12,10 @@ authors:
     affiliation: "Independent Researcher, Malawi"
 license: MIT
 repository-code: "https://github.com/kazuru-chidumbwe/sso-failure-taxonomy"
-url: "https://doi.org/10.5281/zenodo.22214311"
+url: "https://doi.org/10.5281/zenodo.22214674"
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.22214311
+    value: 10.5281/zenodo.22214674
     description: "This version"
   - type: doi
     value: 10.5281/zenodo.21950901
