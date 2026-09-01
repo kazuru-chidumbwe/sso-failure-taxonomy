@@ -11,5 +11,6 @@ Sequential table numbers in the submitted manuscript (31 Aug 2026 Gates pass):
 | **Table V** | Practitioner checklist | `codebook/checklist.json` |
 | **Table VI** | Prior-work comparison | manuscript only |
 | **Table VII** | F5 threat model | manuscript only |
+| **Table VIII** | Protocol and edge callback artifact contrast | manuscript only |
 
 Earlier artifact releases used non-sequential numbering (evidence classes as Table VI). From this revision onward, the manuscript uses normal IEEE ordering and the artifact tracks it via `incidents.json` → `manuscript_tables`.

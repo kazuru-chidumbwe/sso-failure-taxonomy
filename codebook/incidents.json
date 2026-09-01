@@ -26,7 +26,8 @@
     "case_catalog": "IV",
     "practitioner_checklist": "V",
     "prior_work_comparison": "VI",
-    "f5_threat_model": "VII"
+    "f5_threat_model": "VII",
+    "protocol_artifact_contrast": "VIII"
   },
   "forms": {
     "DESIGN": 5,

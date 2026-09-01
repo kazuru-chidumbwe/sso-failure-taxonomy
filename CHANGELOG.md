@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.12 — 2026-09-01
+
+Submit-pass: figure render fix, Table VIII tracking, replicated-store production extension.
+
+- **Figures.** Fix `build_figures.py` label spacing, callout badge placement, Fig. 3 three-panel single-row layout; regenerate PNGs.
+- **Manuscript alignment.** Table VIII (protocol artifact contrast) tracked in `docs/MANUSCRIPT-TABLES.md` and `incidents.json` → `manuscript_tables`.
+- **Harness.** `harness/SCHEDULES.md` adds "Production extension (not modelled)" for replicated-store consume primitives.
+- **README** cite pin → `v1.0.12`.
+
 ## 1.0.11 — 2026-08-31
 
 Manuscript Gates pass: sequential IEEE table numbering and operational-priority mapping. No taxonomy, category assignments, or reliability values changed.

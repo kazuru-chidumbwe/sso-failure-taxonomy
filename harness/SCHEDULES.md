@@ -40,3 +40,7 @@ Threat model (narrow): the harness models an edge callback capability that an at
 - Not a model of clustered replication, multi-primary writes, or failover.
 - “One step” without atomic single-winner semantics at the relevant consistency scope is insufficient; the atomic schedule requires atomic get-and-delete at the callback-consistency scope.
 - TTL expiry / TTL mismatch relative to callback RTT is in the category definition; this harness focuses on consume interleaving, not a full TTL simulator.
+
+## Production extension (not modelled)
+
+Extending single-winner consume across a replicated store requires a primitive that is linearizable at the callback-consistency scope: compare-and-swap on a versioned key, a fencing token carried into the release action, or a lease-based single-writer partition for the callback keyspace. Under partition or failover, where the consume outcome cannot be determined, the endpoint fails closed and rejects the callback.
