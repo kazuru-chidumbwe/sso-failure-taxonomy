@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.15 — 2026-09-06
+
+Sponsor recount fix — external-eval summary aligned to `coder-b.json`.
+
+- **Fix.** `reliability-external-v1.json` Coder B outside-taxonomy count 37→36 (92.3%, not 94.9%).
+- **Docs.** README interpretation updated; κ CI spans-zero note in corpus summary.
+- **N=11.** Unchanged; byte-frozen at `v1.0.12`.
+
 ## 1.0.14 — 2026-09-06
 
 External-eval human coding complete (A2).

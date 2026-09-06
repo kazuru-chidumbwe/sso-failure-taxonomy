@@ -17,7 +17,8 @@ Public-narrative feasibility corpus for IEEE Access §IV-K. **Not part of N=11.*
 - **Coder A:** independent practitioner — complete (`coder-a.json`, 95 min).
 - **Coder B:** independent practitioner — complete (`coder-b.json`).
 - **Overlap (n=13):** 11/13 agreement (84.6%); Gwet AC1 = 0.83; Cohen κ = 0.61 (wide CIs).
-- Outside-taxonomy on assigned narratives: Coder A 14/39 (35.9%); Coder B 37/39 (94.9%).
+- Outside-taxonomy on assigned narratives: Coder A 14/39 (35.9%); Coder B 36/39 (92.3%).
+- Coder B assigned only three non-outside labels (`edge_callback_consume`, `cluster_state`, `multi_site_affinity`); per-category reads of disjoint blocks are not informative.
 - Disagreements: EN027, GH004.
 
 N=11 structured-packet pilot remains in `codebook/reliability.json` (frozen at `v1.0.12` audit).

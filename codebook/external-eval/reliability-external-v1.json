@@ -74,8 +74,8 @@
     },
     "coder_b": {
       "n_assigned": 39,
-      "n_outside": 37,
-      "pct_outside": 94.9
+      "n_outside": 36,
+      "pct_outside": 92.3
     },
     "overlap_only": {
       "coder_a_n_outside": 10,
@@ -87,6 +87,6 @@
     "n_corpus": 65,
     "n_double_coded": 13,
     "n_single_coded": 52,
-    "interpretation": "Feasibility pilot on raw public narratives under less favorable information than the structured N=11 packet. High outside-taxonomy routing under strict non-invention; overlap agreement moderate with wide CIs."
+    "interpretation": "Feasibility pilot on raw public narratives under less favorable information than the structured N=11 packet. Outside-taxonomy routing is highly sensitive to non-invention strictness (14/39 vs 36/39 on assigned sets). Overlap block (n=13) is a routability feasibility signal; Cohen κ CI includes zero and is not a reliability estimate."
   }
 }
