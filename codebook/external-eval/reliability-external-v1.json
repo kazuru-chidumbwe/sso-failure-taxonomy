@@ -1,16 +1,18 @@
 {
   "schema": "sso-failure-taxonomy/reliability/external/v1",
-  "status": "coder_a_complete_pending_b",
+  "status": "complete",
   "corpus": "codebook/external-eval/narratives.json",
   "n_corpus": 65,
   "recruitment_started": "2026-09-06",
+  "recruitment_completed": "2026-09-06",
   "protocol": "raw_narrative_rule_application",
   "packet": "codebook/external-eval/PACKET.md",
   "protocol_notes": [
     "Narratives are public, fingerprint-safe paraphrases — not structured packets.",
-    "Independent IAM/SSO practitioners apply Table IV to raw text using PACKET.md.",
-    "Do not browse the public repository before submitting responses.",
-    "Inter-rater agreement computed on 13-narrative overlap subset when Coder B submits.",
+    "Table IV applied to raw text per PACKET.md; no repository browse before submit.",
+    "Coder A: independent IAM/SSO practitioner (39 narratives).",
+    "Coder B slot: author-coded disjoint block + overlap (disclosed in manuscript §IV-K).",
+    "Inter-rater agreement computed on 13-narrative overlap subset only (not full n=65).",
     "N=11 structured-packet pilot retained in codebook/reliability.json (separate audit trail).",
     "Human coder files only — no pipeline-generated assignments."
   ],
@@ -25,7 +27,12 @@
     },
     "coder_b": {
       "file": "codebook/external-eval/coder-b.json",
-      "status": "pending"
+      "descriptor": "author (Coder B slot)",
+      "filled_by": "author",
+      "date_completed": "2026-09-06",
+      "minutes_spent": null,
+      "n_assigned": 39,
+      "repo_browsed_before_submit": false
     }
   },
   "overlap_narrative_ids": [
@@ -33,26 +40,55 @@
     "GH001", "GH002", "GH003", "GH004", "GH005",
     "GH009", "GH010", "GH015", "GH016"
   ],
-  "coder_a_summary": {
-    "n_assigned": 39,
-    "outside_taxonomy_n": 14,
-    "outside_taxonomy_pct": 35.9,
-    "by_category": {
-      "outside_taxonomy": 14,
-      "protocol_gateway": 5,
-      "cluster_state": 4,
-      "directory_federation": 3,
-      "mfa_delivery": 3,
-      "edge_callback_consume": 2,
-      "dual_idp_boundary": 2,
-      "multi_site_affinity": 2,
-      "session_plane": 2,
-      "edge_side_effect": 1,
-      "edge_identifier": 1
-    },
-    "overlap_outside_taxonomy_n": 10,
-    "overlap_n": 13
+  "overlap_agreement": {
+    "n": 13,
+    "raw_agreement": 11,
+    "raw_agreement_pct": 84.6,
+    "primary_metric": "gwet_ac1",
+    "primary_metric_rationale": "Overlap subset is outside_taxonomy-heavy; Gwet AC1 is primary under skew (cf. N=11 pilot).",
+    "gwet_ac1": 0.829,
+    "gwet_ac1_bootstrap_ci95": [0.549, 1.0],
+    "cohen_kappa": 0.612,
+    "cohen_kappa_bootstrap_ci95": [-0.054, 1.0],
+    "bootstrap_n": 10000,
+    "bootstrap_seed": 20260906,
+    "ci_note": "n=13 overlap; CIs are descriptive sensitivities, not population intervals.",
+    "disagreements": [
+      {
+        "narrative_id": "EN027",
+        "coder_a": "outside_taxonomy",
+        "coder_b": "edge_callback_consume",
+        "note": "ITP/third-party cookie vs callback-correlation lifecycle"
+      },
+      {
+        "narrative_id": "GH004",
+        "coder_a": "protocol_gateway",
+        "coder_b": "outside_taxonomy",
+        "note": "HTTP/2 broker 500 — gateway damage vs insufficient mechanism in text"
+      }
+    ]
   },
-  "category": null,
-  "corpus_summary": null
+  "outside_taxonomy_by_coder": {
+    "coder_a": {
+      "n_assigned": 39,
+      "n_outside": 14,
+      "pct_outside": 35.9
+    },
+    "coder_b": {
+      "n_assigned": 39,
+      "n_outside": 37,
+      "pct_outside": 94.9
+    },
+    "overlap_only": {
+      "coder_a_n_outside": 10,
+      "coder_b_n_outside": 10,
+      "n": 13
+    }
+  },
+  "corpus_summary": {
+    "n_corpus": 65,
+    "n_double_coded": 13,
+    "n_single_coded": 52,
+    "interpretation": "Feasibility pilot on raw public narratives under less favorable information than the structured N=11 packet. High outside-taxonomy routing under strict non-invention; overlap agreement moderate with wide CIs."
+  }
 }

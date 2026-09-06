@@ -1,0 +1,205 @@
+{
+  "schema": "sso-failure-taxonomy/external-eval/coder-response/v1",
+  "coder_slot": "Coder B",
+  "descriptor": "author (Coder B slot; disjoint block self-coded per submitter)",
+  "date_completed": "2026-09-06",
+  "minutes_spent": null,
+  "repo_browsed_before_submit": false,
+  "assignments": [
+    {
+      "narrative_id": "GH017",
+      "primary_label": "outside_taxonomy",
+      "note": "Authentication-flow actions are not executed after external IdP login, but the text does not establish a specific Table IV mechanism."
+    },
+    {
+      "narrative_id": "GH019",
+      "primary_label": "outside_taxonomy",
+      "note": "SAML AuthnContext/classRef semantic handling is outside the defined failure mechanisms."
+    },
+    {
+      "narrative_id": "GH020",
+      "primary_label": "outside_taxonomy",
+      "note": "Trusted-origin iframe restriction is a security/configuration requirement, not a Table IV failure mechanism."
+    },
+    {
+      "narrative_id": "SFSAM001",
+      "primary_label": "outside_taxonomy",
+      "note": "ForceAuthn handling by the external IdP is not sufficiently attributable to a defined session-plane failure."
+    },
+    {
+      "narrative_id": "SFSAM002",
+      "primary_label": "outside_taxonomy",
+      "note": "Generic AuthnRequest error; the text does not establish a Table IV mechanism."
+    },
+    {
+      "narrative_id": "SFSAM003",
+      "primary_label": "outside_taxonomy",
+      "note": "Generic SAML authentication-on-virtual-junction topic; no Table IV mechanism is stated."
+    },
+    {
+      "narrative_id": "SFSAM004",
+      "primary_label": "outside_taxonomy",
+      "note": "Configuration/how-to request; no Table IV failure mechanism is stated."
+    },
+    {
+      "narrative_id": "SFSAM005",
+      "primary_label": "outside_taxonomy",
+      "note": "User-to-SAML-IdP account mapping requirement; no Table IV mechanism fits."
+    },
+    {
+      "narrative_id": "SFSAM006",
+      "primary_label": "outside_taxonomy",
+      "note": "Generic federation errors without a sufficiently specified directory, gateway, or other Table IV mechanism."
+    },
+    {
+      "narrative_id": "SFSAM007",
+      "primary_label": "outside_taxonomy",
+      "note": "OpenSAML marshalling error is outside the defined Table IV mechanisms."
+    },
+    {
+      "narrative_id": "SFSAM008",
+      "primary_label": "outside_taxonomy",
+      "note": "Expired IdP signing certificate is outside the defined Table IV mechanisms."
+    },
+    {
+      "narrative_id": "SFOPE001",
+      "primary_label": "outside_taxonomy",
+      "note": "Query-parameter trust/security concern is outside the Table IV failure mechanisms."
+    },
+    {
+      "narrative_id": "SFOPE002",
+      "primary_label": "outside_taxonomy",
+      "note": "AWS security-group/network configuration issue; no Table IV mechanism is established."
+    },
+    {
+      "narrative_id": "SFKEY002",
+      "primary_label": "outside_taxonomy",
+      "note": "Container probes killing Keycloak is infrastructure/liveness behavior outside Table IV."
+    },
+    {
+      "narrative_id": "SFKEY003",
+      "primary_label": "outside_taxonomy",
+      "note": "Redirect-URI/hostname configuration mismatch does not establish a Table IV mechanism."
+    },
+    {
+      "narrative_id": "SFKEY004",
+      "primary_label": "outside_taxonomy",
+      "note": "HTTPS-required configuration issue does not establish a protocol-gateway payload failure."
+    },
+    {
+      "narrative_id": "SFKEY005",
+      "primary_label": "outside_taxonomy",
+      "note": "Account-status message behavior is UI/functionality outside Table IV."
+    },
+    {
+      "narrative_id": "SFKEY006",
+      "primary_label": "outside_taxonomy",
+      "note": "Flow configuration/how-to request; no Table IV failure mechanism is stated."
+    },
+    {
+      "narrative_id": "SFKEY007",
+      "primary_label": "outside_taxonomy",
+      "note": "404/400 errors behind NGINX do not by themselves establish gateway payload damage."
+    },
+    {
+      "narrative_id": "SFKEY008",
+      "primary_label": "outside_taxonomy",
+      "note": "Reverse-proxy/multi-server SSO topic does not establish cross-site affinity or session-visibility failure from the supplied text."
+    },
+    {
+      "narrative_id": "SFLDA001",
+      "primary_label": "outside_taxonomy",
+      "note": "LDAP query use with certificate information does not establish the specified WAN federation failure."
+    },
+    {
+      "narrative_id": "SFLDA002",
+      "primary_label": "outside_taxonomy",
+      "note": "Apache LDAP authentication/authorization configuration request; no Table IV failure mechanism is stated."
+    },
+    {
+      "narrative_id": "SFLDA003",
+      "primary_label": "outside_taxonomy",
+      "note": "LDAP service-detection failure lacks the required WAN federation mechanism in the supplied text."
+    },
+    {
+      "narrative_id": "SFLDA004",
+      "primary_label": "outside_taxonomy",
+      "note": "LDAP schema/attribute-definition error is outside Table IV."
+    },
+    {
+      "narrative_id": "SFLDA005",
+      "primary_label": "outside_taxonomy",
+      "note": "LDAP authentication configuration/how-to request; no Table IV failure mechanism is stated."
+    },
+    {
+      "narrative_id": "SFLDA006",
+      "primary_label": "outside_taxonomy",
+      "note": "LDAP bind failure is stated, but the required WAN federation-path mechanism is not established."
+    },
+    {
+      "narrative_id": "EN027",
+      "primary_label": "edge_callback_consume",
+      "note": "OIDC callback correlation fails because the browser drops the state-bearing third-party cookie; callback-correlation lifecycle failure rather than nonce validation."
+    },
+    {
+      "narrative_id": "EN028",
+      "primary_label": "cluster_state",
+      "note": "Redis session-store failover leaves inconsistent/orphaned distributed session state."
+    },
+    {
+      "narrative_id": "EN029",
+      "primary_label": "multi_site_affinity",
+      "note": "Cross-datacenter session replication/visibility causes repeated re-authentication."
+    },
+    {
+      "narrative_id": "EN030",
+      "primary_label": "outside_taxonomy",
+      "note": "Failure is explicitly OIDC ID-Token nonce replay detection, which Table IV excludes from edge_callback_consume."
+    },
+    {
+      "narrative_id": "GH001",
+      "primary_label": "outside_taxonomy",
+      "note": "Passive-authentication forwarding semantics to SAML IdPs are outside the defined failure mechanisms."
+    },
+    {
+      "narrative_id": "GH002",
+      "primary_label": "outside_taxonomy",
+      "note": "Login-hint feature request; no Table IV failure mechanism is stated."
+    },
+    {
+      "narrative_id": "GH003",
+      "primary_label": "outside_taxonomy",
+      "note": "Sensitive information exposure in URLs is a security issue outside Table IV."
+    },
+    {
+      "narrative_id": "GH004",
+      "primary_label": "outside_taxonomy",
+      "note": "Intermittent HTTP/2 broker callback 500 is insufficiently specified to establish gateway buffer/timeout/request-size damage."
+    },
+    {
+      "narrative_id": "GH005",
+      "primary_label": "outside_taxonomy",
+      "note": "Cross-domain cookie-domain configuration problem does not establish the defined session-plane or multi-site mechanism."
+    },
+    {
+      "narrative_id": "GH009",
+      "primary_label": "outside_taxonomy",
+      "note": "Identity-provider-to-multiple-organization feature request; no Table IV failure mechanism is stated."
+    },
+    {
+      "narrative_id": "GH010",
+      "primary_label": "outside_taxonomy",
+      "note": "Login-event/session distinction is an observability/semantics issue, not a demonstrated session-plane failure."
+    },
+    {
+      "narrative_id": "GH015",
+      "primary_label": "outside_taxonomy",
+      "note": "Removal of Keycloak-adapter-specific functionality is a design/cleanup task, not a Table IV failure narrative."
+    },
+    {
+      "narrative_id": "GH016",
+      "primary_label": "outside_taxonomy",
+      "note": "Organization-feature development epic; no Table IV failure mechanism is stated."
+    }
+  ]
+}
