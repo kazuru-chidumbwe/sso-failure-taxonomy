@@ -4,7 +4,7 @@ Cite a tag, never floating `main`.
 
 | Tag | Role |
 | --- | --- |
-| `v1.0.16` | **Corpus provenance v2.** 35 live-harvested + 30 author-constructed; `validate_corpus_provenance.py`. Wire Zenodo version DOI into manuscript [38] after release. N=11 frozen at `v1.0.12`. |
+| `v1.0.16` | **Corpus provenance v2.** 35 live-harvested + 30 author-constructed; `validate_corpus_provenance.py`. Zenodo `10.5281/zenodo.22544498`. N=11 frozen at `v1.0.12`. |
 | `v1.0.15` | **Sponsor recount fix.** Coder B outside-taxonomy 36/39 (92.3%). Zenodo `10.5281/zenodo.22544249`. *(Corpus URL honesty superseded by v1.0.16.)* |
 | `v1.0.14` | **A2 complete.** Human `coder-a.json` + `coder-b.json`; `reliability-external-v1.json` overlap stats. Zenodo version DOI `10.5281/zenodo.22544007`. N=11 frozen at `v1.0.12`. *(Coder B outside count superseded by v1.0.15.)* |
 | `v1.0.13` | **Gates round-2 batch.** Tables I–X mapping; `presence_only` harness rename; `codebook/external-eval/`; `docs/QUICK-START.md`. Zenodo version DOI `10.5281/zenodo.22542638`. N=11 catalog frozen at `v1.0.12`. |
