@@ -28,7 +28,7 @@
       "file": "codebook/external-eval/coder-b.json",
       "descriptor": "independent coder, IAM/SSO operations",
       "date_completed": "2026-09-06",
-      "minutes_spent": null,
+      "minutes_spent": 120,
       "n_assigned": 39,
       "repo_browsed_before_submit": false
     }
@@ -62,7 +62,7 @@
         "narrative_id": "GH004",
         "coder_a": "protocol_gateway",
         "coder_b": "outside_taxonomy",
-        "note": "HTTP/2 broker 500 — gateway damage vs insufficient mechanism in text"
+        "note": "HTTP/2 broker 500 — Coder A: protocol_gateway; Coder B: insufficient mechanism in text (outside_taxonomy)"
       }
     ]
   },
