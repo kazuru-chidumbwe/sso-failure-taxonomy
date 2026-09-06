@@ -5,7 +5,7 @@
     "keycloak-github-live",
     "serverfault-live"
   ],
-  "fingerprint_policy": "Live-harvested rows carry a traceable public URL and fingerprint-safe paraphrase text. Author-constructed rows (url null) are vignettes written to resemble operator text in named source styles; they are not traceable to a single public thread.",
+  "fingerprint_policy": "Live-harvested rows: public URL + fingerprint-safe paraphrase only (originals not archived). Author-constructed rows (url null): operator-style vignettes in named source styles, not traceable to a single thread. Procedure: eligibility screen, neutral third-person paraphrase, strip usernames/hostnames/org names/IPs/emails/tokens, author fingerprint scan before release. See external-eval/README.md.",
   "narratives": [
     {
       "id": "EN001",

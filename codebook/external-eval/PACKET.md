@@ -43,6 +43,20 @@ For each narrative:
 
 ---
 
+## Evidence-sufficiency routing precondition (v1.0.18+)
+
+Apply **before** the Table IV walk:
+
+1. **Assign a Table IV mechanism label** only when the narrative states at least one **affirmative mechanism indicator** for that cell’s inclusion rule and **no stated fact contradicts** that label.
+2. **Route to `outside_taxonomy`** when:
+   - evidence is **symptom-only** (no mechanism indicator for any inclusion rule);
+   - **two or more** Table IV cells remain equally plausible after tie-breakers; or
+   - **no inclusion rule** applies.
+
+**Pilot note:** The external routing pilot in `reliability-external-v1.json` predates this rule. Reported outside-taxonomy rates are not comparable across coders until a future study applies v1.0.18+ prospectively.
+
+---
+
 ## Tie-breakers (mandatory)
 
 1. **Identifier instability** → `edge_identifier` even when failure looks like authorize/release.  

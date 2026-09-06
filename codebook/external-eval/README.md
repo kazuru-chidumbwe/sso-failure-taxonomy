@@ -23,12 +23,23 @@ Public-narrative feasibility corpus for IEEE Access §IV-K. **Not part of N=11.*
 
 Author-constructed vignettes resemble operator text in named source styles; they are **not** traceable to a single public thread (same honesty class as design-derived estate scenarios).
 
+## Fingerprint-safe paraphrase procedure (v1.0.18+)
+
+Live-harvested rows are **not** verbatim copies of public threads in the published corpus.
+
+| Step | Procedure |
+| --- | --- |
+| 1. Source eligibility | Only **publicly readable** threads (Keycloak GitHub issues, ServerFault questions) with no paywall or private attachment requirement. |
+| 2. Archive policy | **Originals are not archived** in the repository. Only the paraphrase text, provenance class, and (when permitted) a traceable public URL are retained. |
+| 3. Paraphrase | Rewrite operator symptoms and mechanism cues in neutral third person; remove usernames, hostnames, organization names, IP addresses, e-mail addresses, ticket IDs, configuration secrets, access tokens, and other unique identifiers. |
+| 4. Fingerprint check | Author review scans each row for surviving identifiers or reconstructable fingerprints before release. |
+| 5. Ground truth | Public-thread narratives are **not verified incident ground truth**; they test routability of the codebook on operator-style text. |
+
+The one-line `fingerprint_policy` field in `narratives.json` summarizes this discipline for machine readers.
+
 ## Status (6 Sep 2026)
 
 - **Coder A:** independent practitioner — complete (`coder-a.json`, 95 min).
 - **Coder B:** independent practitioner — complete (`coder-b.json`, 120 min).
 - **Overlap (n=13):** 11/13 agreement (84.6%); Gwet AC1 = 0.83; Cohen κ = 0.61 (bootstrap CI includes zero).
-- Outside-taxonomy on assigned narratives: Coder A 14/39 (35.9%); Coder B 36/39 (92.3%).
-- Disagreements: EN027 (author-constructed), GH004 (live-harvested).
-
-N=11 structured-packet pilot remains in `codebook/reliability.json` (frozen at `v1.0.12` audit).
+- **Outside-taxonomy (assigned sets):** Coder A 14/39 (35.9%); Coder B 36/39 (92.3%). Rates predate evidence-sufficiency rule in `codebook/taxonomy.json` (v1.0.18+).

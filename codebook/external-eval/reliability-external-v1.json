@@ -13,8 +13,28 @@
     "Coder A and Coder B: independent IAM/SSO practitioners (39 narratives each; disjoint + 13 overlap). Both coders have author_coded=false in coder JSON.",
     "Corpus v2: 35 live-harvested (traceable URL) + 30 author-constructed (url null). Overlap n=13: 9 live + 4 author-constructed.",
     "N=11 structured-packet pilot retained in codebook/reliability.json (separate audit trail).",
-    "Human coder files only — no pipeline-generated assignments."
+    "Human coder files only — no pipeline-generated assignments.",
+    "Evidence-sufficiency rule in codebook/taxonomy.json (v1.0.18+) postdates this pilot; outside-taxonomy rates are not comparable across coders until a future study applies the rule prospectively."
   ],
+  "coder_disclosure": {
+    "independence_statement": "Two practitioners independent of the author and of each other; no compensation; no access to N=11 gold labels before submit; no repository browse before submit per PACKET.md; author-constructed vignettes disclosed as a corpus class but not per-narrative IDs before coding; coding performed independently before any discussion.",
+    "coder_a": {
+      "background": "IAM/SSO operations practitioner",
+      "years_experience": "10+",
+      "prior_codebook_exposure": false,
+      "knew_author": false,
+      "knew_other_coder": false,
+      "hypotheses_disclosed": false
+    },
+    "coder_b": {
+      "background": "Federation/platform-security practitioner",
+      "years_experience": "10+",
+      "prior_codebook_exposure": false,
+      "knew_author": false,
+      "knew_other_coder": false,
+      "hypotheses_disclosed": false
+    }
+  },
   "coders": {
     "coder_a": {
       "file": "codebook/external-eval/coder-a.json",

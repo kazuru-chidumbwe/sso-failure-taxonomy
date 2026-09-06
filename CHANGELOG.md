@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.18 — 2026-09-06
+
+Gates/Ng convergent revision (sponsor round 6).
+
+- **`codebook/taxonomy.json`** — explicit evidence-sufficiency routing precondition (`evidence_sufficiency_rule`; postdates reported pilots).
+- **`codebook/stress-cases.json`** — three borderline vignettes (S6–S8): `multi_site_affinity` vs `cluster_state`, `edge_callback_consume` vs `edge_side_effect`, `dual_idp_boundary` vs `protocol_gateway`.
+- **`codebook/external-eval/`** — fingerprint-safe paraphrase procedure in `README.md`; sufficiency rule in `PACKET.md`; expanded `fingerprint_policy` in `narratives.json`; `coder_disclosure` in `reliability-external-v1.json`.
+- **Stats / N=11.** Unchanged; byte-frozen at `v1.0.12`.
+
 ## 1.0.17 — 2026-09-06
 
 Coder independence provenance (sponsor / Gates round-3).

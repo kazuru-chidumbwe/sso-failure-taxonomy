@@ -30,12 +30,35 @@
       "id": "S5",
       "narrative": "Warm SSO is treated as sufficient to skip edge re-authorization after network ACL revoke (no callback race).",
       "coding": "session_plane",
-      "rationale": "Tie-breaker favors nested session planes over edge_side_effect when release was never attempted."
+      "rationale": "Tie-breaker favors nested session planes over edge_side_effect when release was never attempted.",
+      "ambiguous_pair": "session_plane vs edge_side_effect"
+    },
+    {
+      "id": "S6",
+      "narrative": "After site-level load-balancer failover, users land on a cold node in the secondary site. The browser still carries an SSO cookie but application session attributes are missing until full re-login. No divergent authentication outcomes across nodes within the same IdP cluster are reported.",
+      "coding": "multi_site_affinity",
+      "rationale": "Cross-site stickiness and session visibility loss after failover; cluster_state applies only when in-cluster cache split is affirmed after affinity is ruled out.",
+      "ambiguous_pair": "multi_site_affinity vs cluster_state"
+    },
+    {
+      "id": "S7",
+      "narrative": "Identity login succeeds and the first edge callback returns HTTP 200, but downstream firewall sync fails and network access is unchanged. The operator retries with the same callback URL; the edge endpoint accepts the second presentation because it checks capability presence only and does not atomically consume.",
+      "coding": "edge_callback_consume",
+      "rationale": "Consume-defect tie-breaker: single-use lifecycle failure when a second presentation is accepted without atomic consumption.",
+      "ambiguous_pair": "edge_callback_consume vs edge_side_effect"
+    },
+    {
+      "id": "S8",
+      "narrative": "Users authenticating through the secondary IdP receive group memberships as opaque binary attribute values while the primary IdP emits the same LDAP groups as string security identifiers; application authorization fails intermittently. Packet capture shows intact SAML POST size with no reported middlebox truncation.",
+      "coding": "dual_idp_boundary",
+      "rationale": "Shared directory with divergent token or claim semantics across co-deployed IdPs; no affirmative gateway payload damage before IdP logic.",
+      "ambiguous_pair": "dual_idp_boundary vs protocol_gateway"
     }
   ],
   "summary": {
+    "n": 8,
     "outside_taxonomy": 4,
-    "in_taxonomy": 1,
+    "in_taxonomy": 4,
     "added_to_n11": false
   }
 }
