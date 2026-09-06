@@ -35,4 +35,4 @@ See `codebook/external-eval/` for the §IV-K feasibility corpus (65 narratives, 
 
 ## Cite
 
-Tag `v1.0.13` · wire Zenodo version DOI in manuscript ref [38]. N=11 catalog byte-frozen at `v1.0.12`.
+Tag **`v1.0.16`** · Zenodo version DOI in manuscript ref [38]. N=11 catalog byte-frozen at `v1.0.12`.

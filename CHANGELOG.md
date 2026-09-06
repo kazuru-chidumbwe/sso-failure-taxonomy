@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.16 — 2026-09-06
+
+Corpus provenance honesty fix (sponsor block).
+
+- **`narratives.json` v2.** 35 live-harvested (traceable URL + paraphrase) + 30 author-constructed (`url: null`, `source_style` only). Removes placeholder/tag-index/homepage URLs.
+- **Live Keycloak issues.** Raw GitHub paste replaced with fingerprint-safe paraphrases (GH001–GH020 block).
+- **Overlap disclosure.** 13-narrative block = 9 live + 4 author-constructed (EN027–EN030).
+- **Validation.** `validate_corpus_provenance.py` enforces invariants.
+- **N=11.** Unchanged; byte-frozen at `v1.0.12`.
+
 ## 1.0.15 — 2026-09-06
 
 Sponsor recount fix — external-eval summary aligned to `coder-b.json`.

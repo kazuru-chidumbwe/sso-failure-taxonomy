@@ -11,7 +11,7 @@
     "Narratives are public, fingerprint-safe paraphrases — not structured packets.",
     "Table IV applied to raw text per PACKET.md; no repository browse before submit.",
     "Coder A and Coder B: independent IAM/SSO practitioners (39 narratives each; disjoint + 13 overlap).",
-    "Inter-rater agreement computed on 13-narrative overlap subset only (not full n=65).",
+    "Corpus v2: 35 live-harvested (traceable URL) + 30 author-constructed (url null). Overlap n=13: 9 live + 4 author-constructed.",
     "N=11 structured-packet pilot retained in codebook/reliability.json (separate audit trail).",
     "Human coder files only — no pipeline-generated assignments."
   ],
@@ -87,6 +87,6 @@
     "n_corpus": 65,
     "n_double_coded": 13,
     "n_single_coded": 52,
-    "interpretation": "Feasibility pilot on raw public narratives under less favorable information than the structured N=11 packet. Outside-taxonomy routing is highly sensitive to non-invention strictness (14/39 vs 36/39 on assigned sets). Overlap block (n=13) is a routability feasibility signal; Cohen κ CI includes zero and is not a reliability estimate."
+    "interpretation": "Feasibility pilot on narrative text under less favorable information than the structured N=11 packet. Corpus mixes 35 live-harvested and 30 author-constructed vignettes (see narratives.json provenance). Outside-taxonomy routing is highly sensitive to non-invention strictness. Overlap block (n=13; 9 live + 4 author-constructed) is a routability feasibility signal; Cohen κ CI includes zero."
   }
 }
