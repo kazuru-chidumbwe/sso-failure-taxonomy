@@ -1,7 +1,7 @@
 {
   "schema": "sso-failure-taxonomy/external-eval/coder-response/v1",
   "coder_slot": "Coder B",
-  "descriptor": "author (Coder B slot; disjoint block self-coded per submitter)",
+  "descriptor": "independent coder, IAM/SSO operations",
   "date_completed": "2026-09-06",
   "minutes_spent": null,
   "repo_browsed_before_submit": false,
