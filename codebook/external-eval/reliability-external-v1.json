@@ -10,7 +10,7 @@
   "protocol_notes": [
     "Narratives are public, fingerprint-safe paraphrases — not structured packets.",
     "Table IV applied to raw text per PACKET.md; no repository browse before submit.",
-    "Coder A and Coder B: independent IAM/SSO practitioners (39 narratives each; disjoint + 13 overlap).",
+    "Coder A and Coder B: independent IAM/SSO practitioners (39 narratives each; disjoint + 13 overlap). Both coders have author_coded=false in coder JSON.",
     "Corpus v2: 35 live-harvested (traceable URL) + 30 author-constructed (url null). Overlap n=13: 9 live + 4 author-constructed.",
     "N=11 structured-packet pilot retained in codebook/reliability.json (separate audit trail).",
     "Human coder files only — no pipeline-generated assignments."
@@ -19,6 +19,7 @@
     "coder_a": {
       "file": "codebook/external-eval/coder-a.json",
       "descriptor": "independent coder, IAM/SSO operations",
+      "author_coded": false,
       "date_completed": "2026-09-06",
       "minutes_spent": 95,
       "n_assigned": 39,
@@ -27,6 +28,7 @@
     "coder_b": {
       "file": "codebook/external-eval/coder-b.json",
       "descriptor": "independent coder, IAM/SSO operations",
+      "author_coded": false,
       "date_completed": "2026-09-06",
       "minutes_spent": 120,
       "n_assigned": 39,

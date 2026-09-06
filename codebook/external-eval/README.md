@@ -7,9 +7,10 @@ Public-narrative feasibility corpus for IEEE Access §IV-K. **Not part of N=11.*
 | `narratives.json` | 65 narratives — **35 live-harvested** + **30 author-constructed** (schema v2) |
 | `PACKET.md` | Standalone coder instructions + response sheet template |
 | `RECRUITMENT.md` | Outreach blurb and eligibility |
-| `coder-a.json` | Independent practitioner Coder A (39 narratives) |
-| `coder-b.json` | Independent practitioner Coder B (39 narratives) |
+| `coder-a.json` | Independent practitioner Coder A (`author_coded: false`, 39 narratives) |
+| `coder-b.json` | Independent practitioner Coder B (`author_coded: false`, 39 narratives) |
 | `reliability-external-v1.json` | Overlap agreement + outside-taxonomy summary |
+| `PROVENANCE.md` | Coder independence + correction for erroneous `e34f848` commit subject |
 
 ## Corpus provenance (v2)
 

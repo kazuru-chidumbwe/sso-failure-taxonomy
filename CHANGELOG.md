@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.17 — 2026-09-06
+
+Coder independence provenance (sponsor / Gates round-3).
+
+- **`author_coded: false`** on `coder-a.json`, `coder-b.json`, and `reliability-external-v1.json` coders block.
+- **`PROVENANCE.md`** — authoritative independence statement; documents erroneous `e34f848` commit subject ("Coder B (author)").
+- **Docs.** `external-eval/README.md` links provenance note.
+- **Stats / corpus.** Unchanged from v1.0.16 (35 live + 30 author-constructed; overlap 11/13).
+
 ## 1.0.16 — 2026-09-06
 
 Corpus provenance honesty fix (sponsor block).
