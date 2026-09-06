@@ -12,9 +12,11 @@ Public-narrative feasibility corpus for IEEE Access §IV-K. **Not part of N=11.*
 ## Status (6 Sep 2026)
 
 - Corpus **frozen** (n=65).
-- Independent practitioner recruitment **in progress**.
-- **No** inter-rater agreement or outside-taxonomy rates in the manuscript until human coding completes.
-- Draft pipeline-generated coder JSON was **removed** — not citeable.
+- **Coder A:** complete (`coder-a.json`, 39 narratives, 2026-09-06).
+- **Coder B:** pending (`coder-b.json`).
+- Inter-rater agreement: **pending** Coder B overlap submission.
+- Coder A descriptive: **14/39** `outside_taxonomy` (35.9%); overlap block **9/13** outside (pending κ).
+- **No** manuscript §IV-K agreement stats until Coder B completes overlap.
 
 N=11 structured-packet pilot remains in `codebook/reliability.json` (frozen at `v1.0.12` audit).
 

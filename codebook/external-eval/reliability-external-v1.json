@@ -1,6 +1,6 @@
 {
   "schema": "sso-failure-taxonomy/reliability/external/v1",
-  "status": "pending_human_coders",
+  "status": "coder_a_complete_pending_b",
   "corpus": "codebook/external-eval/narratives.json",
   "n_corpus": 65,
   "recruitment_started": "2026-09-06",
@@ -10,10 +10,49 @@
     "Narratives are public, fingerprint-safe paraphrases — not structured packets.",
     "Independent IAM/SSO practitioners apply Table IV to raw text using PACKET.md.",
     "Do not browse the public repository before submitting responses.",
-    "Agreement statistics will be published here when human coding completes.",
+    "Inter-rater agreement computed on 13-narrative overlap subset when Coder B submits.",
     "N=11 structured-packet pilot retained in codebook/reliability.json (separate audit trail).",
-    "Draft pipeline-generated coder files were removed 6 Sep 2026 — not submit-grade."
+    "Human coder files only — no pipeline-generated assignments."
   ],
+  "coders": {
+    "coder_a": {
+      "file": "codebook/external-eval/coder-a.json",
+      "descriptor": "independent coder, IAM/SSO operations",
+      "date_completed": "2026-09-06",
+      "minutes_spent": 95,
+      "n_assigned": 39,
+      "repo_browsed_before_submit": false
+    },
+    "coder_b": {
+      "file": "codebook/external-eval/coder-b.json",
+      "status": "pending"
+    }
+  },
+  "overlap_narrative_ids": [
+    "EN027", "EN028", "EN029", "EN030",
+    "GH001", "GH002", "GH003", "GH004", "GH005",
+    "GH009", "GH010", "GH015", "GH016"
+  ],
+  "coder_a_summary": {
+    "n_assigned": 39,
+    "outside_taxonomy_n": 14,
+    "outside_taxonomy_pct": 35.9,
+    "by_category": {
+      "outside_taxonomy": 14,
+      "protocol_gateway": 5,
+      "cluster_state": 4,
+      "directory_federation": 3,
+      "mfa_delivery": 3,
+      "edge_callback_consume": 2,
+      "dual_idp_boundary": 2,
+      "multi_site_affinity": 2,
+      "session_plane": 2,
+      "edge_side_effect": 1,
+      "edge_identifier": 1
+    },
+    "overlap_outside_taxonomy_n": 10,
+    "overlap_n": 13
+  },
   "category": null,
   "corpus_summary": null
 }
