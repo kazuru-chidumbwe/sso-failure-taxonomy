@@ -56,7 +56,7 @@
         "narrative_id": "EN027",
         "coder_a": "outside_taxonomy",
         "coder_b": "edge_callback_consume",
-        "note": "ITP/third-party cookie vs callback-correlation lifecycle"
+        "note": "ITP/third-party cookie (Coder A: outside_taxonomy) vs callback-correlation lifecycle (Coder B: edge_callback_consume)"
       },
       {
         "narrative_id": "GH004",
