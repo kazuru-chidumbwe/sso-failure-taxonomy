@@ -47,7 +47,7 @@
       "Sev-2": "Pri-2",
       "Sev-3": "Pri-3"
     },
-    "note": "Legacy JSON field retained for the independent-coder response sheet; manuscript Table IVI defines Pri-1/2/3."
+    "note": "Legacy JSON field retained for the independent-coder response sheet; manuscript Table V defines Pri-1/2/3."
   },
   "severity": {
     "n_agree": 10,

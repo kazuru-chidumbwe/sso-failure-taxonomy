@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.14 — 2026-09-06
+
+External-eval human coding complete (A2).
+
+- **Coder A.** Independent practitioner response (`coder-a.json`, 39 narratives, 95 min).
+- **Coder B.** Independent practitioner response (`coder-b.json`, 39 narratives, 120 min).
+- **Reliability.** `reliability-external-v1.json` — overlap n=13: 11/13 agreement, Gwet AC1 0.829, Cohen κ 0.612.
+- **N=11.** Catalog unchanged; byte-frozen at `v1.0.12`.
+
 ## 1.0.13 — 2026-09-06
 
 Gates round-2 batch (manuscript table renumber I–X; external narrative eval infrastructure; harness rename).

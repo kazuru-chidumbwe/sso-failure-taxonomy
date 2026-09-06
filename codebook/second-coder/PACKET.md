@@ -1,6 +1,6 @@
 # Independent coding packet — label assignment
 
-**Task:** Assign one Table IV category and one Table IVI severity to each case.  
+**Task:** Assign one Table IV category and one Table V severity to each case.  
 **This is not taxonomy discovery.** Table IV is normative. You apply the inclusion/exclusion rules and tie-breakers.  
 **Time:** about one hour.  
 **Order:** cases are in randomized order.  
@@ -16,7 +16,7 @@ Return the filled response sheet. Do not discuss cases with the author until you
 
 1. This packet (instructions + cases).  
 2. Table IV (inclusion / exclusion).  
-3. Table IVI (severity).  
+3. Table V (severity).  
 4. Tie-breakers (below).  
 5. Response sheet.
 
@@ -36,7 +36,7 @@ The additional-observations field is evidence for Table IV **excludes**. Use it.
 
 1. Walk the tie-breaker order in Table IV: first matching **Yes** wins.  
 2. Assign **exactly one** category from Table IV.  
-3. Assign **exactly one** severity from Table IVI, written as `Sev-1`, `Sev-2`, or `Sev-3`. Severity is a second axis. It is not a substitute for mechanism. The same mechanism may appear at two severities.  
+3. Assign **exactly one** severity from Table V, written as `Sev-1`, `Sev-2`, or `Sev-3`. Severity is a second axis. It is not a substitute for mechanism. The same mechanism may appear at two severities.  
 4. If no Table IV cell fits, write `NEW_LABEL` and one sentence why.  
 5. Do not invent incidents. Do not recode another coder’s sheet.
 
@@ -70,7 +70,7 @@ The additional-observations field is evidence for Table IV **excludes**. Use it.
 
 ---
 
-## Table IVI — Severity axis
+## Table V — Severity axis
 
 | Code | Meaning |
 | --- | --- |
