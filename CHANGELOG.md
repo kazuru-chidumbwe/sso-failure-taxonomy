@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.0.13 — 2026-09-06
+
+Gates round-2 batch (manuscript table renumber I–X; external narrative eval infrastructure; harness rename).
+
+- **Table numbering.** Manuscript tables I–X sequential mapping in `docs/MANUSCRIPT-TABLES.md` and `incidents.json` → `manuscript_tables`.
+- **Harness.** Rename mode `jwt_only` → `presence_only` (Schedule A / F5); sync tests, `SCHEDULES.md`, READMEs, `EVIDENCE-INDEX.md`.
+- **External eval.** `codebook/external-eval/` — 65 public narratives; `PACKET.md` + `RECRUITMENT.md`; `reliability-external-v1.json` status `pending_human_coders` (integrity fix: draft pipeline coder JSON removed).
+- **Docs.** `docs/QUICK-START.md`; issue template → Table IV; stress-cases rationales → Table IV.
+- **Provenance.** Drop `ops-assessed` from DESIGN row provenance strings (architect note only).
+- **Repro.** CI matrix Python 3.10/3.12 on `ubuntu-latest`; release SHA256 note in README.
+- **TAGS.md.** Wire Zenodo version DOI into manuscript ref **[38]**, not [28].
+- **N=11.** Catalog labels unchanged; byte-frozen at `v1.0.12` audit trail.
+
 ## 1.0.12 — 2026-09-01
 
 Submit-pass: figure render fix, Table VIII tracking, replicated-store production extension.
@@ -74,7 +87,7 @@ Packaging and manuscript-alignment iterations between the first Access freeze (`
 
 ## 0.1.6 — 2026-08-12
 
-Document explicit F3/F5 harness schedules (`harness/SCHEDULES.md`): Schedule A `jwt_only` (second acceptance), Schedule B `naive` (false reject), Schedule C `atomic`. Narrow threat model and atomic single-winner wording for manuscript IV lock.
+Document explicit F3/F5 harness schedules (`harness/SCHEDULES.md`): Schedule A `presence_only` (second acceptance), Schedule B `naive` (false reject), Schedule C `atomic`. Narrow threat model and atomic single-winner wording for manuscript IV lock.
 
 ## 0.1.5 — 2026-08-12
 

@@ -5,7 +5,7 @@ Stdlib only. Not a production IdP. Synthetic callback capabilities; no estate da
 Maps to manuscript edge_callback_consume incidents F3 (Sev-2 false reject) and F5 (Sev-3 replay).
 
 Exact modeled schedules: harness/SCHEDULES.md
-  Schedule A (jwt_only): presence without consume → second path accepts.
+  Schedule A (presence_only): presence without consume → second path accepts.
   Schedule B (naive): check, release, delay, pop → loser false-rejects after seeing present.
   Schedule C (atomic): single-winner pop under one lock.
 """
@@ -20,7 +20,7 @@ import time
 from dataclasses import dataclass, field
 from typing import Literal
 
-Mode = Literal["naive", "jwt_only", "atomic"]
+Mode = Literal["naive", "presence_only", "atomic"]
 
 
 class NaiveCallbackStore:
@@ -100,14 +100,14 @@ class RunResult:
             "leftover": self.leftover,
             "replay_accepted": self.replay_accepted,
             "f3_false_reject_risk": f3,
-            "f5_replay_risk": self.mode == "jwt_only" and self.replay_accepted,
+            "f5_replay_risk": self.mode == "presence_only" and self.replay_accepted,
         }
 
 
 def _store(mode: Mode) -> NaiveCallbackStore | JwtOnlyCallbackStore | AtomicCallbackStore:
     if mode == "naive":
         return NaiveCallbackStore()
-    if mode == "jwt_only":
+    if mode == "presence_only":
         return JwtOnlyCallbackStore()
     return AtomicCallbackStore()
 
@@ -168,14 +168,14 @@ def replay_after_one(mode: Mode) -> RunResult:
 def main() -> int:
     p = argparse.ArgumentParser(description="F3/F5 callback-consume demo (stdlib)")
     p.add_argument("scenario", choices=["concurrent", "replay", "both"])
-    p.add_argument("--mode", choices=["naive", "jwt_only", "atomic", "both"], default="both")
+    p.add_argument("--mode", choices=["naive", "presence_only", "atomic", "both"], default="both")
     p.add_argument("--workers", type=int, default=8)
     p.add_argument("--json", action="store_true")
     args = p.parse_args()
 
     modes: list[Mode]
     if args.mode == "both":
-        modes = ["naive", "jwt_only", "atomic"]
+        modes = ["naive", "presence_only", "atomic"]
     else:
         modes = [args.mode]  # type: ignore[list-item]
 

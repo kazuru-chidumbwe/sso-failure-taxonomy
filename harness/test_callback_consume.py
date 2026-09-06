@@ -39,8 +39,8 @@ class NaiveTests(unittest.TestCase):
         self.assertEqual(store.consume("n"), "p")
         self.assertIsNone(store.consume("n"))
 
-    def test_jwt_only_replay_accepted(self) -> None:
-        r = replay_after_one("jwt_only")
+    def test_presence_only_replay_accepted(self) -> None:
+        r = replay_after_one("presence_only")
         self.assertTrue(r.replay_accepted)
 
     def test_atomic_pop_is_getdel(self) -> None:

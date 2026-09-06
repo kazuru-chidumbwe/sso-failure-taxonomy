@@ -8,7 +8,7 @@
     "Gold category/severity/form for the published catalog are in codebook/incidents.json (Table IV).",
     "The round is not blinded against that catalog.",
     "The coder worked from codebook/second-coder/PACKET.md only and did not browse the repository before submit.",
-    "Agreement is label assignment given Table II, not taxonomy discovery and not a multi-estate reliability claim."
+    "Agreement is label assignment given Table IV, not taxonomy discovery and not a multi-estate reliability claim."
   ],
   "coder_descriptor": "independent_coder_iam_sso_operations",
   "date": "2026-08-12",
@@ -47,7 +47,7 @@
       "Sev-2": "Pri-2",
       "Sev-3": "Pri-3"
     },
-    "note": "Legacy JSON field retained for the independent-coder response sheet; manuscript Table III defines Pri-1/2/3."
+    "note": "Legacy JSON field retained for the independent-coder response sheet; manuscript Table IVI defines Pri-1/2/3."
   },
   "severity": {
     "n_agree": 10,

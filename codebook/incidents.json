@@ -21,13 +21,15 @@
   },
   "manuscript_tables": {
     "evidence_classes": "I",
-    "taxonomy": "II",
-    "operational_priority_class": "III",
-    "case_catalog": "IV",
-    "practitioner_checklist": "V",
-    "prior_work_comparison": "VI",
-    "f5_threat_model": "VII",
-    "protocol_artifact_contrast": "VIII"
+    "claims_supported": "II",
+    "evidence_strength_by_case": "III",
+    "taxonomy": "IV",
+    "operational_priority_class": "V",
+    "protocol_artifact_contrast": "VI",
+    "case_catalog": "VII",
+    "f5_threat_model": "VIII",
+    "practitioner_checklist": "IX",
+    "prior_work_positioning": "X"
   },
   "forms": {
     "DESIGN": 5,
@@ -47,7 +49,7 @@
       "sev": 2,
       "form": "DESIGN",
       "evidence_class": ["E0"],
-      "provenance": "Design scenario; ops-assessed; architect note only",
+      "provenance": "Design scenario; architect note only",
       "summary": "Models identity success without network release on a non-transactional IdP/edge boundary."
     },
     {
@@ -56,7 +58,7 @@
       "sev": 2,
       "form": "DESIGN",
       "evidence_class": ["E0"],
-      "provenance": "Design scenario; ops-assessed; architect note only",
+      "provenance": "Design scenario; architect note only",
       "summary": "Models device-quota exhaustion under ephemeral MACs for legitimate users."
     },
     {
@@ -65,7 +67,7 @@
       "sev": 2,
       "form": "DESIGN",
       "evidence_class": ["E0", "E3"],
-      "provenance": "Design scenario; ops-assessed; architect note + harness",
+      "provenance": "Design scenario; architect note + harness",
       "summary": "Models false rejection of a legitimate concurrent callback under non-atomic callback consumption."
     },
     {
@@ -74,7 +76,7 @@
       "sev": 1,
       "form": "DESIGN",
       "evidence_class": ["E0"],
-      "provenance": "Design scenario; ops-assessed; architect note only",
+      "provenance": "Design scenario; architect note only",
       "summary": "Models dual session-plane friction and unsafe shortcuts when SSO is warm."
     },
     {
@@ -83,7 +85,7 @@
       "sev": 3,
       "form": "DESIGN",
       "evidence_class": ["E0", "E3"],
-      "provenance": "Design scenario; ops-assessed; architect note + harness",
+      "provenance": "Design scenario; architect note + harness",
       "summary": "Models second presentation of an edge callback capability without atomic single-use consumption."
     },
     {

@@ -6,7 +6,7 @@
       "id": "S1",
       "narrative": "Login fails after IdP success when the RP clock is skewed past assertion NotOnOrAfter / token exp during a JWKS rollover window.",
       "coding": "outside_taxonomy",
-      "rationale": "Clock/JWKS adjacent surfaces; no Table I inclusion rule is primary."
+      "rationale": "Clock/JWKS adjacent surfaces; no Table IV inclusion rule is primary."
     },
     {
       "id": "S2",
@@ -24,7 +24,7 @@
       "id": "S4",
       "narrative": "Authorization server rejects the token request for PKCE code_verifier mismatch; edge never receives a callback capability.",
       "coding": "outside_taxonomy",
-      "rationale": "AS-side PKCE failure is not edge_callback_consume and has no other Table I home."
+      "rationale": "AS-side PKCE failure is not edge_callback_consume and has no other Table IV home."
     },
     {
       "id": "S5",

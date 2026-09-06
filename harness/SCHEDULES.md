@@ -4,7 +4,7 @@ This file states the **exact harness assumptions**. Outcomes are properties of t
 
 Threat model (narrow): the harness models an edge callback capability that an attacker or concurrent client can present more than once within its validity window. It does **not** model authorization-server compromise, authorization-code or access-token theft, browser isolation failure, or cryptographic failure of OAuth/OIDC artifacts.
 
-## Schedule A — double acceptance (`jwt_only`, F5)
+## Schedule A — double acceptance (`presence_only`, F5)
 
 **Implementation assumption:** existence (or unexpired JWT-style presence) is treated as sufficient; the store never deletes / consumes the value; a failed or missing delete is not used to reject the second path.
 
@@ -13,7 +13,7 @@ Threat model (narrow): the harness models an edge callback capability that an at
 1. Path P1 checks that the callback capability is present → accepts.
 2. Path P2 presents the same capability → still present → accepts.
 
-**Observable in harness:** `mode=jwt_only`, `replay_accepted=true` (sequential `replay` scenario and leftover presence under concurrency).
+**Observable in harness:** `mode=presence_only`, `replay_accepted=true` (sequential `replay` scenario and leftover presence under concurrency).
 
 ## Schedule B — false reject of a legitimate path (`naive`, F3)
 

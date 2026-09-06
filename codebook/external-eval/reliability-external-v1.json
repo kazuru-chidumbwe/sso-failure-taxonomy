@@ -1,0 +1,19 @@
+{
+  "schema": "sso-failure-taxonomy/reliability/external/v1",
+  "status": "pending_human_coders",
+  "corpus": "codebook/external-eval/narratives.json",
+  "n_corpus": 65,
+  "recruitment_started": "2026-09-06",
+  "protocol": "raw_narrative_rule_application",
+  "packet": "codebook/external-eval/PACKET.md",
+  "protocol_notes": [
+    "Narratives are public, fingerprint-safe paraphrases — not structured packets.",
+    "Independent IAM/SSO practitioners apply Table IV to raw text using PACKET.md.",
+    "Do not browse the public repository before submitting responses.",
+    "Agreement statistics will be published here when human coding completes.",
+    "N=11 structured-packet pilot retained in codebook/reliability.json (separate audit trail).",
+    "Draft pipeline-generated coder files were removed 6 Sep 2026 — not submit-grade."
+  ],
+  "category": null,
+  "corpus_summary": null
+}

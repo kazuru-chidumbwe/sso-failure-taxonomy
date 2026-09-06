@@ -1,4 +1,4 @@
-name: External incident (Table I)
+name: External incident (Table IV)
 description: Submit a fingerprint-safe SSO/IAM incident for fit against the published ten-category taxonomy
 title: "[external-incident] "
 labels: ["external-incident"]
@@ -33,7 +33,7 @@ body:
   - type: dropdown
     id: category
     attributes:
-      label: Proposed Table I category
+      label: Proposed Table IV category
       options:
         - edge_side_effect
         - edge_identifier

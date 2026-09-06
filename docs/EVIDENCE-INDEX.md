@@ -39,7 +39,7 @@ python3 harness/callback_consume.py both --mode both --workers 8
 ```
 
 Expected class of result: atomic consume admits one concurrent winner and rejects a second
-presentation; naive check-then-delete admits a false-reject window; presence-only (`jwt_only`)
+presentation; naive check-then-delete admits a false-reject window; presence-only (`presence_only`)
 admits a second presentation. Exact modeled schedules: [`harness/SCHEDULES.md`](../harness/SCHEDULES.md).
 
 ## I4 synthetic size-class fixtures

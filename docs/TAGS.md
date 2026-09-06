@@ -4,7 +4,8 @@ Cite a tag, never floating `main`.
 
 | Tag | Role |
 | --- | --- |
-| `v1.0.12` | **Manuscript cite pin** (submit pass). Figure render fix; Table VIII tracking; `SCHEDULES.md` production extension. Wire new Zenodo version DOI into manuscript Availability / ref [28] after GitHub release. |
+| `v1.0.13` | **Gates round-2 batch.** Tables I–X mapping; `presence_only` harness rename; `codebook/external-eval/`; `docs/QUICK-START.md`. Wire new Zenodo version DOI into manuscript Availability / ref **[38]** after GitHub release. N=11 catalog frozen at `v1.0.12`. |
+| `v1.0.12` | **Manuscript cite pin** (submit pass). Figure render fix; Table VIII tracking; `SCHEDULES.md` production extension. Wire Zenodo version DOI into manuscript Availability / ref [38] after GitHub release. |
 | `v1.0.11` | Gates pass. Sequential table numbering I–VII; `operational_priority_class` mapping; figure ideal pass (content). Version DOI `10.5281/zenodo.22215468`. |
 | `v1.0.10` | **CITATION.cff policy fix.** `url:` and `identifiers` use concept DOI only (`10.5281/zenodo.21950901`). Version DOI belongs in the manuscript, not in the artifact metadata. |
 | `v1.0.9` | **IEEE Access / Zenodo cite pin** for manuscript Availability and ref [28]. Version DOI `10.5281/zenodo.22214839`. Tag snapshot's `CITATION.cff` still carried v1.0.8 DOI — superseded by v1.0.10 policy. |

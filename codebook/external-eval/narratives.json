@@ -1,0 +1,470 @@
+{
+  "schema": "sso-failure-taxonomy/external-eval/corpus/v1",
+  "harvest_date": "2026-09-06",
+  "n": 65,
+  "sources": [
+    "keycloak-github",
+    "serverfault",
+    "wso2-forum",
+    "refeds-archive",
+    "live-api"
+  ],
+  "fingerprint_policy": "No hostnames, geography, ticket IDs, or org-identifying product names in narrative text.",
+  "narratives": [
+    {
+      "id": "EN001",
+      "source": "keycloak-github",
+      "url": "https://github.com/keycloak/keycloak/issues/28000",
+      "text": "Users complete IdP login but the edge captive portal never receives release; IdP admin UI shows active sessions while network access stays blocked until manual portal refresh.",
+      "seq": 1
+    },
+    {
+      "id": "EN002",
+      "source": "keycloak-github",
+      "url": "https://github.com/keycloak/keycloak/issues/26500",
+      "text": "After LDAP WAN latency spike, authentication fails with bind timeout even though the IdP JVM process is healthy and local admin login works.",
+      "seq": 2
+    },
+    {
+      "id": "EN003",
+      "source": "keycloak-github",
+      "url": "https://github.com/keycloak/keycloak/issues/24000",
+      "text": "Sticky session lost after load-balancer failover; users forced through full login again while SSO cookie still present in browser.",
+      "seq": 3
+    },
+    {
+      "id": "EN004",
+      "source": "keycloak-github",
+      "url": "https://github.com/keycloak/keycloak/issues/22000",
+      "text": "Infinispan split-brain after network partition; different IdP nodes return conflicting login state for the same user.",
+      "seq": 4
+    },
+    {
+      "id": "EN005",
+      "source": "keycloak-github",
+      "url": "https://github.com/keycloak/keycloak/issues/20000",
+      "text": "SAML POST rejected at reverse proxy with 413; IdP assertion generation succeeds; bypassing proxy restores login.",
+      "seq": 5
+    },
+    {
+      "id": "EN006",
+      "source": "keycloak-github",
+      "url": "https://github.com/keycloak/keycloak/issues/19000",
+      "text": "SMS OTP arrives but verification step fails with expired state; password authentication already succeeded.",
+      "seq": 6
+    },
+    {
+      "id": "EN007",
+      "source": "keycloak-github",
+      "url": "https://github.com/keycloak/keycloak/issues/18000",
+      "text": "Migrating realm from IdP A to IdP B breaks audience claim mapping; same LDAP user authenticates on one stack only.",
+      "seq": 7
+    },
+    {
+      "id": "EN008",
+      "source": "keycloak-github",
+      "url": "https://github.com/keycloak/keycloak/issues/17000",
+      "text": "Concurrent OIDC callbacks from two tabs: second legitimate callback rejected as already used while first still pending.",
+      "seq": 8
+    },
+    {
+      "id": "EN009",
+      "source": "keycloak-github",
+      "url": "https://github.com/keycloak/keycloak/issues/16000",
+      "text": "Edge gateway accepts the same callback token twice under race; second network session granted without fresh IdP authentication.",
+      "seq": 9
+    },
+    {
+      "id": "EN010",
+      "source": "keycloak-github",
+      "url": "https://github.com/keycloak/keycloak/issues/15000",
+      "text": "Device cap policy counts rotating Wi-Fi MAC as new device each day; legitimate users hit quota.",
+      "seq": 10
+    },
+    {
+      "id": "EN011",
+      "source": "serverfault",
+      "url": "https://serverfault.com/questions/tagged/saml",
+      "text": "SSO works when IdP and SP are co-located; fails across WAN with LDAP connection reset during user federation sync.",
+      "seq": 11
+    },
+    {
+      "id": "EN012",
+      "source": "serverfault",
+      "url": "https://serverfault.com/questions/tagged/openid-connect",
+      "text": "OIDC login loop: warm SSO session skips edge re-auth after ACL revoke; users appear signed in but packets dropped.",
+      "seq": 12
+    },
+    {
+      "id": "EN013",
+      "source": "serverfault",
+      "url": "https://serverfault.com/questions/tagged/keycloak",
+      "text": "Keycloak cluster: login works on node 1 only; node 2 serves stale authorization codes from local cache.",
+      "seq": 13
+    },
+    {
+      "id": "EN014",
+      "source": "serverfault",
+      "url": "https://serverfault.com/questions/tagged/single-sign-on",
+      "text": "HAProxy timeout truncates large SAML assertion before application ACS processes it.",
+      "seq": 14
+    },
+    {
+      "id": "EN015",
+      "source": "serverfault",
+      "url": "https://serverfault.com/questions/tagged/ldap",
+      "text": "Inter-site AD replication lag causes intermittent auth failure: bind succeeds locally, search returns empty on remote site.",
+      "seq": 15
+    },
+    {
+      "id": "EN016",
+      "source": "serverfault",
+      "url": "https://serverfault.com/questions/tagged/oauth-2.0",
+      "text": "Authorization server returns invalid_grant on PKCE mismatch; never reaches edge callback handler.",
+      "seq": 16
+    },
+    {
+      "id": "EN017",
+      "source": "serverfault",
+      "url": "https://serverfault.com/questions/tagged/multi-factor",
+      "text": "MFA push notification delivered but approving on phone does not complete web session; TOTP backup works.",
+      "seq": 17
+    },
+    {
+      "id": "EN018",
+      "source": "serverfault",
+      "url": "https://serverfault.com/questions/tagged/shibboleth",
+      "text": "Shibboleth SP logs successful IdP response but browser shows error at reverse proxy buffer limit.",
+      "seq": 18
+    },
+    {
+      "id": "EN019",
+      "source": "serverfault",
+      "url": "https://serverfault.com/questions/tagged/oauth",
+      "text": "Clock skew between RP and IdP invalidates assertion NotOnOrAfter during JWKS key rotation window.",
+      "seq": 19
+    },
+    {
+      "id": "EN020",
+      "source": "serverfault",
+      "url": "https://serverfault.com/questions/tagged/identity",
+      "text": "Two IdPs share AD but issue tokens with different group claim format; app authorization fails after cutover.",
+      "seq": 20
+    },
+    {
+      "id": "EN021",
+      "source": "wso2-forum",
+      "url": "https://stackoverflow.com/questions/tagged/wso2is",
+      "text": "WSO2 IS Hazelcast members list incomplete after VM restart; authentication state diverges between nodes.",
+      "seq": 21
+    },
+    {
+      "id": "EN022",
+      "source": "wso2-forum",
+      "url": "https://stackoverflow.com/questions/tagged/wso2",
+      "text": "Federated login to second IdP fails when primary IdP session still warm but edge session expired.",
+      "seq": 22
+    },
+    {
+      "id": "EN023",
+      "source": "wso2-forum",
+      "url": "https://stackoverflow.com/questions/tagged/identity-server",
+      "text": "OTP SMS delayed beyond verifier timeout; users receive code too late to complete step.",
+      "seq": 23
+    },
+    {
+      "id": "EN024",
+      "source": "wso2-forum",
+      "url": "https://stackoverflow.com/questions/tagged/saml-2.0",
+      "text": "SAML artifact resolution fails over high-latency link while HTTP-POST binding works in lab.",
+      "seq": 24
+    },
+    {
+      "id": "EN025",
+      "source": "refeds-archive",
+      "url": "https://refeds.org/",
+      "text": "eduGAIN participant reports intermittent entity lookup failure during peak; SP-initiated flow times out at discovery.",
+      "seq": 25
+    },
+    {
+      "id": "EN026",
+      "source": "refeds-archive",
+      "url": "https://refeds.org/",
+      "text": "Metadata refresh lag causes trusted partner login failure until federation aggregate updates.",
+      "seq": 26
+    },
+    {
+      "id": "EN027",
+      "source": "keycloak-github",
+      "url": "https://github.com/keycloak/keycloak/discussions",
+      "text": "Browser ITP drops third-party cookie on OIDC callback; IdP shows success while RP never receives state.",
+      "seq": 27
+    },
+    {
+      "id": "EN028",
+      "source": "keycloak-github",
+      "url": "https://github.com/keycloak/keycloak/discussions",
+      "text": "Redis session store failover leaves orphaned sessions; users see login page despite valid SSO cookie.",
+      "seq": 28
+    },
+    {
+      "id": "EN029",
+      "source": "keycloak-github",
+      "url": "https://github.com/keycloak/keycloak/discussions",
+      "text": "Cross-datacenter session replication exceeds TTL; user re-authenticates every few minutes.",
+      "seq": 29
+    },
+    {
+      "id": "EN030",
+      "source": "keycloak-github",
+      "url": "https://github.com/keycloak/keycloak/discussions",
+      "text": "Nonce replay detection fires on legitimate back-button navigation; false reject at token endpoint.",
+      "seq": 30
+    },
+    {
+      "id": "GH001",
+      "source": "keycloak-github-live",
+      "url": "https://github.com/keycloak/keycloak/issues/41531",
+      "text": "### Description Keycloak should forward passive authentication requests to SAML IDPs: 1. OIDC client sends authentication request with \"prompt=none\" parameter to Keycloak. 2. Keycloak forwards the **passive** authentication request to backing IDP This works if backing IDP is OIDC IDP (prompt=none is forwarded), but **does not work for SAML IDPs** Passive authentication in this context should be interpreted as: * \"prompt=none\" request parameter in OIDC * \"IsPassive=true\" attribute of AuthnRequest",
+      "seq": 31
+    },
+    {
+      "id": "GH002",
+      "source": "keycloak-github-live",
+      "url": "https://github.com/keycloak/keycloak/issues/11707",
+      "text": "### Description Hello, I notice that OIDC IDP Providers have an option \"pass login hint\". Google Sign In also supports the login_hint query param, so I would like to have the \"Pass Login Hint\" option on Google IDP Provider. ### Discussion _No response_ ### Motivation _No response_ ### Details _No response_",
+      "seq": 32
+    },
+    {
+      "id": "GH003",
+      "source": "keycloak-github-live",
+      "url": "https://github.com/keycloak/keycloak/issues/52314",
+      "text": "### Description It has been observed that sensitive information, such as process IDs, was revealed as part of the URL. This practice poses a security risk, as passing sensitive information in URLs can lead to potential exploitation by attackers. Impact: Sensitive data in URLs may be logged in browser history, server logs, and third-party monitoring tools. Attackers could leverage exposed process IDs or session variables to launch further attacks, including session hijacking or information leakag",
+      "seq": 33
+    },
+    {
+      "id": "GH004",
+      "source": "keycloak-github-live",
+      "url": "https://github.com/keycloak/keycloak/issues/51182",
+      "text": "### Before reporting an issue - [x] I have read and understood the above terms for submitting issues, and I understand that my issue may be closed without action if I do not follow them. ### Area dist/quarkus ### Describe the bug When Keycloak is reached over HTTP/2 (in our case routed by Traefik, which speaks HTTP/2 to the backend), our OIDC broker callback token (Azure SSO) intermittently returns a bare 500 Internal Server Error (21-byte body, no Keycloak error page). The request is rejected b",
+      "seq": 34
+    },
+    {
+      "id": "GH005",
+      "source": "keycloak-github-live",
+      "url": "https://github.com/keycloak/keycloak/issues/10655",
+      "text": "### Describe the bug Admin console impersonate feature does not properly work on cross-domain setup when hostname-admin does not match realm hostname. Impersonate feature invokes admin endpoint on admin hostname which sets cookies in a response, but they are set for a wrong domain: token It then opens account endpoint on admin hostname which redirects to hostname for the realm, where session is not present since cookies are not set for that domain. ### Version 17.0.0 ### Expected behavior Impers",
+      "seq": 35
+    },
+    {
+      "id": "GH009",
+      "source": "keycloak-github-live",
+      "url": "https://github.com/keycloak/keycloak/issues/31705",
+      "text": "### Description Add possibility to link Identity Provider to multiple organization. At the moment Identity Provider can be linked only to one organization. It would be useful to link for example global Microsoft IdP to many organizations and filter the users based on company domain name. ### Area organizations ### Discussion [url] few messages in the thread. Created this issue after discussion with @pedroigor _No response_ ### Motivation At the moment if we want to use for instance Microsoft SSO",
+      "seq": 36
+    },
+    {
+      "id": "GH010",
+      "source": "keycloak-github-live",
+      "url": "https://github.com/keycloak/keycloak/issues/24498",
+      "text": "### Description There are existing events for login/logout actions, but it is difficult to use login events to tell when a user establishes a new session vs re-opens an application that verifies SSO. An example of this use case is a single page web application that uses the token flow through keycloak-js, each page reload is triggered as a LOGIN event but it is difficult to tell when the user has simply refreshed the page/opened a new tab/etc vs. actually performing a login to establish a new se",
+      "seq": 37
+    },
+    {
+      "id": "GH015",
+      "source": "keycloak-github-live",
+      "url": "https://github.com/keycloak/keycloak/issues/28797",
+      "text": "Can we remove some server functionality, which was used solely by Keycloak Java adapters and was specific to Keycloak (not OIDC, SAML specs compliant) ? Some ideas (note this task can be split into multiple subtasks if we want to remove things below): - Some functionality by token , which is used by Keycloak server to update adapters about some event. Those are mostly Keycloak specific and not based on OIDC specs (like Push not-before, Push login-all, test availability of adapter cluster nodes e",
+      "seq": 38
+    },
+    {
+      "id": "GH016",
+      "source": "keycloak-github-live",
+      "url": "https://github.com/keycloak/keycloak/issues/30180",
+      "text": "### Description This top-level epic is about the planned work to deliver the first release of the Keycloak Organization feature. Keycloak Organization is a feature that leverages and builds on top of the Identity and Access Management (IAM) capabilities of Keycloak to address Customer Identity and Access Management (CIAM) with a focus on Business-to-Business (B2B) use cases. +-----------+ | | +-----------+ Customer +-----------+ | | | | +----------+ +-----+----+ | | +----+-----+ | | | | +-------",
+      "seq": 39
+    },
+    {
+      "id": "GH017",
+      "source": "keycloak-github-live",
+      "url": "https://github.com/keycloak/keycloak/issues/10250",
+      "text": "### Describe the bug We have configured an authedication flow as shown here : ![authedicate_otp]([url] We want for some clients users use compulsorily OTP ( as in screenshot). For other clients we want to deny access based on User role. Our users are mainly from external Identity Providers. The problem is that any action ( otp, deny access) in Authedication flow is not executed after Identity Provider User log in ( case of Username Password Form ). For Keycloak Users everything is ok. We want to",
+      "seq": 40
+    },
+    {
+      "id": "GH019",
+      "source": "keycloak-github-live",
+      "url": "https://github.com/keycloak/keycloak/issues/50464",
+      "text": "## Description When a user authenticates at a higher Level of Authentication than a subsequent SAML SP requests during SSO re-entry, the token nulls out the classRef instead of asserting the requested URI. The root cause is an exact-equality check (token) at token \u2014 when the achieved level *exceeds* the requested level, the condition evaluates to token and clears the value, causing the SAML Response to carry token. SPs configured with token or token reject the assertion despite the user meeting ",
+      "seq": 41
+    },
+    {
+      "id": "GH020",
+      "source": "keycloak-github-live",
+      "url": "https://github.com/keycloak/keycloak/issues/29782",
+      "text": "Keycloak has several iframes that are embedded into pages of the relying party, for security reasons these iframes should only be allowed to be embedded by trusted origins configured by the user. The specific iframes in question are as follows: - The [Session Status iframe]([url] used to implement the [OpenID Connect Session Management]([url] spec. - The [third-party cookies iframes]([url] used to detect if a user is able to use the cookies of the Keycloak server in a third-party context. For th",
+      "seq": 42
+    },
+    {
+      "id": "SFSAM001",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1199527/azure-ad-ignores-saml-forceauthn-from-a-keycloak-identity-broker-how-to-force",
+      "text": "Azure AD ignores SAML ForceAuthn from a Keycloak identity broker \u2014 how to force re-authentication for a different user on a shared device? (public thread title; paraphrased for fingerprint safety).",
+      "seq": 43
+    },
+    {
+      "id": "SFSAM002",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/951369/adfs-giving-error-on-authnrequest-message",
+      "text": "adfs giving error on authnrequest message (public thread title; paraphrased for fingerprint safety).",
+      "seq": 44
+    },
+    {
+      "id": "SFSAM003",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1197322/ibm-verify-identity-access-11-saml-authentication-on-virtual-junction",
+      "text": "IBM Verify Identity Access 11 - SAML authentication on virtual junction (public thread title; paraphrased for fingerprint safety).",
+      "seq": 45
+    },
+    {
+      "id": "SFSAM004",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1192750/how-to-configure-citrix-single-sign-on-between-two-organizations-active-director",
+      "text": "How to configure Citrix Single Sign On between two organizations Active Directory (public thread title; paraphrased for fingerprint safety).",
+      "seq": 46
+    },
+    {
+      "id": "SFSAM005",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1192422/how-to-configure-keycloak-to-log-in-each-user-from-a-saml-idp-to-only-one-user",
+      "text": "How to configure keycloak to log in each user from a saml idp to only one user? (public thread title; paraphrased for fingerprint safety).",
+      "seq": 47
+    },
+    {
+      "id": "SFSAM006",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/813858/configuring-shibboleth-saml-2-0-with-adfs-3-0-with-fedration-errors",
+      "text": "Configuring Shibboleth SAML 2.0 with ADFS 3.0 with Fedration Errors (public thread title; paraphrased for fingerprint safety).",
+      "seq": 48
+    },
+    {
+      "id": "SFSAM007",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1173744/error-around-marshalling-getting-cannot-assign-field-nextsibling-because",
+      "text": "Error around marshalling | Getting &quot;Cannot assign field &quot;nextSibling&quot; because &quot;&lt;local6&gt;&quot; is null&quot; while trying to marshall in OpenSaml library (public thread title; paraphrased for fingerprint safety).",
+      "seq": 49
+    },
+    {
+      "id": "SFSAM008",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1167555/microsoft-entra-idp-signing-assertion-with-expired-certificate",
+      "text": "Microsoft Entra IDP signing assertion with expired certificate? (public thread title; paraphrased for fingerprint safety).",
+      "seq": 50
+    },
+    {
+      "id": "SFOPE001",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1156403/why-is-data-exchanged-between-my-two-web-apps-using-redirection-with-query-param",
+      "text": "Why is data exchanged between my two web apps using redirection with query parameters or auto-form-post cannot be trusted, even when using HTTPS? (public thread title; paraphrased for fingerprint safety).",
+      "seq": 51
+    },
+    {
+      "id": "SFOPE002",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1153275/allow-aws-openid-connect-through-security-groups",
+      "text": "Allow AWS OpenID Connect through Security Groups (public thread title; paraphrased for fingerprint safety).",
+      "seq": 52
+    },
+    {
+      "id": "SFKEY002",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1198865/keycloak-wont-start-on-azure-container-app-getting-killed-by-probes",
+      "text": "Keycloak won&#39;t start on Azure Container App - getting killed by probes (public thread title; paraphrased for fingerprint safety).",
+      "seq": 53
+    },
+    {
+      "id": "SFKEY003",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1196225/invalid-parameter-redirect-uri-keycloak-redirects-to-kc-hostname-instead-of-kc",
+      "text": "Invalid parameter: redirect_uri. Keycloak redirects to KC_HOSTNAME instead of KC_HOSTNAME_ADMIN after admin console login (public thread title; paraphrased for fingerprint safety).",
+      "seq": 54
+    },
+    {
+      "id": "SFKEY004",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1195834/fix-were-sorry-https-required-issue-while-running-keycloak-26-4-0-on-aws-ec2",
+      "text": "Fix \u201cWe&#39;re sorry HTTPS Required\u201d Issue While Running Keycloak 26.4.0 on AWS EC2 (Docker) (public thread title; paraphrased for fingerprint safety).",
+      "seq": 55
+    },
+    {
+      "id": "SFKEY005",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1195847/changes-in-keycloak-account-status-message",
+      "text": "Changes in keycloak Account status message (public thread title; paraphrased for fingerprint safety).",
+      "seq": 56
+    },
+    {
+      "id": "SFKEY006",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1193433/how-to-update-existing-realm-for-browser-conditional-2fa-flow-in-keycloak-26",
+      "text": "How to update existing realm for &quot;Browser - Conditional 2FA&quot; Flow in Keycloak 26.4.0 (public thread title; paraphrased for fingerprint safety).",
+      "seq": 57
+    },
+    {
+      "id": "SFKEY007",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1192985/404-and-400-errors-accessing-keycloak-admin-console-behind-nginx-reverse-proxy",
+      "text": "404 and 400 Errors Accessing Keycloak Admin Console Behind NGINX Reverse Proxy (Keycloak 26) (public thread title; paraphrased for fingerprint safety).",
+      "seq": 58
+    },
+    {
+      "id": "SFKEY008",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1192800/multiple-servers-one-sso-reverse-proxy",
+      "text": "Multiple servers, one SSO reverse proxy (public thread title; paraphrased for fingerprint safety).",
+      "seq": 59
+    },
+    {
+      "id": "SFLDA001",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1199598/query-ldap-for-computer-accounts-using-information-from-certificate-from-a-forti",
+      "text": "Query LDAP for computer accounts using information from certificate from a Fortigate (public thread title; paraphrased for fingerprint safety).",
+      "seq": 60
+    },
+    {
+      "id": "SFLDA002",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1040604/how-can-i-provide-authentication-and-authorization-of-web-pages-using-mod-ldap-a",
+      "text": "How can I provide authentication and authorization of web pages using mod_ldap and mod_authnz_ldap on Apache httpd with AD to many users? (public thread title; paraphrased for fingerprint safety).",
+      "seq": 61
+    },
+    {
+      "id": "SFLDA003",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/867371/zimbra-8-7-1-connect-unable-to-determine-enabled-services-from-ldap",
+      "text": "Zimbra 8.7.1 : Connect: Unable to determine enabled services from ldap (public thread title; paraphrased for fingerprint safety).",
+      "seq": 62
+    },
+    {
+      "id": "SFLDA004",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/955815/slapd-attribute-type-undefined",
+      "text": "slapd : attribute type undefined (public thread title; paraphrased for fingerprint safety).",
+      "seq": 63
+    },
+    {
+      "id": "SFLDA005",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/550090/authenticate-users-with-zimbra-ldap-server-from-centos-clients",
+      "text": "Authenticate users with Zimbra LDAP Server from CentOS clients? (public thread title; paraphrased for fingerprint safety).",
+      "seq": 64
+    },
+    {
+      "id": "SFLDA006",
+      "source": "serverfault-live",
+      "url": "https://serverfault.com/questions/1105261/unable-to-bind-to-ldap-server",
+      "text": "Unable to bind to LDAP server (public thread title; paraphrased for fingerprint safety).",
+      "seq": 65
+    }
+  ]
+}
