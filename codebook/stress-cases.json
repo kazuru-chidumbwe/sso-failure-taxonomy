@@ -2,7 +2,7 @@
   "schema": "sso-failure-taxonomy/stress-cases/v1",
   "corpus_layer": "decision_test_battery",
   "manuscript_table": "VIII",
-  "purpose": "Decision-test battery (S1-S8): instrument specification tests for outside-taxonomy routing and published tie-breakers. Not part of N=11. Not empirical validation evidence. Verified by codebook/validate_catalog_assignments.py in make smoke.",
+  "purpose": "Decision-test battery (S1-S10): instrument specification tests for outside-taxonomy routing and published tie-breakers. Not part of N=11. Not empirical validation evidence. Verified by codebook/validate_catalog_assignments.py in make smoke.",
   "not_in_table_iii": true,
   "vignettes": [
     {
@@ -56,12 +56,26 @@
       "coding": "dual_idp_boundary",
       "rationale": "Shared directory with divergent token or claim semantics across co-deployed IdPs; no affirmative gateway payload damage before IdP logic.",
       "ambiguous_pair": "dual_idp_boundary vs protocol_gateway"
+    },
+    {
+      "id": "S9",
+      "narrative": "Password authentication succeeds at the IdP, but OTP verification times out for an SMS cohort while secondary IdP nodes report elevated session-cache replication lag. Operators initially suspect cluster divergence.",
+      "coding": "mfa_delivery",
+      "rationale": "Tie-breaker: mfa_delivery applies when password and primary IdP auth are acceptable but the MFA completion path fails; cluster_state requires affirmed in-cluster auth divergence after affinity is ruled out.",
+      "ambiguous_pair": "mfa_delivery vs cluster_state"
+    },
+    {
+      "id": "S10",
+      "narrative": "Users fail federated login when a CDN edge returns an HTML error page on the ACS URL before traffic reaches the on-prem gateway; no SAML/OIDC payload is parsed by the IdP.",
+      "coding": "outside_taxonomy",
+      "rationale": "CDN/WAF edge interference is adjacent to protocol_gateway; without affirmative gateway buffer handling on a federation payload, force outside taxonomy rather than inventing a label.",
+      "ambiguous_pair": "protocol_gateway vs outside_taxonomy"
     }
   ],
   "summary": {
-    "n": 8,
-    "outside_taxonomy": 4,
-    "in_taxonomy": 4,
+    "n": 10,
+    "outside_taxonomy": 5,
+    "in_taxonomy": 5,
     "negative_decoys": 4,
     "added_to_n11": false
   },

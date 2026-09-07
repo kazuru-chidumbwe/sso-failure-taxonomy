@@ -1,7 +1,7 @@
 {
   "schema": "sso-failure-taxonomy/corpus/v1",
   "evaluation_model": "executable_path_d",
-  "description": "Evaluation corpus: N=11 estate catalog, S1–S8 decision-test battery, and rejected-estate-adjacent vignettes (R1). Not an inter-rater or prevalence study.",
+  "description": "Evaluation corpus: N=11 estate catalog, S1–S10 decision-test battery, and rejected-estate-adjacent vignettes (R1–R2). Not an inter-rater or prevalence study.",
   "layers": [
     {
       "id": "estate_catalog_n11",
@@ -20,7 +20,7 @@
       "manuscript_table": "VIII",
       "manuscript_section": "IV-E",
       "file": "codebook/stress-cases.json",
-      "n": 8,
+      "n": 10,
       "negative_decoys": 4,
       "not_empirical_validation": true
     },
@@ -29,7 +29,7 @@
       "role": "outside_taxonomy_illustration",
       "manuscript_section": "IV-D",
       "file": "codebook/rejected-estate-vignettes.json",
-      "n": 1,
+      "n": 2,
       "not_in_n11": true,
       "not_empirical_validation": true
     }
@@ -37,7 +37,10 @@
   "supplementary_docs": [
     "docs/CASE-SELECTION.md",
     "docs/OBSERVABILITY-MAP.md",
-    "docs/REJECTED-CASES.md"
+    "docs/REJECTED-CASES.md",
+    "docs/INCIDENT-SCHEMA-MAP.md",
+    "docs/FUTURE-VALIDATION-PROTOCOL.md",
+    "docs/DEVELOPER-CALLBACK-GUIDANCE.md"
   ],
   "manuscript_tables": {
     "evidence_classes": "I",

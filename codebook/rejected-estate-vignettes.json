@@ -15,10 +15,21 @@
         "edge_side_effect": "No edge release or callback step was attempted."
       },
       "why_excluded_from_n11": "Layer 1 was limited to assignable illustrations with a Table IV primary home; R1 demonstrates mandatory outside-taxonomy routing on estate-adjacent operations material instead."
+    },
+    {
+      "id": "R2",
+      "narrative": "During one outage window the same user cohort reports WAN LDAP bind timeouts and gateway rejection of oversized SAML POSTs; evidence for both directory reachability and gateway request-size handling is present and neither tie-breaker privileges a single primary mechanism.",
+      "coding": "outside_taxonomy",
+      "rationale": "Multi-causal deadlock: directory_federation and protocol_gateway remain equally plausible after tie-breakers (parallel to specification vignette S2).",
+      "negative_evidence": {
+        "directory_federation": "Gateway rejection is also observed — WAN bind alone does not explain the full cohort symptom pattern.",
+        "protocol_gateway": "WAN LDAP timeouts are also observed — payload-size class alone does not explain the full cohort symptom pattern."
+      },
+      "why_excluded_from_n11": "Illustrates outside-taxonomy routing on estate-adjacent multi-causal material without expanding the byte-frozen N=11 catalog."
     }
   ],
   "summary": {
-    "n": 1,
-    "outside_taxonomy": 1
+    "n": 2,
+    "outside_taxonomy": 2
   }
 }

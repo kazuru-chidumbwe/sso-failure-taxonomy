@@ -1,5 +1,18 @@
 # Changelog
 
+## 1.0.27 — 2026-09-07
+
+Stanford reviewer round-2 — specification tests, portability docs, order-sensitivity audit.
+
+- **`codebook/stress-cases.json`** — S9 (mfa_delivery vs cluster_state), S10 (CDN/WAF → outside_taxonomy); n=10.
+- **`codebook/rejected-estate-vignettes.json`** — R2 multi-causal WAN+gateway deadlock (parallel S2).
+- **`codebook/order_sensitivity_audit.py`** — Table IV-A audit script (Stanford Q1).
+- **`docs/INCIDENT-SCHEMA-MAP.md`** — Table XIII bridge to VERIS-like / ITSM placement.
+- **`docs/FUTURE-VALIDATION-PROTOCOL.md`** — closed-book S1–S10/R1–R2 pilot protocol (not study evidence).
+- **`docs/DEVELOPER-CALLBACK-GUIDANCE.md`** — edge capability vs OAuth/OIDC artifacts.
+- **`codebook/validate_catalog_assignments.py`** — oracle counts for 10 stress + 2 rejected vignettes.
+- **`codebook/corpus.json`** — layer counts and supplementary doc list.
+
 ## 1.0.26 — 2026-09-07
 
 Reviewer-facing strengthening — application walkthrough support, negative evidence, rejected estate vignette.

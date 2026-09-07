@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verify N=11 catalog assignments and S1-S8 decision-test battery (make smoke)."""
+"""Verify N=11 catalog assignments and S1-S10 decision-test battery (make smoke)."""
 from __future__ import annotations
 
 import json
@@ -35,6 +35,8 @@ STRESS_GOLDEN: dict[str, str] = {
     "S6": "multi_site_affinity",
     "S7": "edge_callback_consume",
     "S8": "dual_idp_boundary",
+    "S9": "mfa_delivery",
+    "S10": "outside_taxonomy",
 }
 
 NEGATIVE_DECOYS_GOLDEN: dict[str, tuple[str, str, str]] = {
@@ -46,6 +48,7 @@ NEGATIVE_DECOYS_GOLDEN: dict[str, tuple[str, str, str]] = {
 
 REJECTED_ESTATE_GOLDEN: dict[str, str] = {
     "R1": "outside_taxonomy",
+    "R2": "outside_taxonomy",
 }
 
 
@@ -84,8 +87,8 @@ def verify_decision_tests() -> None:
     data = json.loads((ROOT / "stress-cases.json").read_text(encoding="utf-8"))
     valid = valid_category_ids() | {"outside_taxonomy"}
     vignettes = data["vignettes"]
-    if len(vignettes) != 8:
-        raise SystemExit(f"stress-cases: expected 8 vignettes, got {len(vignettes)}")
+    if len(vignettes) != 10:
+        raise SystemExit(f"stress-cases: expected 10 vignettes, got {len(vignettes)}")
     if data.get("corpus_layer") != "decision_test_battery":
         raise SystemExit("stress-cases: corpus_layer must be decision_test_battery")
     if data.get("manuscript_table") != "VIII":
@@ -103,10 +106,10 @@ def verify_decision_tests() -> None:
             raise SystemExit(f"stress {vid}: coding {coding} != golden {expected}")
         if coding == "outside_taxonomy":
             outside += 1
-    if outside != 4:
-        raise SystemExit(f"stress-cases: expected 4 outside_taxonomy, got {outside}")
+    if outside != 5:
+        raise SystemExit(f"stress-cases: expected 5 outside_taxonomy, got {outside}")
     summary = data.get("summary", {})
-    if summary.get("n") != 8 or summary.get("outside_taxonomy") != 4:
+    if summary.get("n") != 10 or summary.get("outside_taxonomy") != 5:
         raise SystemExit("stress-cases summary counts mismatch")
     if summary.get("negative_decoys") != 4:
         raise SystemExit("stress-cases summary negative_decoys must be 4")
@@ -142,8 +145,8 @@ def verify_rejected_estate() -> None:
     data = json.loads((ROOT / "rejected-estate-vignettes.json").read_text(encoding="utf-8"))
     valid = valid_category_ids() | {"outside_taxonomy"}
     vignettes = data.get("vignettes", [])
-    if len(vignettes) != 1:
-        raise SystemExit(f"rejected-estate: expected 1 vignette, got {len(vignettes)}")
+    if len(vignettes) != 2:
+        raise SystemExit(f"rejected-estate: expected 2 vignettes, got {len(vignettes)}")
     if data.get("not_in_n11") is not True:
         raise SystemExit("rejected-estate: not_in_n11 must be true")
     for v in vignettes:
@@ -157,7 +160,7 @@ def verify_rejected_estate() -> None:
         if coding != expected:
             raise SystemExit(f"rejected-estate {vid}: coding {coding} != golden {expected}")
     summary = data.get("summary", {})
-    if summary.get("n") != 1 or summary.get("outside_taxonomy") != 1:
+    if summary.get("n") != 2 or summary.get("outside_taxonomy") != 2:
         raise SystemExit("rejected-estate summary counts mismatch")
 
 
@@ -188,7 +191,7 @@ def verify_corpus_manifest() -> None:
         raise SystemExit("corpus.json: estate layer n=11 but incidents.json row count differs")
 
     battery = layers["decision_test_battery"]
-    if battery.get("n") != 8 or battery.get("file") != "codebook/stress-cases.json":
+    if battery.get("n") != 10 or battery.get("file") != "codebook/stress-cases.json":
         raise SystemExit("corpus.json: decision_test_battery layer mismatch")
     if battery.get("negative_decoys") != 4:
         raise SystemExit("corpus.json: decision_test_battery negative_decoys must be 4")
@@ -196,12 +199,12 @@ def verify_corpus_manifest() -> None:
         raise SystemExit("stress-cases.json corpus_layer does not match corpus manifest")
 
     rejected_layer = layers["rejected_estate_adjacent"]
-    if rejected_layer.get("n") != 1:
-        raise SystemExit("corpus.json: rejected_estate_adjacent n must be 1")
+    if rejected_layer.get("n") != 2:
+        raise SystemExit("corpus.json: rejected_estate_adjacent n must be 2")
     if rejected_layer.get("file") != "codebook/rejected-estate-vignettes.json":
         raise SystemExit("corpus.json: rejected_estate_adjacent file mismatch")
     rejected = json.loads((ROOT / "rejected-estate-vignettes.json").read_text(encoding="utf-8"))
-    if len(rejected.get("vignettes", [])) != 1:
+    if len(rejected.get("vignettes", [])) != 2:
         raise SystemExit("rejected-estate-vignettes.json row count mismatch")
 
     oracle = corpus.get("oracle")
