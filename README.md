@@ -6,21 +6,30 @@ It is **not** a production identity provider.
 
 License: MIT · [`LICENSE`](LICENSE) · [`CITATION.cff`](CITATION.cff)
 
-https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite tag **`v1.0.21`** (or its Zenodo version DOI), not floating `main`.
+https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite tag **`v1.0.22`** (or its Zenodo version DOI), not floating `main`.
 
 **Quick start:** [`docs/QUICK-START.md`](docs/QUICK-START.md)
 
 ## What is in the archive
 
+**Manuscript cite (Path D):** see [`docs/MANUSCRIPT-CITE.md`](docs/MANUSCRIPT-CITE.md) for what the paper cites vs exploratory archive.
+
 | Path | Role |
 | --- | --- |
 | [`codebook/`](codebook/) | Ten-category taxonomy, N=11 publishable summaries, checklist |
-| [`codebook/second-coder/`](codebook/second-coder/) | Unblinded independent-coding packet (send standalone; public catalog is not hidden) |
-| [`codebook/compute_reliability.py`](codebook/compute_reliability.py) | Regenerate / verify `reliability.json` and external-eval overlap stats |
-| [`codebook/reliability.json`](codebook/reliability.json) | Second-coder agreement (AC1 primary + κ + bootstrap CI) |
+| [`codebook/stress-cases.json`](codebook/stress-cases.json) | S1–S8 decision-test battery (manuscript §IV-E) |
+| [`codebook/validate_catalog_assignments.py`](codebook/validate_catalog_assignments.py) | Catalog + decision-test oracle (`make smoke`) |
 | [`harness/`](harness/) | Stdlib demo of Fig. 3: naive check-then-delete vs atomic consume |
 | [`figures/`](figures/) | Fig. 1–3 (captions in the manuscript). Fig. 2 is the tie-breaker walk, not a count chart |
-| [`codebook/external-eval/`](codebook/external-eval/) | Public-narrative feasibility corpus (§IV-K; not N=11) |
+| [`docs/EXTERNAL-INCIDENTS.md`](docs/EXTERNAL-INCIDENTS.md) | Open community falsifiability template |
+
+**Exploratory archive (not manuscript study evidence):**
+
+| Path | Role |
+| --- | --- |
+| [`codebook/second-coder/`](codebook/second-coder/) | Structured-packet pilot (archived) |
+| [`codebook/reliability.json`](codebook/reliability.json) | Archival N=11 agreement stats |
+| [`codebook/external-eval/`](codebook/external-eval/) | Public-narrative pilot corpus (archived) |
 
 ## Reproducibility notes
 

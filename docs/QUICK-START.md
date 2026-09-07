@@ -25,20 +25,24 @@ make smoke   # from repo root
 
 Modes: `presence_only` (F5 second acceptance), `naive` (F3 false reject), `atomic` (single winner).
 
-## 4. Verify agreement statistics
+## 4. Verify executable evaluation (Path D)
 
 ```bash
-python3 codebook/compute_reliability.py --verify
+python3 codebook/validate_catalog_assignments.py
+make smoke   # from repo root
 ```
 
 ## 5. Submit an external incident (falsifiability)
 
 Use GitHub issue template **External incident (Table IV)** or `docs/EXTERNAL-INCIDENTS.md`. Submissions are scored `fits` / `fits_with_clarification` / `forces_new_label` — **not** added to N=11.
 
-## 6. Public-narrative pilot
+## Exploratory archive (not cited in manuscript)
 
-See `codebook/external-eval/` for the §IV-K feasibility corpus (65 narratives, multi-coder sheets).
+- `codebook/second-coder/` — structured-packet pilot  
+- `codebook/external-eval/` — public-narrative pilot corpus  
+
+See [`docs/MANUSCRIPT-CITE.md`](MANUSCRIPT-CITE.md).
 
 ## Cite
 
-Tag **`v1.0.19`** · Zenodo version DOI in manuscript ref [38]. N=11 catalog byte-frozen at `v1.0.12`.
+Tag **`v1.0.22`** · Zenodo version DOI in manuscript ref [38]. N=11 catalog byte-frozen at `v1.0.12`.

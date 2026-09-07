@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.22 — 2026-09-07
+
+Reviewer-facing doc alignment (Path D; no science change).
+
+- **`docs/MANUSCRIPT-CITE.md`** — separates manuscript-cited paths from exploratory archive.
+- **`README.md`**, **`docs/QUICK-START.md`**, **`codebook/second-coder/README.md`** — Path D banners; drop §IV-K / inter-rater as study evidence.
+
 ## 1.0.21 — 2026-09-07
 
 Path D reframe — executable evaluation without human coding claims.
