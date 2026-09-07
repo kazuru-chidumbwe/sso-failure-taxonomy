@@ -6,7 +6,7 @@ It is **not** a production identity provider.
 
 License: MIT · [`LICENSE`](LICENSE) · [`CITATION.cff`](CITATION.cff)
 
-https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite tag **`v1.0.19`** (or its Zenodo version DOI), not floating `main`.
+https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite tag **`v1.0.20`** (or its Zenodo version DOI), not floating `main`.
 
 **Quick start:** [`docs/QUICK-START.md`](docs/QUICK-START.md)
 
