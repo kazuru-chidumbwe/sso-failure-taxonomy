@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.20 — 2026-09-07
+
+Sponsor round-7 reliability CI fix.
+
+- **`codebook/compute_reliability.py`** — fixed scheme size q=10/3 for N=11 Gwet AC1 bootstrap; CI keys added to `--verify`.
+- **`harness/callback_consume.py`** — F3 flag gated to concurrent scenario only (replay no longer false-positives).
+
 ## 1.0.19 — 2026-09-07
 
 Sponsor artifact-alignment release (portal prep).
