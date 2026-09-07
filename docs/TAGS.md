@@ -4,7 +4,7 @@ Cite a tag, never floating `main`.
 
 | Tag | Role |
 | --- | --- |
-| `v1.0.19` | **Sponsor artifact alignment.** Table map I–XII; checklist 14 rows; `compute_reliability.py`; harness `PresenceOnlyCallbackStore`; title/cite pin sync. Wire Zenodo version DOI after GitHub Release. N=11 frozen at `v1.0.12`. |
+| `v1.0.19` | **Sponsor artifact alignment.** Table map I–XII; checklist 14 rows; `compute_reliability.py`; harness `PresenceOnlyCallbackStore`; title/cite pin sync. Zenodo `10.5281/zenodo.22644754`. N=11 frozen at `v1.0.12`. |
 | `v1.0.18` | **Gates/Ng convergent revision.** Evidence-sufficiency rule in `taxonomy.json`; stress vignettes S6–S8; fingerprint-safe procedure in `external-eval/README.md`. Zenodo `10.5281/zenodo.22550779`. N=11 frozen at `v1.0.12`. |
 | `v1.0.17` | **Coder independence provenance.** `author_coded: false` on external-eval coder JSON; `PROVENANCE.md` corrects `e34f848` commit subject. Zenodo `10.5281/zenodo.22546805`. N=11 frozen at `v1.0.12`. |
 | `v1.0.16` | **Corpus provenance v2.** 35 live-harvested + 30 author-constructed; `validate_corpus_provenance.py`. Zenodo `10.5281/zenodo.22544498`. N=11 frozen at `v1.0.12`. |
