@@ -13,6 +13,8 @@ EXTERNAL = ROOT / "external-eval"
 N11_SEED = 20260812
 EXT_SEED = 20260906
 BOOTSTRAP = 10000
+N11_CATEGORY_Q = 10
+N11_SEVERITY_Q = 3
 OVERLAP_IDS = [
     "EN027", "EN028", "EN029", "EN030",
     "GH001", "GH002", "GH003", "GH004", "GH005",
@@ -31,30 +33,39 @@ def cohen_kappa_pairs(a: list, b: list) -> float:
     return (po - pe) / (1 - pe)
 
 
-def gwet_ac1_pairs(a: list, b: list) -> float:
+def gwet_ac1_pairs(a: list, b: list, q: int | None = None) -> float:
+    """Gwet AC1 with scheme size q. When q is None, q = distinct labels in the pair."""
     n = len(a)
     cats = sorted(set(a) | set(b))
-    q = len(cats)
+    scheme_q = q if q is not None else len(cats)
     agree = sum(1 for x, y in zip(a, b) if x == y)
     po = agree / n
     pe = sum(((sum(1 for x in a if x == c) / n) + (sum(1 for x in b if x == c) / n)) / 2 *
              (1 - ((sum(1 for x in a if x == c) / n) + (sum(1 for x in b if x == c) / n)) / 2)
-             for c in cats) / (q - 1 if q > 1 else 1)
+             for c in cats) / (scheme_q - 1 if scheme_q > 1 else 1)
     if pe == 1.0:
         return 1.0
     return (po - pe) / (1 - pe)
 
 
-def bootstrap_ci(a: list, b: list, metric: str, seed: int) -> list[float]:
+def bootstrap_ci(
+    a: list,
+    b: list,
+    metric: str,
+    seed: int,
+    q: int | None = None,
+) -> list[float]:
     n = len(a)
     rng = random.Random(seed)
-    fn = cohen_kappa_pairs if metric == "kappa" else gwet_ac1_pairs
     vals = []
     for _ in range(BOOTSTRAP):
         idx = [rng.randrange(n) for _ in range(n)]
         la = [a[i] for i in idx]
         lb = [b[i] for i in idx]
-        vals.append(fn(la, lb))
+        if metric == "kappa":
+            vals.append(cohen_kappa_pairs(la, lb))
+        else:
+            vals.append(gwet_ac1_pairs(la, lb, q=q))
     vals.sort()
     return [vals[int(0.025 * BOOTSTRAP)], vals[int(0.975 * BOOTSTRAP)]]
 
@@ -80,16 +91,20 @@ def compute_n11() -> dict:
         "category": {
             "n_agree": cat_agree,
             "raw_agreement": cat_agree / len(ids),
-            "gwet_ac1": gwet_ac1_pairs(gold_cat, coder_cat),
-            "gwet_ac1_bootstrap_ci95": bootstrap_ci(gold_cat, coder_cat, "ac1", N11_SEED),
+            "gwet_ac1": gwet_ac1_pairs(gold_cat, coder_cat, q=N11_CATEGORY_Q),
+            "gwet_ac1_bootstrap_ci95": bootstrap_ci(
+                gold_cat, coder_cat, "ac1", N11_SEED, q=N11_CATEGORY_Q,
+            ),
             "cohen_kappa": cohen_kappa_pairs(gold_cat, coder_cat),
             "cohen_kappa_bootstrap_ci95": bootstrap_ci(gold_cat, coder_cat, "kappa", N11_SEED),
         },
         "severity": {
             "n_agree": sev_agree,
             "raw_agreement": sev_agree / len(ids),
-            "gwet_ac1": gwet_ac1_pairs(gold_sev, coder_sev),
-            "gwet_ac1_bootstrap_ci95": bootstrap_ci(gold_sev, coder_sev, "ac1", N11_SEED),
+            "gwet_ac1": gwet_ac1_pairs(gold_sev, coder_sev, q=N11_SEVERITY_Q),
+            "gwet_ac1_bootstrap_ci95": bootstrap_ci(
+                gold_sev, coder_sev, "ac1", N11_SEED, q=N11_SEVERITY_Q,
+            ),
             "cohen_kappa": cohen_kappa_pairs(gold_sev, coder_sev),
             "cohen_kappa_bootstrap_ci95": bootstrap_ci(gold_sev, coder_sev, "kappa", N11_SEED),
         },
@@ -117,11 +132,18 @@ def approx_equal(a: float, b: float, tol: float = 1e-3) -> bool:
     return abs(a - b) <= tol
 
 
+def approx_ci(computed: list[float], expected: list[float], tol: float = 1e-2) -> bool:
+    return approx_equal(computed[0], expected[0], tol) and approx_equal(computed[1], expected[1], tol)
+
+
 def verify_n11(computed: dict) -> None:
     rel = json.loads((ROOT / "reliability.json").read_text(encoding="utf-8"))
     for axis in ("category", "severity"):
         for key in ("n_agree", "raw_agreement", "gwet_ac1", "cohen_kappa"):
             if not approx_equal(computed[axis][key], rel[axis][key]):
+                raise SystemExit(f"n11 {axis}.{key}: computed={computed[axis][key]} file={rel[axis][key]}")
+        for key in ("gwet_ac1_bootstrap_ci95", "cohen_kappa_bootstrap_ci95"):
+            if not approx_ci(computed[axis][key], rel[axis][key]):
                 raise SystemExit(f"n11 {axis}.{key}: computed={computed[axis][key]} file={rel[axis][key]}")
 
 
@@ -136,6 +158,9 @@ def verify_overlap(computed: dict) -> None:
     for key, expected in checks:
         if not approx_equal(computed[key], expected, 1e-2):
             raise SystemExit(f"overlap {key}: computed={computed[key]} file={expected}")
+    for key in ("gwet_ac1_bootstrap_ci95", "cohen_kappa_bootstrap_ci95"):
+        if not approx_ci(computed[key], oa[key]):
+            raise SystemExit(f"overlap {key}: computed={computed[key]} file={oa[key]}")
 
 
 def main() -> int:

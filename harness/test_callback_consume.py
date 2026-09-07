@@ -17,7 +17,7 @@ class NaiveConcurrentTests(unittest.TestCase):
         r = concurrent_consume("naive", workers=12)
         self.assertGreaterEqual(r.successes, 1)
         self.assertGreater(r.observed_present, r.successes)
-        self.assertTrue(r.as_dict()["f3_false_reject_risk"])
+        self.assertTrue(r.as_dict("concurrent")["f3_false_reject_risk"])
 
     def test_naive_replay_after_clean_consume_usually_safe(self) -> None:
         store = NaiveCallbackStore()
@@ -29,8 +29,10 @@ class NaiveConcurrentTests(unittest.TestCase):
 class PresenceOnlyTests(unittest.TestCase):
     def test_replay_after_one_accepted(self) -> None:
         r = replay_after_one("presence_only")
+        d = r.as_dict("replay")
         self.assertTrue(r.replay_accepted)
-        self.assertTrue(r.as_dict()["f5_replay_risk"])
+        self.assertTrue(d["f5_replay_risk"])
+        self.assertFalse(d["f3_false_reject_risk"])
 
     def test_concurrent_observes_multiple_present(self) -> None:
         r = concurrent_consume("presence_only", workers=12)

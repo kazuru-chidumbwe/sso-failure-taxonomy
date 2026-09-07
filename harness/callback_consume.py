@@ -95,8 +95,8 @@ class RunResult:
     leftover: bool = False
     replay_accepted: bool = False
 
-    def as_dict(self) -> dict:
-        f3 = self.observed_present > self.successes
+    def as_dict(self, scenario: str = "concurrent") -> dict:
+        f3 = scenario == "concurrent" and self.observed_present > self.successes
         return {
             "mode": self.mode,
             "successes": self.successes,
@@ -195,11 +195,11 @@ def main() -> int:
             out.append(("replay", replay_after_one(mode)))
 
     if args.json:
-        print(json.dumps([{"scenario": s, **r.as_dict()} for s, r in out], indent=2))
+        print(json.dumps([{"scenario": s, **r.as_dict(s)} for s, r in out], indent=2))
         return 0
 
     for scenario, r in out:
-        d = r.as_dict()
+        d = r.as_dict(scenario)
         print(f"{scenario:11} mode={d['mode']:8}  ok={d['successes']}  miss={d['misses']}  "
               f"saw={d['observed_present']}  replay={d['replay_accepted']}  "
               f"F3={d['f3_false_reject_risk']}  F5={d['f5_replay_risk']}")
