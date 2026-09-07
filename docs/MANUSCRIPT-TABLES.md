@@ -11,7 +11,7 @@ Sequential table numbers in the submitted manuscript (round 6, Sep 2026):
 | **Table V** | Operational priority class | `codebook/taxonomy.json` / `incidents.json` |
 | **Table VI** | Protocol and edge callback artifact contrast | manuscript only |
 | **Table VII** | Release cite pins and freeze points | manuscript only |
-| **Table VIII** | Overlap routing contingency (external pilot) | `codebook/external-eval/reliability-external-v1.json` |
+| **Table VIII** | Decision-test battery expected labels (S1–S8) | `codebook/stress-cases.json` |
 | **Table IX** | Case catalog (N=11) | `codebook/incidents.json` |
 | **Table X** | F5 threat model | manuscript only |
 | **Table XI** | Practitioner checklist | `codebook/checklist.json` |

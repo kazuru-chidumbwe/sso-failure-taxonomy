@@ -25,7 +25,7 @@ make smoke   # from repo root
 
 Modes: `presence_only` (F5 second acceptance), `naive` (F3 false reject), `atomic` (single winner).
 
-## 4. Verify executable evaluation (Path D)
+## 4. Verify executable evaluation
 
 ```bash
 python3 codebook/validate_catalog_assignments.py
@@ -36,13 +36,6 @@ make smoke   # from repo root
 
 Use GitHub issue template **External incident (Table IV)** or `docs/EXTERNAL-INCIDENTS.md`. Submissions are scored `fits` / `fits_with_clarification` / `forces_new_label` — **not** added to N=11.
 
-## Exploratory archive (not cited in manuscript)
-
-- `codebook/second-coder/` — structured-packet pilot  
-- `codebook/external-eval/` — public-narrative pilot corpus  
-
-See [`docs/MANUSCRIPT-CITE.md`](MANUSCRIPT-CITE.md).
-
 ## Cite
 
-Tag **`v1.0.22`** · Zenodo version DOI in manuscript ref [38]. N=11 catalog byte-frozen at `v1.0.12`.
+Tag **`v1.0.23`** · Zenodo version DOI in manuscript ref [34]. N=11 catalog byte-frozen at `v1.0.12`.

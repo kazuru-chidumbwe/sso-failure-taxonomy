@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.23 — 2026-09-07
+
+Remove human-coding pilot materials from the public tree.
+
+- **Removed** `codebook/second-coder/`, `codebook/external-eval/`, `codebook/compute_reliability.py`, `codebook/reliability.json`, `codebook/reliability.md`.
+- **Docs** — README, QUICK-START, SCOPE, MANUSCRIPT-CITE, MANUSCRIPT-TABLES, EVIDENCE-INDEX aligned to executable evaluation only.
+
 ## 1.0.22 — 2026-09-07
 
 Reviewer-facing doc alignment (Path D; no science change).

@@ -11,9 +11,8 @@ Honest map for the manuscript **Table IX** case catalog. **No estate tickets, li
 | **E2** | Privately ticket-reviewed reconstruction. Reviewed by the author; public release limited to an anonymized paraphrase. |
 | **E3** | Artifact-reproduced mechanism. A synthetic runnable artifact reproduces the stated mechanism under explicitly bounded assumptions. E3 attaches to the **mechanism**, never to the original operational event. |
 
-`form` (DESIGN / RETRO) remains the primary key used by `codebook/incidents.json`,
-`codebook/reliability.json`, and `codebook/second-coder/PACKET.md`. Evidence class is an
-additional, finer-grained label; it does not renumber or recode any row.
+`form` (DESIGN / RETRO) remains the primary key used by `codebook/incidents.json`.
+Evidence class is an additional, finer-grained label; it does not renumber or recode any row.
 
 ## Per-case map
 
