@@ -4,9 +4,10 @@
 
 ## 1. Read the instrument
 
-1. Open `codebook/taxonomy.json` — ten mechanism categories + tie-breakers (manuscript **Table IV**).
-2. Skim `docs/MANUSCRIPT-TABLES.md` — maps manuscript tables I–XII to artifact files.
-3. Optional: `figures/fig2-tie-breaker.png` — decision walk (not a prevalence chart).
+1. Open `codebook/corpus.json` — two-layer evaluation corpus (N=11 estate catalog + S1–S8 decision tests).
+2. Open `codebook/taxonomy.json` — ten mechanism categories + tie-breakers (manuscript **Table IV**).
+3. Skim `docs/MANUSCRIPT-TABLES.md` — maps manuscript tables I–XII to artifact files.
+4. Optional: `figures/fig2-tie-breaker.png` — decision walk (not a prevalence chart).
 
 ## 2. Classify a case
 
@@ -38,4 +39,4 @@ Use GitHub issue template **External incident (Table IV)** or `docs/EXTERNAL-INC
 
 ## Cite
 
-Tag **`v1.0.23`** · Zenodo version DOI in manuscript ref [34]. N=11 catalog byte-frozen at `v1.0.12`.
+Tag **`v1.0.24`** · Zenodo version DOI in manuscript ref [34]. N=11 catalog byte-frozen at `v1.0.12`.

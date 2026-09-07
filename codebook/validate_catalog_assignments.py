@@ -75,6 +75,10 @@ def verify_decision_tests() -> None:
     vignettes = data["vignettes"]
     if len(vignettes) != 8:
         raise SystemExit(f"stress-cases: expected 8 vignettes, got {len(vignettes)}")
+    if data.get("corpus_layer") != "decision_test_battery":
+        raise SystemExit("stress-cases: corpus_layer must be decision_test_battery")
+    if data.get("manuscript_table") != "VIII":
+        raise SystemExit("stress-cases: manuscript_table must be VIII")
     outside = 0
     for v in vignettes:
         vid = v["id"]
@@ -95,10 +99,50 @@ def verify_decision_tests() -> None:
         raise SystemExit("stress-cases summary counts mismatch")
 
 
+def verify_corpus_manifest() -> None:
+    corpus = json.loads((ROOT / "corpus.json").read_text(encoding="utf-8"))
+    incidents = json.loads((ROOT / "incidents.json").read_text(encoding="utf-8"))
+    stress = json.loads((ROOT / "stress-cases.json").read_text(encoding="utf-8"))
+
+    if incidents.get("evaluation_corpus") != "codebook/corpus.json":
+        raise SystemExit("incidents.json: evaluation_corpus must point to codebook/corpus.json")
+
+    tables = corpus.get("manuscript_tables", {})
+    if incidents.get("manuscript_tables") != tables:
+        raise SystemExit("incidents.json manuscript_tables != corpus.json manuscript_tables")
+    if "decision_test_battery" not in tables or tables["decision_test_battery"] != "VIII":
+        raise SystemExit("corpus.json: decision_test_battery must map to VIII")
+    if "overlap_routing_contingency" in tables:
+        raise SystemExit("corpus.json: legacy overlap_routing_contingency key must be removed")
+
+    layers = {layer["id"]: layer for layer in corpus.get("layers", [])}
+    if set(layers) != {"estate_catalog_n11", "decision_test_battery"}:
+        raise SystemExit(f"corpus.json: unexpected layer ids {set(layers)}")
+
+    n11 = layers["estate_catalog_n11"]
+    if n11.get("n") != 11 or n11.get("file") != "codebook/incidents.json":
+        raise SystemExit("corpus.json: estate_catalog_n11 layer mismatch")
+    if len(incidents.get("incidents", [])) != 11:
+        raise SystemExit("corpus.json: estate layer n=11 but incidents.json row count differs")
+
+    battery = layers["decision_test_battery"]
+    if battery.get("n") != 8 or battery.get("file") != "codebook/stress-cases.json":
+        raise SystemExit("corpus.json: decision_test_battery layer mismatch")
+    if stress.get("corpus_layer") != "decision_test_battery":
+        raise SystemExit("stress-cases.json corpus_layer does not match corpus manifest")
+
+    oracle = corpus.get("oracle")
+    if oracle != "codebook/validate_catalog_assignments.py":
+        raise SystemExit("corpus.json oracle path mismatch")
+    if not (ROOT / "validate_catalog_assignments.py").is_file():
+        raise SystemExit("corpus oracle file missing")
+
+
 def main() -> int:
     verify_catalog()
     verify_decision_tests()
-    print("catalog assignments and decision-test battery: PASS")
+    verify_corpus_manifest()
+    print("catalog assignments, decision-test battery, and corpus manifest: PASS")
     return 0
 
 

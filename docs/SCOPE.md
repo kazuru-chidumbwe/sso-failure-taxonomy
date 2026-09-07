@@ -3,7 +3,7 @@
 ## This artefact is
 
 - A frozen codebook for a ten-category federated SSO classification instrument (inclusion, exclusion, tie-breakers, operational-priority classes).
-- Eleven fingerprint-safe incident summaries used as a demonstration of that scheme (`codebook/incidents.json` is the published catalog).
+- Eleven fingerprint-safe incident summaries used as a demonstration of that scheme (`codebook/incidents.json` is the published catalog; layer declared in `codebook/corpus.json`).
 - Executable evaluation: S1–S8 decision-test vignettes (`codebook/stress-cases.json`) and catalog consistency checks (`codebook/validate_catalog_assignments.py`).
 - A standard-library callback-consume demonstration of the manuscript Fig. 3 claim (`harness/callback_consume.py`).
 - An **evidence index** (`docs/EVIDENCE-INDEX.md`) mapping each Table IX case to released material (honest when the entry is architect note only).

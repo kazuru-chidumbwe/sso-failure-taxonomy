@@ -17,4 +17,4 @@ Sequential table numbers in the submitted manuscript (round 6, Sep 2026):
 | **Table XI** | Practitioner checklist | `codebook/checklist.json` |
 | **Table XII** | Prior-work positioning | manuscript only |
 
-The artifact tracks this map in `codebook/incidents.json` → `manuscript_tables`. **Table IX** in the manuscript is authoritative for case-catalog rows; internal cross-reference notes in JSON are informative only.
+The artifact tracks this map in `codebook/corpus.json` → `manuscript_tables` (mirrored in `codebook/incidents.json` for convenience). **Table IX** in the manuscript is authoritative for case-catalog rows; internal cross-reference notes in JSON are informative only.

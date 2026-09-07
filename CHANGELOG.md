@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.24 — 2026-09-07
+
+Align evaluation corpus to Path D two-layer model.
+
+- **`codebook/corpus.json`** — manifest for N=11 estate catalog + S1–S8 decision-test battery.
+- **`codebook/incidents.json`** — `evaluation_corpus` pointer; `decision_test_battery` table key (replaces legacy `overlap_routing_contingency`); priority-class note drops response-sheet wording.
+- **`codebook/stress-cases.json`** — `schema`, `corpus_layer`, `manuscript_table` metadata.
+- **`codebook/validate_catalog_assignments.py`** — corpus manifest oracle in `make smoke`.
+- **Docs** — EVIDENCE-INDEX, MANUSCRIPT-CITE/TABLES, README, QUICK-START, SCOPE.
+
 ## 1.0.23 — 2026-09-07
 
 Remove human-coding pilot materials from the public tree.

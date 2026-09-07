@@ -1,0 +1,46 @@
+{
+  "schema": "sso-failure-taxonomy/corpus/v1",
+  "evaluation_model": "executable_path_d",
+  "description": "Two-layer evaluation corpus: author-coded N=11 estate catalog (illustrative application) plus S1–S8 decision-test battery (instrument specification tests). Not an inter-rater or prevalence study.",
+  "layers": [
+    {
+      "id": "estate_catalog_n11",
+      "role": "illustrative_application",
+      "manuscript_table": "IX",
+      "manuscript_section": "IV-D",
+      "file": "codebook/incidents.json",
+      "n": 11,
+      "annotator": "author",
+      "freeze_tag": "v1.0.12",
+      "freeze_fields": ["category", "sev", "summary", "form", "evidence_class"]
+    },
+    {
+      "id": "decision_test_battery",
+      "role": "instrument_specification_test",
+      "manuscript_table": "VIII",
+      "manuscript_section": "IV-E",
+      "file": "codebook/stress-cases.json",
+      "n": 8,
+      "not_empirical_validation": true
+    }
+  ],
+  "manuscript_tables": {
+    "evidence_classes": "I",
+    "claims_supported": "II",
+    "evidence_strength_by_case": "III",
+    "taxonomy": "IV",
+    "operational_priority_class": "V",
+    "protocol_artifact_contrast": "VI",
+    "release_cite_pins": "VII",
+    "decision_test_battery": "VIII",
+    "case_catalog": "IX",
+    "f5_threat_model": "X",
+    "practitioner_checklist": "XI",
+    "prior_work_positioning": "XII"
+  },
+  "oracle": "codebook/validate_catalog_assignments.py",
+  "non_corpus": [
+    "harness/ mechanism demonstrations (F3/F5 callback consume; I4 synthetic fixtures)",
+    "docs/EXTERNAL-INCIDENTS.md open community falsifiability submissions"
+  ]
+}

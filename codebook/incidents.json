@@ -17,8 +17,9 @@
       "Sev-2": "Pri-2",
       "Sev-3": "Pri-3"
     },
-    "note": "The legacy field name was retained for compatibility with the original response sheet. In the manuscript, this construct is termed operational priority class because it is a triage label rather than a unidimensional severity measure."
+    "note": "The legacy JSON field name severity (values Sev-1/2/3) is retained for artifact backward compatibility. In the manuscript, this construct is termed operational priority class (Pri-1/2/3) because it is a triage label rather than a unidimensional severity measure."
   },
+  "evaluation_corpus": "codebook/corpus.json",
   "manuscript_tables": {
     "evidence_classes": "I",
     "claims_supported": "II",
@@ -27,7 +28,7 @@
     "operational_priority_class": "V",
     "protocol_artifact_contrast": "VI",
     "release_cite_pins": "VII",
-    "overlap_routing_contingency": "VIII",
+    "decision_test_battery": "VIII",
     "case_catalog": "IX",
     "f5_threat_model": "X",
     "practitioner_checklist": "XI",
