@@ -1,6 +1,6 @@
 # Callback-consume harness (F3 / F5)
 
-Manuscript `edge_callback_consume`: F3 (Severity-2 false reject) and F5 (Severity-3 second acceptance / replay of the **same edge callback capability**).  
+Manuscript `edge_callback_consume`: F3 (false reject of a legitimate path) and F5 (second acceptance / replay of the **same edge callback capability**).  
 Not a Keycloak or WSO2 deployment. Not a production config. Synthetic callback values only.
 
 **Modeled schedules (required reading):** [`SCHEDULES.md`](SCHEDULES.md) — Schedule A (`presence_only` / F5), Schedule B (`naive` / F3), Schedule C (`atomic`).
@@ -19,4 +19,4 @@ From the repository root: `make smoke`.
 | `naive` | B | TOCTOU → F3 false-reject risk under concurrency |
 | `atomic` | C | one concurrent winner; replay rejected |
 
-Resolution class: checklist item 3 — atomic single-winner get-and-delete at the callback-consistency scope (GETDEL / one lock), TTL ≥ round-trip, do not trust JWT `exp` alone.
+Resolution class: checklist Table XI items 3a–3e — single-winner consume at the callback-consistency scope (GETDEL / one lock), TTL ≥ round-trip.

@@ -5,7 +5,7 @@
 ## 1. Read the instrument
 
 1. Open `codebook/taxonomy.json` — ten mechanism categories + tie-breakers (manuscript **Table IV**).
-2. Skim `docs/MANUSCRIPT-TABLES.md` — maps manuscript tables I–X to artifact files.
+2. Skim `docs/MANUSCRIPT-TABLES.md` — maps manuscript tables I–XII to artifact files.
 3. Optional: `figures/fig2-tie-breaker.png` — decision walk (not a prevalence chart).
 
 ## 2. Classify a case
@@ -25,14 +25,20 @@ make smoke   # from repo root
 
 Modes: `presence_only` (F5 second acceptance), `naive` (F3 false reject), `atomic` (single winner).
 
-## 4. Submit an external incident (falsifiability)
+## 4. Verify agreement statistics
+
+```bash
+python3 codebook/compute_reliability.py --verify
+```
+
+## 5. Submit an external incident (falsifiability)
 
 Use GitHub issue template **External incident (Table IV)** or `docs/EXTERNAL-INCIDENTS.md`. Submissions are scored `fits` / `fits_with_clarification` / `forces_new_label` — **not** added to N=11.
 
-## 5. Public-narrative pilot
+## 6. Public-narrative pilot
 
 See `codebook/external-eval/` for the §IV-K feasibility corpus (65 narratives, multi-coder sheets).
 
 ## Cite
 
-Tag **`v1.0.16`** · Zenodo version DOI in manuscript ref [38]. N=11 catalog byte-frozen at `v1.0.12`.
+Tag **`v1.0.19`** · Zenodo version DOI in manuscript ref [38]. N=11 catalog byte-frozen at `v1.0.12`.

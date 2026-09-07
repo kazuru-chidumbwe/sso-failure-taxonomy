@@ -1,6 +1,6 @@
 # Manuscript table numbering (IEEE Access)
 
-Sequential table numbers in the submitted manuscript (Gates round-2, 6 Sep 2026):
+Sequential table numbers in the submitted manuscript (round 6, Sep 2026):
 
 | Manuscript table | Content | Artifact primary file |
 | --- | --- | --- |
@@ -10,9 +10,11 @@ Sequential table numbers in the submitted manuscript (Gates round-2, 6 Sep 2026)
 | **Table IV** | Rule-bounded taxonomy (categories) | `codebook/taxonomy.json` |
 | **Table V** | Operational priority class | `codebook/taxonomy.json` / `incidents.json` |
 | **Table VI** | Protocol and edge callback artifact contrast | manuscript only |
-| **Table VII** | Case catalog (N=11) | `codebook/incidents.json` |
-| **Table VIII** | F5 threat model | manuscript only |
-| **Table IX** | Practitioner checklist | `codebook/checklist.json` |
-| **Table X** | Prior-work positioning | manuscript only |
+| **Table VII** | Release cite pins and freeze points | manuscript only |
+| **Table VIII** | Overlap routing contingency (external pilot) | `codebook/external-eval/reliability-external-v1.json` |
+| **Table IX** | Case catalog (N=11) | `codebook/incidents.json` |
+| **Table X** | F5 threat model | manuscript only |
+| **Table XI** | Practitioner checklist | `codebook/checklist.json` |
+| **Table XII** | Prior-work positioning | manuscript only |
 
-Earlier artifact releases used non-sequential numbering (e.g. evidence classes as Table VI; protocol contrast as Table VIII only). From **v1.0.13** onward, the manuscript uses normal IEEE ordering I–X and the artifact tracks it via `incidents.json` → `manuscript_tables`.
+The artifact tracks this map in `codebook/incidents.json` → `manuscript_tables`. **Table IX** in the manuscript is authoritative for case-catalog rows; internal cross-reference notes in JSON are informative only.

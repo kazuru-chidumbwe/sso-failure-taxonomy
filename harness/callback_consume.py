@@ -2,7 +2,7 @@
 """Illustrate F3/F5 edge callback-consume race: naive check-then-delete vs atomic consume.
 
 Stdlib only. Not a production IdP. Synthetic callback capabilities; no estate data.
-Maps to manuscript edge_callback_consume incidents F3 (Sev-2 false reject) and F5 (Sev-3 replay).
+Maps to manuscript edge_callback_consume incidents F3 (false reject) and F5 (replay).
 
 Exact modeled schedules: harness/SCHEDULES.md
   Schedule A (presence_only): presence without consume → second path accepts.
@@ -47,12 +47,13 @@ class NaiveCallbackStore:
             return self._data.pop(capability, None)
 
 
-class JwtOnlyCallbackStore:
-    """Schedule A: presence/expiry treated as enough; never consumes. Second path accepts (F5)."""
+class PresenceOnlyCallbackStore:
+    """Schedule A: presence treated as sufficient; never consumes. Second path accepts (F5)."""
 
     def __init__(self) -> None:
         self._data: dict[str, str] = {}
         self._lock = threading.Lock()
+        self.observed_present = 0
 
     def put(self, capability: str, payload: str) -> None:
         with self._lock:
@@ -60,6 +61,8 @@ class JwtOnlyCallbackStore:
 
     def consume(self, capability: str) -> str | None:
         with self._lock:
+            if capability in self._data:
+                self.observed_present += 1
             return self._data.get(capability)
 
 
@@ -69,6 +72,7 @@ class AtomicCallbackStore:
     def __init__(self) -> None:
         self._data: dict[str, str] = {}
         self._lock = threading.Lock()
+        self.observed_present = 0
 
     def put(self, capability: str, payload: str) -> None:
         with self._lock:
@@ -76,6 +80,8 @@ class AtomicCallbackStore:
 
     def consume(self, capability: str) -> str | None:
         with self._lock:
+            if capability in self._data:
+                self.observed_present += 1
             return self._data.pop(capability, None)
 
 
@@ -90,7 +96,7 @@ class RunResult:
     replay_accepted: bool = False
 
     def as_dict(self) -> dict:
-        f3 = self.mode == "naive" and self.observed_present > self.successes
+        f3 = self.observed_present > self.successes
         return {
             "mode": self.mode,
             "successes": self.successes,
@@ -100,15 +106,15 @@ class RunResult:
             "leftover": self.leftover,
             "replay_accepted": self.replay_accepted,
             "f3_false_reject_risk": f3,
-            "f5_replay_risk": self.mode == "presence_only" and self.replay_accepted,
+            "f5_replay_risk": self.replay_accepted,
         }
 
 
-def _store(mode: Mode) -> NaiveCallbackStore | JwtOnlyCallbackStore | AtomicCallbackStore:
+def _store(mode: Mode) -> NaiveCallbackStore | PresenceOnlyCallbackStore | AtomicCallbackStore:
     if mode == "naive":
         return NaiveCallbackStore()
     if mode == "presence_only":
-        return JwtOnlyCallbackStore()
+        return PresenceOnlyCallbackStore()
     return AtomicCallbackStore()
 
 
@@ -134,7 +140,7 @@ def concurrent_consume(mode: Mode, workers: int = 8) -> RunResult:
 
     successes = [v for v in got if v is not None]
     leftover = capability in store._data  # noqa: SLF001 — demo introspection
-    observed = getattr(store, "observed_present", len(successes))
+    observed = store.observed_present
     replay = store.consume(capability) is not None
     return RunResult(
         mode=mode,
@@ -158,7 +164,7 @@ def replay_after_one(mode: Mode) -> RunResult:
         mode=mode,
         successes=1 if first else 0,
         misses=0 if second is None else 1,
-        observed_present=1 if first else 0,
+        observed_present=store.observed_present,
         winners=["legit"] if first else [],
         leftover=False,
         replay_accepted=second is not None,
@@ -172,6 +178,8 @@ def main() -> int:
     p.add_argument("--workers", type=int, default=8)
     p.add_argument("--json", action="store_true")
     args = p.parse_args()
+    if args.workers < 2:
+        p.error("--workers must be >= 2")
 
     modes: list[Mode]
     if args.mode == "both":

@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.0.19 — 2026-09-07
+
+Sponsor artifact-alignment release (portal prep).
+
+- **`docs/MANUSCRIPT-TABLES.md`** — Tables I–XII map aligned with round-6 manuscript (VII release pins, IX catalog, XI checklist).
+- **`codebook/incidents.json`** — `manuscript_tables` refresh; Table IX summary note; I4 provenance canonical string.
+- **`codebook/checklist.json`** — 14 rows (3a–3e split; expanded item 10) aligned with manuscript Table XI.
+- **`codebook/taxonomy.json`**, **`README.md`**, **`docs/QUICK-START.md`** — manuscript title + cite pin `v1.0.19`.
+- **`codebook/second-coder/responses.json`** — machine-readable N=11 coder responses.
+- **`codebook/compute_reliability.py`** — verify/regenerate agreement statistics (`make smoke`).
+- **`codebook/reliability.json`** — Efron bootstrap reference → manuscript [22].
+- **`harness/`** — `PresenceOnlyCallbackStore` rename; detector-style F3/F5 flags; JWT/Sev prose purge; tests 17–19.
+- **`docs/EVIDENCE-INDEX.md`**, **`codebook/README.md`** — Table IX cross-refs.
+- **N=11 stats.** Unchanged; byte-frozen at `v1.0.12`.
+
 ## 1.0.18 — 2026-09-06
 
 Gates/Ng convergent revision (sponsor round 6).

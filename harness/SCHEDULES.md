@@ -6,7 +6,7 @@ Threat model (narrow): the harness models an edge callback capability that an at
 
 ## Schedule A — double acceptance (`presence_only`, F5)
 
-**Implementation assumption:** existence (or unexpired JWT-style presence) is treated as sufficient; the store never deletes / consumes the value; a failed or missing delete is not used to reject the second path.
+**Implementation assumption:** existence (or unexpired presence) is treated as sufficient; the store never deletes / consumes the value; a failed or missing delete is not used to reject the second path.
 
 **Interleaving:**
 
@@ -25,7 +25,7 @@ Threat model (narrow): the harness models an edge callback capability that an at
 2. Path P1 deletes/pops the value and accepts.
 3. Path P2’s later pop finds nothing → rejects, even though P2 had a legitimate concurrent callback that already passed the existence check.
 
-**Observable in harness:** `mode=naive`, concurrent workers, `observed_present > successes` → `f3_false_reject_risk=true`.
+**Observable in harness:** `mode=naive`, concurrent workers, `observed_present > successes` → `f3_false_reject_risk=true`. The `misses` field counts paths that returned no payload after observing presence; semantics differ by schedule (see mode output JSON).
 
 ## Schedule C — single winner (`atomic`)
 

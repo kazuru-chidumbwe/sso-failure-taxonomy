@@ -6,3 +6,4 @@ smoke test:
 	$(PYTHON) -m unittest discover -s harness -v
 	$(PYTHON) -m unittest discover -s harness/fixtures/i4 -v
 	$(PYTHON) harness/fixtures/i4/check_sizes.py --limit 16384
+	$(PYTHON) codebook/compute_reliability.py --verify

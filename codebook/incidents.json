@@ -26,10 +26,12 @@
     "taxonomy": "IV",
     "operational_priority_class": "V",
     "protocol_artifact_contrast": "VI",
-    "case_catalog": "VII",
-    "f5_threat_model": "VIII",
-    "practitioner_checklist": "IX",
-    "prior_work_positioning": "X"
+    "release_cite_pins": "VII",
+    "overlap_routing_contingency": "VIII",
+    "case_catalog": "IX",
+    "f5_threat_model": "X",
+    "practitioner_checklist": "XI",
+    "prior_work_positioning": "XII"
   },
   "forms": {
     "DESIGN": 5,
@@ -41,7 +43,7 @@
     "E2": "Privately ticket-reviewed reconstruction: internal reconstruction reviewed by the author; public release limited to an anonymized paraphrase.",
     "E3": "Artifact-reproduced mechanism: a synthetic runnable artifact reproduces the stated mechanism under explicitly bounded assumptions. E3 attaches to the mechanism, never to the original operational event."
   },
-  "note": "Publishable summaries only. These strings are byte-identical to the manuscript Table IV 'Publishable summary' column. No geography, hostnames, ticket IDs, or non-IAM product names. DESIGN rows are stated in modeling voice because they are author-constructed scenarios, not observed events.",
+  "note": "Publishable summaries only. These strings are byte-identical to the manuscript Table IX 'Publishable summary' column. No geography, hostnames, ticket IDs, or non-IAM product names. DESIGN rows are stated in modeling voice because they are author-constructed scenarios, not observed events.",
   "incidents": [
     {
       "id": "F1",
@@ -121,7 +123,7 @@
       "sev": 2,
       "form": "RETRO",
       "evidence_class": ["E2"],
-      "provenance": "Ticket-reviewed privately; publishable summary only + synthetic size-class fixtures (harness/fixtures/i4/)",
+      "provenance": "Ticket-reviewed privately; publishable summary + synthetic fixtures",
       "summary": "SAML POST rejected on the gateway path after successful IdP authentication because the auth POST exceeded the request-size limit; raising the limit restored SSO; fixtures are synthetic, not estate captures.",
       "support_material": "harness/fixtures/i4/ contains synthetic size-class fixtures. These are E3-style demonstration objects for gateway request-limit behaviour in general; they are not evidence of the original operational event and do not upgrade this row above E2."
     },

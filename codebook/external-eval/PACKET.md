@@ -14,7 +14,7 @@ Return the filled response sheet. Do not discuss narratives with the author unti
 ## What you receive
 
 1. This packet (instructions).  
-2. Your assigned narratives (separate file or e-mail attachment — IDs `EN001`…).  
+2. Your assigned narratives (separate file or e-mail attachment — IDs such as `EN001`…, `GH001`…, `SF001`…).  
 3. Table IV summary (below).  
 4. Tie-breakers (below).  
 5. Response sheet (bottom).

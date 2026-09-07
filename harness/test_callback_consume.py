@@ -12,6 +12,32 @@ from callback_consume import (
 )
 
 
+class NaiveConcurrentTests(unittest.TestCase):
+    def test_naive_concurrent_false_reject(self) -> None:
+        r = concurrent_consume("naive", workers=12)
+        self.assertGreaterEqual(r.successes, 1)
+        self.assertGreater(r.observed_present, r.successes)
+        self.assertTrue(r.as_dict()["f3_false_reject_risk"])
+
+    def test_naive_replay_after_clean_consume_usually_safe(self) -> None:
+        store = NaiveCallbackStore()
+        store.put("n", "p")
+        self.assertEqual(store.consume("n"), "p")
+        self.assertIsNone(store.consume("n"))
+
+
+class PresenceOnlyTests(unittest.TestCase):
+    def test_replay_after_one_accepted(self) -> None:
+        r = replay_after_one("presence_only")
+        self.assertTrue(r.replay_accepted)
+        self.assertTrue(r.as_dict()["f5_replay_risk"])
+
+    def test_concurrent_observes_multiple_present(self) -> None:
+        r = concurrent_consume("presence_only", workers=12)
+        self.assertGreaterEqual(r.successes, 1)
+        self.assertGreaterEqual(r.observed_present, r.successes)
+
+
 class AtomicTests(unittest.TestCase):
     def test_replay_rejected(self) -> None:
         r = replay_after_one("atomic")
@@ -24,24 +50,6 @@ class AtomicTests(unittest.TestCase):
         self.assertEqual(r.misses, 11)
         self.assertFalse(r.replay_accepted)
         self.assertFalse(r.leftover)
-
-    def test_naive_concurrent_false_reject(self) -> None:
-        r = concurrent_consume("naive", workers=12)
-        self.assertGreaterEqual(r.successes, 1)
-        self.assertGreater(r.observed_present, r.successes)
-        self.assertTrue(r.as_dict()["f3_false_reject_risk"])
-
-
-class NaiveTests(unittest.TestCase):
-    def test_replay_after_clean_consume_usually_safe(self) -> None:
-        store = NaiveCallbackStore()
-        store.put("n", "p")
-        self.assertEqual(store.consume("n"), "p")
-        self.assertIsNone(store.consume("n"))
-
-    def test_presence_only_replay_accepted(self) -> None:
-        r = replay_after_one("presence_only")
-        self.assertTrue(r.replay_accepted)
 
     def test_atomic_pop_is_getdel(self) -> None:
         store = AtomicCallbackStore()
