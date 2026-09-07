@@ -6,7 +6,7 @@ It is **not** a production identity provider.
 
 License: MIT · [`LICENSE`](LICENSE) · [`CITATION.cff`](CITATION.cff)
 
-https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite tag **`v1.0.24`** (or its Zenodo version DOI), not floating `main`.
+https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite tag **`v1.0.25`** (or its Zenodo version DOI), not floating `main`.
 
 **Quick start:** [`docs/QUICK-START.md`](docs/QUICK-START.md) · **Manuscript cite map:** [`docs/MANUSCRIPT-CITE.md`](docs/MANUSCRIPT-CITE.md)
 
@@ -14,9 +14,11 @@ https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite tag **`v1.0.24
 
 | Path | Role |
 | --- | --- |
-| [`codebook/corpus.json`](codebook/corpus.json) | Two-layer evaluation corpus manifest (N=11 + S1–S8) |
+| [`docs/CASE-SELECTION.md`](docs/CASE-SELECTION.md) | N=11 selection criteria |
+| [`docs/OBSERVABILITY-MAP.md`](docs/OBSERVABILITY-MAP.md) | Category → signal map |
+| [`codebook/corpus.json`](codebook/corpus.json) | Two-layer evaluation corpus manifest |
 | [`codebook/`](codebook/) | Ten-category taxonomy, N=11 publishable summaries, checklist |
-| [`codebook/stress-cases.json`](codebook/stress-cases.json) | S1–S8 decision-test battery (manuscript §IV-E) |
+| [`codebook/stress-cases.json`](codebook/stress-cases.json) | S1–S8 decision tests + D1–D4 negative decoys (§IV-E) |
 | [`codebook/validate_catalog_assignments.py`](codebook/validate_catalog_assignments.py) | Catalog + decision-test + corpus manifest oracle (`make smoke`) |
 | [`harness/`](harness/) | Stdlib demo of Fig. 3: naive check-then-delete vs atomic consume |
 | [`figures/`](figures/) | Fig. 1–3 (captions in the manuscript). Fig. 2 is the tie-breaker walk, not a count chart |

@@ -62,6 +62,41 @@
     "n": 8,
     "outside_taxonomy": 4,
     "in_taxonomy": 4,
+    "negative_decoys": 4,
     "added_to_n11": false
-  }
+  },
+  "negative_decoys": [
+    {
+      "id": "D1",
+      "pairs_with": "S1",
+      "narrative": "Same as S1 (clock/JWKS skew during rollover); a coder forces protocol_gateway because a SAML POST was involved.",
+      "incorrect_label": "protocol_gateway",
+      "correct_label": "outside_taxonomy",
+      "rationale": "Gateway involvement is not affirmative payload damage; clock/JWKS has no Table IV primary home."
+    },
+    {
+      "id": "D2",
+      "pairs_with": "S5",
+      "narrative": "Same as S5 (warm SSO after ACL revoke); a coder forces edge_side_effect because network access did not change.",
+      "incorrect_label": "edge_side_effect",
+      "correct_label": "session_plane",
+      "rationale": "Tie-breaker: edge re-authorization was never attempted; nested session planes explain the failure."
+    },
+    {
+      "id": "D3",
+      "pairs_with": "S7",
+      "narrative": "Same as S7 (second callback accepted); a coder forces edge_side_effect because firewall sync failed.",
+      "incorrect_label": "edge_side_effect",
+      "correct_label": "edge_callback_consume",
+      "rationale": "Consume-defect tie-breaker: second presentation accepted without atomic consumption."
+    },
+    {
+      "id": "D4",
+      "pairs_with": "S8",
+      "narrative": "Same as S8 (divergent group claim encodings); a coder forces protocol_gateway because SAML is on the wire.",
+      "incorrect_label": "protocol_gateway",
+      "correct_label": "dual_idp_boundary",
+      "rationale": "Wire integrity intact; divergent token/claim semantics across co-deployed IdPs is primary."
+    }
+  ]
 }

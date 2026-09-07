@@ -21,8 +21,13 @@
       "manuscript_section": "IV-E",
       "file": "codebook/stress-cases.json",
       "n": 8,
+      "negative_decoys": 4,
       "not_empirical_validation": true
     }
+  ],
+  "supplementary_docs": [
+    "docs/CASE-SELECTION.md",
+    "docs/OBSERVABILITY-MAP.md"
   ],
   "manuscript_tables": {
     "evidence_classes": "I",

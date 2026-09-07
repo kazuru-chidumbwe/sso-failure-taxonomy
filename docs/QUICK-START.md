@@ -39,4 +39,4 @@ Use GitHub issue template **External incident (Table IV)** or `docs/EXTERNAL-INC
 
 ## Cite
 
-Tag **`v1.0.24`** · Zenodo version DOI in manuscript ref [34]. N=11 catalog byte-frozen at `v1.0.12`.
+Tag **`v1.0.25`** · Zenodo version DOI in manuscript ref [34]. N=11 catalog byte-frozen at `v1.0.12`.

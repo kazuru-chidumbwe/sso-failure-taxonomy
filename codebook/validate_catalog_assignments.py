@@ -37,6 +37,13 @@ STRESS_GOLDEN: dict[str, str] = {
     "S8": "dual_idp_boundary",
 }
 
+NEGATIVE_DECOYS_GOLDEN: dict[str, tuple[str, str, str]] = {
+    "D1": ("S1", "protocol_gateway", "outside_taxonomy"),
+    "D2": ("S5", "edge_side_effect", "session_plane"),
+    "D3": ("S7", "edge_side_effect", "edge_callback_consume"),
+    "D4": ("S8", "protocol_gateway", "dual_idp_boundary"),
+}
+
 
 def valid_category_ids() -> set[str]:
     tax = json.loads((ROOT / "taxonomy.json").read_text(encoding="utf-8"))
@@ -97,6 +104,34 @@ def verify_decision_tests() -> None:
     summary = data.get("summary", {})
     if summary.get("n") != 8 or summary.get("outside_taxonomy") != 4:
         raise SystemExit("stress-cases summary counts mismatch")
+    if summary.get("negative_decoys") != 4:
+        raise SystemExit("stress-cases summary negative_decoys must be 4")
+
+
+def verify_negative_decoys() -> None:
+    data = json.loads((ROOT / "stress-cases.json").read_text(encoding="utf-8"))
+    valid = valid_category_ids() | {"outside_taxonomy"}
+    decoys = data.get("negative_decoys", [])
+    if len(decoys) != 4:
+        raise SystemExit(f"negative_decoys: expected 4, got {len(decoys)}")
+    for d in decoys:
+        did = d["id"]
+        expected = NEGATIVE_DECOYS_GOLDEN.get(did)
+        if expected is None:
+            raise SystemExit(f"decoy {did}: not in golden map")
+        pairs_with, incorrect, correct = expected
+        if d.get("pairs_with") != pairs_with:
+            raise SystemExit(f"decoy {did}: pairs_with mismatch")
+        if d.get("incorrect_label") != incorrect:
+            raise SystemExit(f"decoy {did}: incorrect_label mismatch")
+        if d.get("correct_label") != correct:
+            raise SystemExit(f"decoy {did}: correct_label mismatch")
+        if incorrect == correct:
+            raise SystemExit(f"decoy {did}: incorrect_label must differ from correct_label")
+        if incorrect not in valid or correct not in valid:
+            raise SystemExit(f"decoy {did}: label not in valid set")
+        if STRESS_GOLDEN.get(pairs_with) != correct:
+            raise SystemExit(f"decoy {did}: correct_label must match paired vignette golden")
 
 
 def verify_corpus_manifest() -> None:
@@ -128,6 +163,8 @@ def verify_corpus_manifest() -> None:
     battery = layers["decision_test_battery"]
     if battery.get("n") != 8 or battery.get("file") != "codebook/stress-cases.json":
         raise SystemExit("corpus.json: decision_test_battery layer mismatch")
+    if battery.get("negative_decoys") != 4:
+        raise SystemExit("corpus.json: decision_test_battery negative_decoys must be 4")
     if stress.get("corpus_layer") != "decision_test_battery":
         raise SystemExit("stress-cases.json corpus_layer does not match corpus manifest")
 
@@ -141,8 +178,9 @@ def verify_corpus_manifest() -> None:
 def main() -> int:
     verify_catalog()
     verify_decision_tests()
+    verify_negative_decoys()
     verify_corpus_manifest()
-    print("catalog assignments, decision-test battery, and corpus manifest: PASS")
+    print("catalog, decision-test battery, negative decoys, and corpus manifest: PASS")
     return 0
 
 

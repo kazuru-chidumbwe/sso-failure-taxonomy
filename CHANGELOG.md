@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.25 — 2026-09-07
+
+Publishability fixes — selection transparency, observability map, negative decoys.
+
+- **`codebook/stress-cases.json`** — D1–D4 negative decoys (mislabel guards paired with S1/S5/S7/S8).
+- **`codebook/validate_catalog_assignments.py`** — negative-decoy oracle in `make smoke`.
+- **`docs/CASE-SELECTION.md`** — N=11 selection criteria and exclusions.
+- **`docs/OBSERVABILITY-MAP.md`** — category → signal mapping for practitioners.
+- **`docs/external-submissions/README.md`** — scored community submission ledger (empty at release).
+
 ## 1.0.24 — 2026-09-07
 
 Align evaluation corpus to Path D two-layer model.

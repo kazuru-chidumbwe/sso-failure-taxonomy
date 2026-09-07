@@ -58,6 +58,22 @@ Author-constructed vignettes in [`codebook/stress-cases.json`](../codebook/stres
 
 Full narratives and rationales: `stress-cases.json` → `vignettes[]`.
 
+## Negative decoys (D1–D4)
+
+Mislabel guards paired with S1, S5, S7, and S8. Each documents an **incorrect** primary label and the frozen **correct** label. Verified at release by `validate_catalog_assignments.py`.
+
+| ID | Pairs with | Incorrect label | Correct label |
+| --- | --- | --- | --- |
+| D1 | S1 | protocol_gateway | outside_taxonomy |
+| D2 | S5 | edge_side_effect | session_plane |
+| D3 | S7 | edge_side_effect | edge_callback_consume |
+| D4 | S8 | protocol_gateway | dual_idp_boundary |
+
+## Supplementary docs
+
+- [`docs/CASE-SELECTION.md`](CASE-SELECTION.md) — N=11 selection criteria and exclusions
+- [`docs/OBSERVABILITY-MAP.md`](OBSERVABILITY-MAP.md) — category → signal map for triage
+
 ## How to run the executable evidence objects
 
 ```bash
