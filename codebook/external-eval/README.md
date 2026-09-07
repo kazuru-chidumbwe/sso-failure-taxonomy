@@ -1,6 +1,8 @@
-# External narrative evaluation (Gates round-2 / sponsor Hold)
+# External narrative evaluation (exploratory archive)
 
-Public-narrative feasibility corpus for IEEE Access §IV-K. **Not part of N=11.**
+> **Manuscript note (Path D, Sep 2026):** This corpus and coder responses were collected for an exploratory routing pilot. They are **not cited as study evidence** in the IEEE Access manuscript. Open falsifiability for operators uses `docs/EXTERNAL-INCIDENTS.md` instead.
+
+Public-narrative feasibility corpus (archived). **Not part of N=11.**
 
 | File | Role |
 | --- | --- |

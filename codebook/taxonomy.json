@@ -7,10 +7,6 @@
   "tie_breaker": "identifier instability wins over authorize/release manifestation",
   "evidence_sufficiency_rule": {
     "introduced": "v1.0.18",
-    "postdates_pilots": [
-      "n11-structured-packet (codebook/reliability.json)",
-      "external-eval routing pilot (codebook/external-eval/reliability-external-v1.json)"
-    ],
     "assign_table_iv_when": [
       "At least one affirmative mechanism indicator for a cell's Table IV inclusion rule is stated in the packet or narrative.",
       "No stated fact contradicts that cell."
@@ -20,7 +16,7 @@
       "Two or more Table IV cells remain equally plausible after tie-breakers.",
       "No inclusion rule applies."
     ],
-    "note": "Reported pilot outside-taxonomy rates predate this rule; cross-coder counts are not comparable until coders apply v1.0.18+."
+    "note": "Design-time routing rule; illustrated by stress vignettes S1-S4 (outside) and S2 tie-breaker deadlock."
   },
   "categories": [
     {

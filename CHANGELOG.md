@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.21 — 2026-09-07
+
+Path D reframe — executable evaluation without human coding claims.
+
+- **`codebook/validate_catalog_assignments.py`** — golden-check N=11 catalog + S1–S8 decision tests (`make smoke`).
+- **`Makefile`** — smoke uses catalog validator (replaces `compute_reliability.py` in smoke path).
+- **`codebook/taxonomy.json`** — evidence-sufficiency rule note design-grounded (not pilot-motivated).
+- **`codebook/external-eval/README.md`** — exploratory archive banner; not manuscript study evidence.
+
 ## 1.0.20 — 2026-09-07
 
 Sponsor round-7 reliability CI fix.

@@ -4,6 +4,7 @@ Cite a tag, never floating `main`.
 
 | Tag | Role |
 | --- | --- |
+| `v1.0.21` | **Path D reframe.** `validate_catalog_assignments.py`; decision-test battery in smoke; external-eval demoted to exploratory archive. Wire Zenodo version DOI after GitHub Release. |
 | `v1.0.20` | **Sponsor round-7 CI fix.** `compute_reliability.py` fixed q=10/3 for N=11 bootstrap; CI verification in smoke; F3 flag concurrent-only. Zenodo `10.5281/zenodo.22645087`. |
 | `v1.0.19` | **Sponsor artifact alignment.** Table map I–XII; checklist 14 rows; `compute_reliability.py`; harness `PresenceOnlyCallbackStore`; title/cite pin sync. Zenodo `10.5281/zenodo.22644754`. N=11 frozen at `v1.0.12`. |
 | `v1.0.18` | **Gates/Ng convergent revision.** Evidence-sufficiency rule in `taxonomy.json`; stress vignettes S6–S8; fingerprint-safe procedure in `external-eval/README.md`. Zenodo `10.5281/zenodo.22550779`. N=11 frozen at `v1.0.12`. |

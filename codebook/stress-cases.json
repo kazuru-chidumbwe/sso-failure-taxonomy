@@ -1,5 +1,5 @@
 {
-  "purpose": "Illustrative decision-test vignettes for the terminal outside-taxonomy outcome (including deliberately out-of-scope narratives). Not part of N=11. Not empirical validation evidence. Not ticket extracts.",
+  "purpose": "Decision-test battery (S1-S8): instrument specification tests for outside-taxonomy routing and published tie-breakers. Not part of N=11. Not empirical validation evidence. Verified by codebook/validate_catalog_assignments.py in make smoke.",
   "not_in_table_iii": true,
   "vignettes": [
     {
