@@ -4,7 +4,7 @@ Cite a tag, never floating `main`.
 
 | Tag | Role |
 | --- | --- |
-| `v1.0.23` | **Remove coder pilot tree.** Dropped second-coder, external-eval, reliability scripts/JSON. Wire Zenodo after release. |
+| `v1.0.23` | **Remove coder pilot tree.** Dropped second-coder, external-eval, reliability scripts/JSON. Zenodo `10.5281/zenodo.22649373`. |
 | `v1.0.22` | **Reviewer-facing docs.** `MANUSCRIPT-CITE.md`; README/QUICK-START archive banners. Zenodo `10.5281/zenodo.22649332`. |
 | `v1.0.21` | **Path D reframe.** `validate_catalog_assignments.py`; decision-test battery in smoke; external-eval demoted to exploratory archive. Zenodo `10.5281/zenodo.22649220`. |
 | `v1.0.20` | **Sponsor round-7 CI fix.** `compute_reliability.py` fixed q=10/3 for N=11 bootstrap; CI verification in smoke; F3 flag concurrent-only. Zenodo `10.5281/zenodo.22645087`. |
