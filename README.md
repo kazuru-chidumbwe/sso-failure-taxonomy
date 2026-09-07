@@ -1,6 +1,6 @@
 # SSO Failure Taxonomy
 
-Companion codebook and callback-consume harness for the manuscript *An Artifact-Supported Instrument for Classifying Federated SSO Failure Mechanisms*.
+Companion codebook and callback-consume harness for the manuscript *A Deployment-Bounded, Artifact-Backed Coding Instrument for Federated SSO Failure Triage*.
 
 It is **not** a production identity provider.
 
