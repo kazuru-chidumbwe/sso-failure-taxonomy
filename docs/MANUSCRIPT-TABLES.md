@@ -1,4 +1,4 @@
-# Manuscript table numbering (IEEE Access)
+# Manuscript table numbering
 
 Sequential table numbers in the submitted manuscript (round 6, Sep 2026):
 

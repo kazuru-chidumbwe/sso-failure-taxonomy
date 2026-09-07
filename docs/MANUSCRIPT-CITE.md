@@ -1,6 +1,6 @@
-# What the IEEE Access manuscript cites
+# What the companion manuscript cites
 
-**Manuscript cite pin:** tag **`v1.0.26`** (or latest release) · Zenodo version DOI in manuscript [34]  
+**Manuscript cite pin:** tag **`v1.0.26`** (or latest release) · Zenodo version DOI in manuscript [23]  
 **N=11 catalog freeze:** tag **`v1.0.12`** (category / priority / summary fields)
 
 | Path | Role |
