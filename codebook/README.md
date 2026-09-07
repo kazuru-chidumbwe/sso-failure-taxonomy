@@ -8,6 +8,6 @@ Machine-readable copy of the frozen coding scheme. No hostnames, geography, tick
 | [`incidents.json`](incidents.json) | N=11 publishable catalog (category, severity, form, summary) |
 | [`checklist.json`](checklist.json) | Table XI items with bidirectional case traceability |
 | [`stress-cases.json`](stress-cases.json) | S1–S8 decision-test battery |
-| [`validate_catalog_assignments.py`](validate_catalog_assignments.py) | Catalog + decision-test oracle (`make smoke`) |
+| [`validate_catalog_assignments.py`](validate_catalog_assignments.py) | Catalog + decision-test conformance checker (`make smoke`) |
 
 Canonical definitions are Tables I–XII in the manuscript. This directory is the machine-readable copy.

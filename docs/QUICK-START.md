@@ -26,7 +26,7 @@ make smoke   # from repo root
 
 Modes: `presence_only` (F5 second acceptance), `naive` (F3 false reject), `atomic` (single winner).
 
-## 4. Verify executable evaluation
+## 4. Verify artifact conformance
 
 ```bash
 python3 codebook/validate_catalog_assignments.py

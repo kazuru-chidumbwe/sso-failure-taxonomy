@@ -18,7 +18,7 @@ Golden labels: `codebook/stress-cases.json`, `codebook/rejected-estate-vignettes
 
 - Measure time-to-primary-label and misroute rate vs pre-instrument baseline on redacted tickets/logs.
 - Requires multi-organization data and IRB/DP review where applicable.
-- Not part of the v1.0.27 artifact evaluation model.
+- Not part of the v1.0.28 artifact verification model.
 
 ## Community falsifiability (ongoing)
 

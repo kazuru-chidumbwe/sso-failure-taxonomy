@@ -6,7 +6,7 @@ It is **not** a production identity provider.
 
 License: MIT · [`LICENSE`](LICENSE) · [`CITATION.cff`](CITATION.cff)
 
-https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite tag **`v1.0.27`** (or its Zenodo version DOI), not floating `main`.
+https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite tag **`v1.0.28`** (or its Zenodo version DOI), not floating `main`.
 
 **Quick start:** [`docs/QUICK-START.md`](docs/QUICK-START.md) · **Manuscript cite map:** [`docs/MANUSCRIPT-CITE.md`](docs/MANUSCRIPT-CITE.md)
 
@@ -19,7 +19,7 @@ https://github.com/kazuru-chidumbwe/sso-failure-taxonomy — cite tag **`v1.0.27
 | [`codebook/corpus.json`](codebook/corpus.json) | Two-layer evaluation corpus manifest |
 | [`codebook/`](codebook/) | Ten-category taxonomy, N=11 publishable summaries, checklist |
 | [`codebook/stress-cases.json`](codebook/stress-cases.json) | S1–S8 decision tests + D1–D4 negative decoys (§IV-E) |
-| [`codebook/validate_catalog_assignments.py`](codebook/validate_catalog_assignments.py) | Catalog + decision-test + corpus manifest oracle (`make smoke`) |
+| [`codebook/validate_catalog_assignments.py`](codebook/validate_catalog_assignments.py) | Catalog + decision-test + corpus manifest conformance checker (`make smoke`) |
 | [`harness/`](harness/) | Stdlib demo of Fig. 3: naive check-then-delete vs atomic consume |
 | [`figures/`](figures/) | Fig. 1–3 (captions in the manuscript). Fig. 2 is the tie-breaker walk, not a count chart |
 | [`docs/EXTERNAL-INCIDENTS.md`](docs/EXTERNAL-INCIDENTS.md) | Open community falsifiability template |

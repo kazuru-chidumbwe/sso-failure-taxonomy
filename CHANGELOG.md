@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.28 — 2026-09-07
+
+Gates final major revision — manuscript terminology sync (no N=11 science change).
+
+- **Docs** — README, MANUSCRIPT-CITE, QUICK-START, TAGS, FUTURE-VALIDATION-PROTOCOL: cite pin `v1.0.28`; “artifact verification” / “conformance checker” prose (internal `corpus.json` `oracle` key unchanged).
+- **Manuscript (Atlas)** — design-science reframe; Table IV-B; Table X threat model; Table XIII → artifact-primary; §V compression; title change.
+
 ## 1.0.27 — 2026-09-07
 
 Stanford reviewer round-2 — specification tests, portability docs, order-sensitivity audit.
