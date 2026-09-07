@@ -1,7 +1,7 @@
 {
   "schema": "sso-failure-taxonomy/corpus/v1",
   "evaluation_model": "executable_path_d",
-  "description": "Two-layer evaluation corpus: author-coded N=11 estate catalog (illustrative application) plus S1–S8 decision-test battery (instrument specification tests). Not an inter-rater or prevalence study.",
+  "description": "Evaluation corpus: N=11 estate catalog, S1–S8 decision-test battery, and rejected-estate-adjacent vignettes (R1). Not an inter-rater or prevalence study.",
   "layers": [
     {
       "id": "estate_catalog_n11",
@@ -23,11 +23,21 @@
       "n": 8,
       "negative_decoys": 4,
       "not_empirical_validation": true
+    },
+    {
+      "id": "rejected_estate_adjacent",
+      "role": "outside_taxonomy_illustration",
+      "manuscript_section": "IV-D",
+      "file": "codebook/rejected-estate-vignettes.json",
+      "n": 1,
+      "not_in_n11": true,
+      "not_empirical_validation": true
     }
   ],
   "supplementary_docs": [
     "docs/CASE-SELECTION.md",
-    "docs/OBSERVABILITY-MAP.md"
+    "docs/OBSERVABILITY-MAP.md",
+    "docs/REJECTED-CASES.md"
   ],
   "manuscript_tables": {
     "evidence_classes": "I",

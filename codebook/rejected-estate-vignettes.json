@@ -1,0 +1,24 @@
+{
+  "schema": "sso-failure-taxonomy/rejected-estate/v1",
+  "corpus_layer": "rejected_estate_adjacent",
+  "not_in_n11": true,
+  "purpose": "Anonymized estate-adjacent illustrations excluded from the N=11 catalog. Exercises outside-taxonomy routing on operational-adjacent material without changing the byte-frozen Table IX rows. Not empirical validation evidence.",
+  "vignettes": [
+    {
+      "id": "R1",
+      "narrative": "Users cannot start federated login when upstream DNS for the IdP hostname fails intermittently; no authorize or ACS exchange is observed; edge and IdP processes report healthy on direct reachability tests.",
+      "coding": "outside_taxonomy",
+      "rationale": "Name-resolution failure precedes any Table IV authentication-path mechanism; forcing directory_federation or protocol_gateway would invent a label.",
+      "negative_evidence": {
+        "directory_federation": "No LDAP bind or WAN directory timeout on the authentication path — failure occurs before any federation exchange.",
+        "protocol_gateway": "No SAML/OIDC payload reached a gateway — resolution failed upstream.",
+        "edge_side_effect": "No edge release or callback step was attempted."
+      },
+      "why_excluded_from_n11": "Layer 1 was limited to assignable illustrations with a Table IV primary home; R1 demonstrates mandatory outside-taxonomy routing on estate-adjacent operations material instead."
+    }
+  ],
+  "summary": {
+    "n": 1,
+    "outside_taxonomy": 1
+  }
+}

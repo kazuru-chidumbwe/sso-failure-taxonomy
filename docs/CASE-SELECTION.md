@@ -25,7 +25,7 @@ Illustrate each primary Table IV surface represented in the studied deployment m
 
 ## Outside taxonomy in Layer 1
 
-**None** of the eleven estate rows are coded `outside_taxonomy`. That is a deliberate illustration choice, not evidence that production estates rarely produce ambiguous cases. Layer 2 (S1–S4) exercises outside-taxonomy routing on specification vignettes.
+**None** of the eleven estate rows are coded `outside_taxonomy`. That is a deliberate illustration choice for Table IX, not evidence that production estates rarely produce ambiguous cases. Outside-taxonomy routing on estate-adjacent material is illustrated in **Layer 1.5** (R1 in `codebook/rejected-estate-vignettes.json`) and in Layer 2 (S1–S4 specification vignettes).
 
 ## Coverage map (not prevalence)
 

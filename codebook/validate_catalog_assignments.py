@@ -44,6 +44,10 @@ NEGATIVE_DECOYS_GOLDEN: dict[str, tuple[str, str, str]] = {
     "D4": ("S8", "protocol_gateway", "dual_idp_boundary"),
 }
 
+REJECTED_ESTATE_GOLDEN: dict[str, str] = {
+    "R1": "outside_taxonomy",
+}
+
 
 def valid_category_ids() -> set[str]:
     tax = json.loads((ROOT / "taxonomy.json").read_text(encoding="utf-8"))
@@ -134,6 +138,29 @@ def verify_negative_decoys() -> None:
             raise SystemExit(f"decoy {did}: correct_label must match paired vignette golden")
 
 
+def verify_rejected_estate() -> None:
+    data = json.loads((ROOT / "rejected-estate-vignettes.json").read_text(encoding="utf-8"))
+    valid = valid_category_ids() | {"outside_taxonomy"}
+    vignettes = data.get("vignettes", [])
+    if len(vignettes) != 1:
+        raise SystemExit(f"rejected-estate: expected 1 vignette, got {len(vignettes)}")
+    if data.get("not_in_n11") is not True:
+        raise SystemExit("rejected-estate: not_in_n11 must be true")
+    for v in vignettes:
+        vid = v["id"]
+        coding = v["coding"]
+        if coding not in valid:
+            raise SystemExit(f"rejected-estate {vid}: invalid coding {coding}")
+        expected = REJECTED_ESTATE_GOLDEN.get(vid)
+        if expected is None:
+            raise SystemExit(f"rejected-estate {vid}: not in golden map")
+        if coding != expected:
+            raise SystemExit(f"rejected-estate {vid}: coding {coding} != golden {expected}")
+    summary = data.get("summary", {})
+    if summary.get("n") != 1 or summary.get("outside_taxonomy") != 1:
+        raise SystemExit("rejected-estate summary counts mismatch")
+
+
 def verify_corpus_manifest() -> None:
     corpus = json.loads((ROOT / "corpus.json").read_text(encoding="utf-8"))
     incidents = json.loads((ROOT / "incidents.json").read_text(encoding="utf-8"))
@@ -151,7 +178,7 @@ def verify_corpus_manifest() -> None:
         raise SystemExit("corpus.json: legacy overlap_routing_contingency key must be removed")
 
     layers = {layer["id"]: layer for layer in corpus.get("layers", [])}
-    if set(layers) != {"estate_catalog_n11", "decision_test_battery"}:
+    if set(layers) != {"estate_catalog_n11", "decision_test_battery", "rejected_estate_adjacent"}:
         raise SystemExit(f"corpus.json: unexpected layer ids {set(layers)}")
 
     n11 = layers["estate_catalog_n11"]
@@ -168,6 +195,15 @@ def verify_corpus_manifest() -> None:
     if stress.get("corpus_layer") != "decision_test_battery":
         raise SystemExit("stress-cases.json corpus_layer does not match corpus manifest")
 
+    rejected_layer = layers["rejected_estate_adjacent"]
+    if rejected_layer.get("n") != 1:
+        raise SystemExit("corpus.json: rejected_estate_adjacent n must be 1")
+    if rejected_layer.get("file") != "codebook/rejected-estate-vignettes.json":
+        raise SystemExit("corpus.json: rejected_estate_adjacent file mismatch")
+    rejected = json.loads((ROOT / "rejected-estate-vignettes.json").read_text(encoding="utf-8"))
+    if len(rejected.get("vignettes", [])) != 1:
+        raise SystemExit("rejected-estate-vignettes.json row count mismatch")
+
     oracle = corpus.get("oracle")
     if oracle != "codebook/validate_catalog_assignments.py":
         raise SystemExit("corpus.json oracle path mismatch")
@@ -179,8 +215,9 @@ def main() -> int:
     verify_catalog()
     verify_decision_tests()
     verify_negative_decoys()
+    verify_rejected_estate()
     verify_corpus_manifest()
-    print("catalog, decision-test battery, negative decoys, and corpus manifest: PASS")
+    print("catalog, decision tests, decoys, rejected estate, corpus manifest: PASS")
     return 0
 
 

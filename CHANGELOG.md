@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.26 — 2026-09-07
+
+Reviewer-facing strengthening — application walkthrough support, negative evidence, rejected estate vignette.
+
+- **`codebook/rejected-estate-vignettes.json`** — R1 outside-taxonomy estate-adjacent illustration (not N=11).
+- **`docs/REJECTED-CASES.md`** — Layer 1.5 documentation.
+- **`codebook/corpus.json`** — third corpus layer `rejected_estate_adjacent`.
+- **Manuscript (Atlas)** — §V I4 walkthrough, negative evidence per case, abstract alignment, Appendix B coverage caption.
+
 ## 1.0.25 — 2026-09-07
 
 Publishability fixes — selection transparency, observability map, negative decoys.

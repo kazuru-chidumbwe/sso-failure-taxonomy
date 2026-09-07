@@ -4,7 +4,8 @@ Cite a tag, never floating `main`.
 
 | Tag | Role |
 | --- | --- |
-| `v1.0.25` | **Publishability pack.** CASE-SELECTION, OBSERVABILITY-MAP, D1–D4 negative decoys. Zenodo version DOI pending upload. |
+| `v1.0.26` | **Application walkthrough support.** R1 rejected-estate vignette; corpus Layer 1.5; MS negative-evidence pass. Zenodo version DOI pending upload. |
+| `v1.0.25` | **Publishability pack.** CASE-SELECTION, OBSERVABILITY-MAP, D1–D4 negative decoys. |
 | `v1.0.24` | **Corpus alignment (Path D).** `codebook/corpus.json` two-layer manifest; incidents/stress metadata; corpus oracle in smoke. Zenodo `10.5281/zenodo.22649373`. |
 | `v1.0.23` | **Remove coder pilot tree.** Dropped second-coder, external-eval, reliability scripts/JSON. Zenodo `10.5281/zenodo.22649373`. |
 | `v1.0.22` | **Reviewer-facing docs.** `MANUSCRIPT-CITE.md`; README/QUICK-START archive banners. Zenodo `10.5281/zenodo.22649332`. |
